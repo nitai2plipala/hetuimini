@@ -58,6 +58,41 @@ Hetui Mini 采用**三层分离**架构：
 
 **关注点完全隔离**：修改任何一层不会牵连其他层，和 Tailwind "改样式只改 class" 是同一个解耦思想。
 
+## AI Agent 技能包
+
+本项目提供了 AI Agent 技能包，用于辅助开发 Hetui Mini 框架应用。
+
+### 技能包位置
+
+```
+skills/use-hetuimini/
+├── SKILL.md                 # 技能包主文件
+├── examples/                # 示例代码
+│   └── basic-app.html       # 基础应用示例
+└── references/              # 参考文档
+    └── quick-reference.md   # 快速参考
+```
+
+### 技能包内容
+
+- **SKILL.md**: 技能包主文件，包含框架语法、最佳实践、常见错误避免等完整开发规范
+- **examples/**: 示例代码目录，包含基础应用示例
+- **references/**: 参考文档目录，包含快速参考文档
+
+### 使用场景
+
+当用户提到以下内容时，可以触发此技能包：
+- `hetuimini`、`hetuimini.js`
+- 需要创建使用该框架的 HTML 页面
+- 框架语法、最佳实践、常见错误避免等
+
+### 技能包功能
+
+1. **框架语法指导**: 提供完整的框架语法说明
+2. **最佳实践**: 包含开发最佳实践和常见错误避免
+3. **示例代码**: 提供可直接使用的示例代码
+4. **快速参考**: 提供指令速查和 API 参考
+
 ## 快速开始
 
 ```html
@@ -175,9 +210,9 @@ console.log(data.count);      // ✅ 唯一写法
 |------|------|------|
 | `:text` | `:text="msg"` | 文本内容 |
 | `:value` | `:value="input"` | 表单值（双向） |
-| `:attr` | `:attr|href="url"` | HTML 属性 |
-| `:class` | `:class|active="flag"` 或 `:class="className"` | CSS 类（支持类名字符串绑定） |
-| `:style` | `:style|color="color"` | 内联样式 |
+| `:attr` | `:attr\|href="url"` | HTML 属性 |
+| `:class` | `:class\|active="flag"` 或 `:class="className"` | CSS 类（支持类名字符串绑定） |
+| `:style` | `:style\|color="color"` | 内联样式 |
 | `:html` | `:html="content"` | HTML 内容 |
 | `:data` | `:data="user:id"` | data-* 属性 |
 | `:disabled` | `:disabled="flag"` | 禁用状态 |
@@ -267,6 +302,8 @@ var app2 = Hetui.runApp({...}, document.getElementById('app2'));
 ## 浏览器兼容
 
 支持所有现代浏览器（ES6+）。
+
+
 
 ## 许可
 

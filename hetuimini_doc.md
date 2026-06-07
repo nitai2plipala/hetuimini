@@ -1290,10 +1290,10 @@ var app = Hetui.runApp({
 |------|------|------|
 | `:text` | `:text="field"` | 文本绑定 |
 | `:value` | `:value="field"` | 值绑定（双向） |
-| `:attr` | `:attr|attrName="field"` | 属性绑定 |
+| `:attr` | `:attr\|attrName="field"` | 属性绑定 |
 | `:data` | `:data="field:subfield"` | data-* 属性绑定 |
-| `:class` | `:class|className="field"` | 类绑定 |
-| `:style` | `:style|styleName="field"` | 样式绑定 |
+| `:class` | `:class\|className="field"` | 类绑定 |
+| `:style` | `:style\|styleName="field"` | 样式绑定 |
 | `:disabled` | `:disabled="field"` | 禁用绑定 |
 | `:checked` | `:checked="field"` | 选中绑定（双向） |
 | `:placeholder` | `:placeholder="field"` | 占位符绑定 |
