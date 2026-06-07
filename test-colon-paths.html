@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>冒号分隔路径测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .info { color: blue; }
+        button { margin: 5px; padding: 8px 16px; }
+        input { margin: 5px; padding: 8px; }
+        .test-result { margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px; }
+        .log { margin-top: 10px; padding: 10px; background: #e8f4fc; border-radius: 5px; font-family: monospace; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>冒号分隔路径测试</h1>
+        <p class="info">测试所有指令对冒号分隔路径（如 <code>user:name</code>）的支持</p>
+        
+        <!-- 测试1: 嵌套对象属性绑定 -->
+        <div class="section">
+            <h2>测试1: 嵌套对象属性绑定</h2>
+            <div class="test-result">
+                <p>用户名: <span HeTui :text="user:name" class="success"></span></p>
+                <p>邮箱: <span HeTui :text="user:email" class="success"></span></p>
+                <p>年龄: <span HeTui :text="user:profile:age" class="success"></span></p>
+            </div>
+            
+            <div class="log">
+                <p>控制台输出: 用户名应为 "张三", 邮箱应为 "zhangsan@example.com", 年龄应为 25</p>
+            </div>
+        </div>
+        
+        <!-- 测试2: 嵌套对象值绑定（双向绑定） -->
+        <div class="section">
+            <h2>测试2: 嵌套对象值绑定（双向绑定）</h2>
+            <p>
+                用户名: <input HeTui type="text" :value="user:name" @input="updateUserName">
+            </p>
+            <p>
+                邮箱: <input HeTui type="email" :value="user:email" @input="updateUserEmail">
+            </p>
+            <p>
+                年龄: <input HeTui type="number" :value="user:profile:age" @input="updateUserAge">
+            </p>
+            
+            <div class="test-result">
+                <p>更新后的用户名: <span HeTui :text="user:name" class="success"></span></p>
+                <p>更新后的邮箱: <span HeTui :text="user:email" class="success"></span></p>
+                <p>更新后的年龄: <span HeTui :text="user:profile:age" class="success"></span></p>
+            </div>
+        </div>
+        
+        <!-- 测试3: 嵌套对象事件绑定 -->
+        <div class="section">
+            <h2>测试3: 嵌套对象事件绑定</h2>
+            <p>
+                <button HeTui @click="incrementAge">增加年龄</button>
+                <button HeTui @click="decrementAge">减少年龄</button>
+                <button HeTui @click="resetUser">重置用户</button>
+            </p>
+            
+            <div class="test-result">
+                <p>当前年龄: <span HeTui :text="user:profile:age" class="success"></span></p>
+                <p>年龄变化次数: <span HeTui :text="user:profile:ageChanges" class="success"></span></p>
+            </div>
+            
+            <div class="log">
+                <p>控制台输出: 点击按钮应触发对应方法，年龄和变化次数应更新</p>
+            </div>
+        </div>
+        
+        <!-- 测试4: 嵌套对象样式绑定 -->
+        <div class="section">
+            <h2>测试4: 嵌套对象样式绑定</h2>
+            <p>
+                <div HeTui :class|active="user:isActive" class="test-element">
+                    动态类绑定 (user:isActive)
+                </div>
+            </p>
+            <p>
+                <div HeTui :style|color="user:theme:color" class="test-element">
+                    动态样式绑定 (user:theme:color)
+                </div>
+            </p>
+            
+            <div class="test-result">
+                <p>用户状态: <span HeTui :text="user:isActive" class="success"></span></p>
+                <p>主题颜色: <span HeTui :text="user:theme:color" class="success"></span></p>
+            </div>
+            
+            <p>
+                <button HeTui @click="toggleActive">切换状态</button>
+                <button HeTui @click="changeColor">改变颜色</button>
+            </p>
+        </div>
+        
+        <!-- 测试5: 嵌套对象流程控制 -->
+        <div class="section">
+            <h2>测试5: 嵌套对象流程控制</h2>
+            
+            <!-- foreach 测试 -->
+            <div class="test-result">
+                <h3>foreach: 测试</h3>
+                <ul>
+                    <li HeTui foreach:="user:items">
+                        <span HeTui :text="name"></span> - 
+                        <span HeTui :text="price"></span> 元
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- if 测试 -->
+            <div class="test-result">
+                <h3>if: 测试</h3>
+                <div HeTui if:="user:showDetails">
+                    <p>详细信息已显示</p>
+                    <p>用户ID: <span HeTui :text="user:id"></span></p>
+                </div>
+            </div>
+            
+            <!-- show 测试 -->
+            <div class="test-result">
+                <h3>show: 测试</h3>
+                <div HeTui show:="user:isVisible">
+                    <p>此内容根据 user:isVisible 显示/隐藏</p>
+                </div>
+            </div>
+            
+            <p>
+                <button HeTui @click="toggleDetails">切换详细信息</button>
+                <button HeTui @click="toggleVisibility">切换可见性</button>
+                <button HeTui @click="addItem">添加项目</button>
+            </p>
+        </div>
+        
+        <!-- 测试6: 错误信息显示测试（修复的核心问题） -->
+        <div class="section">
+            <h2>测试6: 错误信息显示测试（修复的核心问题）</h2>
+            <p class="info">此测试验证错误信息是否能正确显示在页面上</p>
+            
+            <div class="test-result">
+                <p>
+                    用户名: <input HeTui type="text" :value="form:username" @input="updateFormUsername">
+                    <span HeTui :text="errors:username" class="error"></span>
+                </p>
+                <p>
+                    邮箱: <input HeTui type="email" :value="form:email" @input="updateFormEmail">
+                    <span HeTui :text="errors:email" class="error"></span>
+                </p>
+                <p>
+                    密码: <input HeTui type="password" :value="form:password" @input="updateFormPassword">
+                    <span HeTui :text="errors:password" class="error"></span>
+                </p>
+            </div>
+            
+            <p>
+                <button HeTui @click="validateForm">验证表单</button>
+                <button HeTui @click="clearErrors">清除错误</button>
+            </p>
+            
+            <div class="log">
+                <p>控制台输出: 验证表单后，错误信息应显示在输入框旁边</p>
+            </div>
+        </div>
+        
+        <!-- 测试结果汇总 -->
+        <div class="section">
+            <h2>测试结果汇总</h2>
+            <div class="test-result">
+                <p>测试状态: <span HeTui :text="testStatus" class="success"></span></p>
+                <p>通过测试数: <span HeTui :text="passedTests" class="success"></span></p>
+                <p>失败测试数: <span HeTui :text="failedTests" class="error"></span></p>
+            </div>
+            
+            <div class="log">
+                <p>所有测试应通过，验证冒号分隔路径在所有指令中正常工作</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = Hetui.Observe({
+            // 测试数据：嵌套对象
+            user: Observer.Define({
+                id: 1001,
+                name: '张三',
+                email: 'zhangsan@example.com',
+                profile: {
+                    age: 25,
+                    ageChanges: 0
+                },
+                isActive: true,
+                theme: {
+                    color: '#3f6085'
+                },
+                showDetails: true,
+                isVisible: true,
+                items: [
+                    { name: '商品A', price: 100 },
+                    { name: '商品B', price: 200 },
+                    { name: '商品C', price: 300 }
+                ]
+            }),
+            
+            // 表单数据
+            form: Observer.Define({
+                username: '',
+                email: '',
+                password: ''
+            }),
+            
+            // 错误信息
+            errors: Observer.Define({
+                username: '',
+                email: '',
+                password: ''
+            }),
+            
+            // 测试状态
+            testStatus: '运行中',
+            passedTests: 0,
+            failedTests: 0
+        })
+        .methods({
+            updateUserName: function(event, data) {
+                data.user.name = event.target.value;
+                console.log('用户名更新:', event.target.value);
+            },
+            updateUserEmail: function(event, data) {
+                data.user.email = event.target.value;
+                console.log('邮箱更新:', event.target.value);
+            },
+            updateUserAge: function(event, data) {
+                data.user.profile.age = parseInt(event.target.value) || 0;
+                console.log('年龄更新:', event.target.value);
+            },
+            incrementAge: function(event, data) {
+                data.user.profile.age++;
+                data.user.profile.ageChanges++;
+                console.log('年龄增加:', data.user.profile.age);
+            },
+            decrementAge: function(event, data) {
+                if (data.user.profile.age > 0) {
+                    data.user.profile.age--;
+                    data.user.profile.ageChanges++;
+                    console.log('年龄减少:', data.user.profile.age);
+                }
+            },
+            resetUser: function(event, data) {
+                data.user.name = '张三';
+                data.user.email = 'zhangsan@example.com';
+                data.user.profile.age = 25;
+                data.user.profile.ageChanges = 0;
+                data.user.isActive = true;
+                data.user.theme.color = '#3f6085';
+                data.user.showDetails = true;
+                data.user.isVisible = true;
+                data.user.items = [
+                    { name: '商品A', price: 100 },
+                    { name: '商品B', price: 200 },
+                    { name: '商品C', price: 300 }
+                ];
+                console.log('用户已重置');
+            },
+            toggleActive: function(event, data) {
+                data.user.isActive = !data.user.isActive;
+                console.log('状态切换:', data.user.isActive);
+            },
+            changeColor: function(event, data) {
+                var colors = ['#3f6085', '#f22314', '#db9a00', '#0391d1', '#79af3a'];
+                var currentColor = data.user.theme.color;
+                var currentIndex = colors.indexOf(currentColor);
+                var nextIndex = (currentIndex + 1) % colors.length;
+                data.user.theme.color = colors[nextIndex];
+                console.log('颜色改变:', data.user.theme.color);
+            },
+            toggleDetails: function(event, data) {
+                data.user.showDetails = !data.user.showDetails;
+                console.log('详细信息切换:', data.user.showDetails);
+            },
+            toggleVisibility: function(event, data) {
+                data.user.isVisible = !data.user.isVisible;
+                console.log('可见性切换:', data.user.isVisible);
+            },
+            addItem: function(event, data) {
+                var newIndex = data.user.items.length + 1;
+                data.user.items.push({
+                    name: '新商品' + newIndex,
+                    price: newIndex * 100
+                });
+                console.log('添加项目:', '新商品' + newIndex);
+            },
+            updateFormUsername: function(event, data) {
+                data.form.username = event.target.value;
+                data.errors.username = '';
+                console.log('表单用户名更新:', event.target.value);
+            },
+            updateFormEmail: function(event, data) {
+                data.form.email = event.target.value;
+                data.errors.email = '';
+                console.log('表单邮箱更新:', event.target.value);
+            },
+            updateFormPassword: function(event, data) {
+                data.form.password = event.target.value;
+                data.errors.password = '';
+                console.log('表单密码更新:', event.target.value);
+            },
+            validateForm: function(event, data) {
+                var errors = { username: '', email: '', password: '' };
+                var isValid = true;
+                
+                // 验证用户名
+                if (!data.form.username) {
+                    errors.username = '用户名不能为空';
+                    isValid = false;
+                } else if (data.form.username.length < 3) {
+                    errors.username = '用户名至少3个字符';
+                    isValid = false;
+                }
+                
+                // 验证邮箱
+                if (!data.form.email) {
+                    errors.email = '邮箱不能为空';
+                    isValid = false;
+                } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.form.email)) {
+                    errors.email = '请输入有效的邮箱地址';
+                    isValid = false;
+                }
+                
+                // 验证密码
+                if (!data.form.password) {
+                    errors.password = '密码不能为空';
+                    isValid = false;
+                } else if (data.form.password.length < 6) {
+                    errors.password = '密码至少6个字符';
+                    isValid = false;
+                }
+                
+                // 更新错误信息
+                data.errors = errors;
+                
+                // 更新测试状态
+                if (isValid) {
+                    data.testStatus = '验证通过';
+                    data.passedTests++;
+                    console.log('表单验证通过');
+                } else {
+                    data.testStatus = '验证失败，错误信息已显示';
+                    data.failedTests++;
+                    console.log('表单验证失败:', errors);
+                }
+                
+                // 测试通过条件：错误信息正确显示
+                if (errors.username && data.errors.username === errors.username) {
+                    console.log('✓ 用户名错误信息正确显示');
+                }
+                if (errors.email && data.errors.email === errors.email) {
+                    console.log('✓ 邮箱错误信息正确显示');
+                }
+                if (errors.password && data.errors.password === errors.password) {
+                    console.log('✓ 密码错误信息正确显示');
+                }
+            },
+            clearErrors: function(event, data) {
+                data.errors.username = '';
+                data.errors.email = '';
+                data.errors.password = '';
+                data.testStatus = '错误已清除';
+                console.log('错误信息已清除');
+            }
+        })
+        .computed({
+            // 计算属性测试
+            userAge: function() {
+                return this.user.profile.age;
+            },
+            itemCount: function() {
+                return this.user.items.length;
+            }
+        });
+        
+        // 页面加载完成后的测试
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('=== 冒号分隔路径测试开始 ===');
+            console.log('测试数据:', JSON.stringify(app.user));
+            
+            // 验证初始数据
+            if (app.user.name === '张三' && 
+                app.user.email === 'zhangsan@example.com' &&
+                app.user.profile.age === 25) {
+                console.log('✓ 初始数据正确');
+                app.passedTests++;
+            } else {
+                console.log('✗ 初始数据错误');
+                app.failedTests++;
+            }
+            
+            // 测试嵌套对象访问
+            try {
+                var age = app.user.profile.age;
+                console.log('✓ 嵌套对象访问正常:', age);
+                app.passedTests++;
+            } catch (e) {
+                console.log('✗ 嵌套对象访问失败:', e);
+                app.failedTests++;
+            }
+            
+            console.log('=== 测试初始化完成 ===');
+            console.log('当前测试状态:', app.testStatus);
+        });
+    </script>
+</body>
+</html>

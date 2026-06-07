@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title> Hetui Mini 基础示例</title>
+    <script src="../../hetuimini.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1> Hetui Mini 基础示例</h1>
+        
+        <!-- 文本绑定 -->
+        <p>问候语: <span HeTui :text="greeting"></span></p>
+        <p>计数器: <span HeTui :text="count"></span></p>
+        
+        <!-- 事件绑定 -->
+        <button HeTui @click="increment">+1</button>
+        <button HeTui @click="decrement">-1</button>
+        <button HeTui @click="reset">重置</button>
+        
+        <!-- 双向绑定 -->
+        <p>用户名: <input HeTui @input="updateUsername" placeholder="请输入用户名"></p>
+        <p>显示: <span HeTui :text="username"></span></p>
+        
+        <!-- 计算属性 -->
+        <p>双倍计数: <span HeTui :text="doubleCount"></span></p>
+        
+        <!-- 条件渲染 -->
+        <p>
+            <button HeTui @click="toggleShow">切换显示</button>
+        </p>
+        <div HeTui if:="show">这是条件显示的内容</div>
+        <div HeTui show:="visible">这是 show 控制的内容</div>
+        
+        <!-- 循环 -->
+        <ul>
+            <li HeTui foreach:="items">
+                <span HeTui :text="name"></span> - ¥<span HeTui :text="price"></span>
+            </li>
+        </ul>
+        <button HeTui @click="addItem">添加商品</button>
+        
+        <!-- 样式绑定 -->
+        <p>
+            <button HeTui @click="toggleColor">切换颜色</button>
+        </p>
+        <p HeTui :style|color="textColor">彩色文本</p>
+    </div>
+    
+    <script>
+        var app = Hetui.runApp({
+            greeting: Observer.Define('你好，Hetui Mini!'),
+            count: Observer.Define(0),
+            username: Observer.Define(''),
+            show: Observer.Define(true),
+            visible: Observer.Define(true),
+            items: Observer.Define([
+                { name: '商品A', price: 100 },
+                { name: '商品B', price: 200 }
+            ]),
+            textColor: Observer.Define('blue')
+        }, document.getElementById('app'))
+        .methods({
+            increment(event, data) {
+                data.count++;
+            },
+            decrement(event, data) {
+                data.count--;
+            },
+            reset(event, data) {
+                data.count = 0;
+            },
+            updateUsername(event, data) {
+                data.username = event.target.value;
+            },
+            toggleShow(event, data) {
+                data.show = !data.show;
+                data.visible = !data.visible;
+            },
+            addItem(event, data) {
+                data.items.push({
+                    name: '新商品',
+                    price: Math.floor(Math.random() * 500)
+                });
+            },
+            toggleColor(event, data) {
+                data.textColor = data.textColor === 'blue' ? 'red' : 'blue';
+            }
+        })
+        .computed({
+            doubleCount() {
+                return this.count * 2;
+            }
+        });
+    </script>
+</body>
+</html>

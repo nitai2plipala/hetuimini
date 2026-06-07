@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>:class 指令新功能测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .test-box { padding: 10px; margin: 10px 0; border: 1px solid #eee; }
+        
+        /* 测试类名 */
+        .class-a { background-color: #ffcccc; border: 2px solid red; }
+        .class-b { background-color: #ccffcc; border: 2px solid green; }
+        .class-c { background-color: #ccccff; border: 2px solid blue; }
+        
+        .active { color: green; font-weight: bold; }
+        .inactive { color: gray; }
+        .highlight { background-color: yellow; padding: 5px; }
+        .large { font-size: 20px; }
+        .small { font-size: 12px; }
+        
+        .admin { border-left: 5px solid red; }
+        .user { border-left: 5px solid blue; }
+        .guest { border-left: 5px solid gray; }
+        
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+        
+        button { margin: 5px; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>:class 指令新功能测试</h1>
+        
+        <!-- 测试1: 简单类名绑定 -->
+        <div class="section">
+            <h2>测试1: 简单类名绑定</h2>
+            <p>语法: <code>:class="className"</code></p>
+            
+            <div class="test-box">
+                <div HeTui :class="simpleClass">这个元素的类名由 simpleClass 变量控制</div>
+            </div>
+            
+            <p>
+                <button HeTui @click="setClassA">设置 class-a</button>
+                <button HeTui @click="setClassB">设置 class-b</button>
+                <button HeTui @click="setClassC">设置 class-c</button>
+                <button HeTui @click="clearClass">清除类名</button>
+            </p>
+            
+            <p>当前类名: <span HeTui :text="simpleClass"></span></p>
+        </div>
+        
+        <!-- 测试2: 计算属性绑定 -->
+        <div class="section">
+            <h2>测试2: 计算属性绑定</h2>
+            <p>语法: <code>:class="computedClassName"</code></p>
+            
+            <div class="test-box">
+                <div HeTui :class="roleClass">这个元素的类名由计算属性 roleClass 控制</div>
+            </div>
+            
+            <p>
+                <button HeTui @click="setRoleAdmin">设置管理员</button>
+                <button HeTui @click="setRoleUser">设置用户</button>
+                <button HeTui @click="setRoleGuest">设置访客</button>
+            </p>
+            
+            <p>当前角色: <span HeTui :text="userRole"></span></p>
+        </div>
+        
+        <!-- 测试3: 布尔值控制（原有功能） -->
+        <div class="section">
+            <h2>测试3: 布尔值控制（原有功能）</h2>
+            <p>语法: <code>:class|active="isActive"</code></p>
+            
+            <div class="test-box">
+                <div HeTui :class|active="isActive" :class|highlight="isHighlighted">这个元素使用布尔值控制多个类</div>
+            </div>
+            
+            <p>
+                <button HeTui @click="toggleActive">切换 active</button>
+                <button HeTui @click="toggleHighlighted">切换 highlight</button>
+            </p>
+            
+            <p>isActive: <span HeTui :text="isActive"></span>, isHighlighted: <span HeTui :text="isHighlighted"></span></p>
+        </div>
+        
+        <!-- 测试4: 条件切换类名 -->
+        <div class="section">
+            <h2>测试4: 条件切换类名</h2>
+            <p>使用计算属性根据条件返回不同的类名</p>
+            
+            <div class="test-box">
+                <div HeTui :class="stateClass">这个元素根据状态切换类名</div>
+            </div>
+            
+            <p>
+                <button HeTui @click="setStateActive">状态: active</button>
+                <button HeTui @click="setStateInactive">状态: inactive</button>
+                <button HeTui @click="toggleState">切换状态</button>
+            </p>
+            
+            <p>当前状态: <span HeTui :text="isActive ? 'active' : 'inactive'"></span></p>
+        </div>
+        
+        <!-- 测试5: 嵌套数据绑定 -->
+        <div class="section">
+            <h2>测试5: 嵌套数据绑定</h2>
+            <p>语法: <code>:class="user:stateClass"</code></p>
+            
+            <div class="test-box">
+                <div HeTui :class="user:stateClass">这个元素的类名由嵌套数据控制</div>
+            </div>
+            
+            <p>
+                <button HeTui @click="setUserStateA">用户状态 A</button>
+                <button HeTui @click="setUserStateB">用户状态 B</button>
+            </p>
+            
+            <p>用户状态: <span HeTui :text="user:stateClass"></span></p>
+        </div>
+        
+        <!-- 测试6: 混合测试 -->
+        <div class="section">
+            <h2>测试6: 混合测试</h2>
+            <p>同时使用新旧语法</p>
+            
+            <div class="test-box">
+                <div HeTui :class="dynamicClass" :class|active="isActive" :class|large="isLarge">
+                    这个元素混合使用新旧语法
+                </div>
+            </div>
+            
+            <p>
+                <button HeTui @click="cycleDynamicClass">切换动态类名</button>
+                <button HeTui @click="toggleActive">切换 active</button>
+                <button HeTui @click="toggleLarge">切换 large</button>
+            </p>
+            
+            <p>dynamicClass: <span HeTui :text="dynamicClass"></span></p>
+        </div>
+        
+        <!-- 测试结果 -->
+        <div class="section">
+            <h2>测试结果</h2>
+            <div id="testResults">
+                <p>测试正在运行...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = Hetui.Observe({
+            // 测试1数据
+            simpleClass: Observer.Define('class-a'),
+            
+            // 测试2数据
+            userRole: Observer.Define('admin'),
+            
+            // 测试3数据
+            isActive: Observer.Define(true),
+            isHighlighted: Observer.Define(false),
+            
+            // 测试4数据
+            // 使用 isActive 作为状态
+            
+            // 测试5数据
+            user: Observer.Define({
+                stateClass: 'class-a'
+            }),
+            
+            // 测试6数据
+            dynamicClass: Observer.Define('class-a'),
+            isLarge: Observer.Define(false),
+            
+            // 测试状态
+            testResults: []
+        })
+        .methods({
+            // 测试1方法
+            setClassA: function(event, data) {
+                data.simpleClass = 'class-a';
+            },
+            setClassB: function(event, data) {
+                data.simpleClass = 'class-b';
+            },
+            setClassC: function(event, data) {
+                data.simpleClass = 'class-c';
+            },
+            clearClass: function(event, data) {
+                data.simpleClass = '';
+            },
+            
+            // 测试2方法
+            setRoleAdmin: function(event, data) {
+                data.userRole = 'admin';
+            },
+            setRoleUser: function(event, data) {
+                data.userRole = 'user';
+            },
+            setRoleGuest: function(event, data) {
+                data.userRole = 'guest';
+            },
+            
+            // 测试3方法
+            toggleActive: function(event, data) {
+                data.isActive = !data.isActive;
+            },
+            toggleHighlighted: function(event, data) {
+                data.isHighlighted = !data.isHighlighted;
+            },
+            
+            // 测试4方法
+            setStateActive: function(event, data) {
+                data.isActive = true;
+            },
+            setStateInactive: function(event, data) {
+                data.isActive = false;
+            },
+            toggleState: function(event, data) {
+                data.isActive = !data.isActive;
+            },
+            
+            // 测试5方法
+            setUserStateA: function(event, data) {
+                data.user.stateClass = 'class-a';
+            },
+            setUserStateB: function(event, data) {
+                data.user.stateClass = 'class-b';
+            },
+            
+            // 测试6方法
+            cycleDynamicClass: function(event, data) {
+                var classes = ['class-a', 'class-b', 'class-c'];
+                var currentIndex = classes.indexOf(data.dynamicClass);
+                data.dynamicClass = classes[(currentIndex + 1) % classes.length];
+            },
+            toggleLarge: function(event, data) {
+                data.isLarge = !data.isLarge;
+            }
+        })
+        .computed({
+            // 测试2计算属性
+            roleClass: function() {
+                return this.userRole;
+            },
+            
+            // 测试4计算属性
+            stateClass: function() {
+                return this.isActive ? 'active' : 'inactive';
+            },
+            
+            // 测试状态计算
+            testStatus: function() {
+                var passed = 0;
+                var total = 6;
+                
+                // 测试1: 简单类名绑定
+                if (typeof this.simpleClass === 'string') passed++;
+                
+                // 测试2: 计算属性绑定
+                if (typeof this.roleClass === 'string') passed++;
+                
+                // 测试3: 布尔值控制
+                if (typeof this.isActive === 'boolean') passed++;
+                
+                // 测试4: 条件切换类名
+                if (typeof this.stateClass === 'string') passed++;
+                
+                // 测试5: 嵌套数据绑定
+                if (typeof this.user === 'object' && typeof this.user.stateClass === 'string') passed++;
+                
+                // 测试6: 混合测试
+                if (typeof this.dynamicClass === 'string') passed++;
+                
+                return passed + '/' + total + ' 测试通过';
+            }
+        });
+        
+        // 显示测试结果
+        document.addEventListener('DOMContentLoaded', function() {
+            var resultsDiv = document.getElementById('testResults');
+            resultsDiv.innerHTML = '<p class="success">' + app.testStatus + '</p>';
+        });
+    </script>
+</body>
+</html>

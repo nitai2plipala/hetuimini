@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多实例测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .app1 { border-color: #4CAF50; }
+        .app2 { border-color: #2196F3; }
+        button { margin: 5px; padding: 8px 16px; }
+        input { margin: 5px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>多实例测试</h1>
+        
+        <!-- 应用实例1 -->
+        <div id="app1-container" class="section app1">
+            <h2>应用实例1 (app1)</h2>
+            <p>计数器: <span HeTui :text="count"></span></p>
+            <p>消息: <span HeTui :text="message"></span></p>
+            <button HeTui @click="increment">+1</button>
+            <button HeTui @click="decrement">-1</button>
+            <button HeTui @click="reset">重置</button>
+            <input HeTui type="text" :value="message" placeholder="输入消息">
+        </div>
+        
+        <!-- 应用实例2 -->
+        <div id="app2-container" class="section app2">
+            <h2>应用实例2 (app2)</h2>
+            <p>计数器: <span HeTui :text="count"></span></p>
+            <p>消息: <span HeTui :text="message"></span></p>
+            <button HeTui @click="increment">+1</button>
+            <button HeTui @click="decrement">-1</button>
+            <button HeTui @click="reset">重置</button>
+            <input HeTui type="text" :value="message" placeholder="输入消息">
+        </div>
+        
+        <!-- 测试 createApp 工厂函数 -->
+        <div class="section" style="border-color: #FF9800;">
+            <h2>使用 createApp 工厂函数</h2>
+            <div id="app3-container">
+                <p>计数器: <span HeTui :text="count"></span></p>
+                <p>消息: <span HeTui :text="message"></span></p>
+                <button HeTui @click="increment">+1</button>
+                <button HeTui @click="decrement">-1</button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // 使用 Hetui.Observe 创建多个实例
+        var app1 = Hetui.Observe({
+            count: Observer.Define(0),
+            message: Observer.Define('应用1的消息')
+        }, document.getElementById('app1-container')).methods({
+            increment(event, data) {
+                data.count++;
+            },
+            decrement(event, data) {
+                data.count--;
+            },
+            reset(event, data) {
+                data.count = 0;
+            }
+        });
+        
+        var app2 = Hetui.Observe({
+            count: Observer.Define(10),
+            message: Observer.Define('应用2的消息')
+        }, document.getElementById('app2-container')).methods({
+            increment(event, data) {
+                data.count += 2;
+            },
+            decrement(event, data) {
+                data.count -= 2;
+            },
+            reset(event, data) {
+                data.count = 10;
+            }
+        });
+        
+        // 使用 Hetui.runApp 工厂函数创建独立实例 - 支持链式调用
+        var app3 = Hetui.runApp({
+            count: Observer.Define(100),
+            message: Observer.Define('应用3的消息')
+        }, document.getElementById('app3-container')).methods({
+            increment(event, data) {
+                data.count += 5;
+            },
+            decrement(event, data) {
+                data.count -= 5;
+            }
+        });
+        
+        // 测试实例独立性
+        console.log('app1 数据:', JSON.stringify(app1));
+        console.log('app2 数据:', JSON.stringify(app2));
+        console.log('app3 数据:', JSON.stringify(app3));
+        
+        // 测试响应式更新
+        setTimeout(function() {
+            app1.message = 'app1 消息已更新';
+            app2.message = 'app2 消息已更新';
+            app3.message = 'app3 消息已更新';
+        }, 2000);
+    </script>
+</body>
+</html>

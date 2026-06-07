@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# Playwright test snapshot files (keep directory)
+.playwright-cli/*
+
+# Environment files
+.env
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store

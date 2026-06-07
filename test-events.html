@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>事件测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        button { margin: 5px; padding: 8px 16px; }
+        input { margin: 5px; padding: 8px; }
+        .event-log { margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>事件测试</h1>
+        
+        <!-- 基本事件测试 -->
+        <div class="section">
+            <h2>基本事件测试</h2>
+            <p>
+                <button HeTui @click="handleClick">点击事件 (@click)</button>
+                <button HeTui @dblclick="handleDblClick">双击事件 (@dblclick)</button>
+            </p>
+            <p>
+                <input HeTui type="text" @input="handleInput" placeholder="输入事件 (@input)">
+                <input HeTui type="text" @change="handleChange" placeholder="变化事件 (@change)">
+            </p>
+            <p>
+                <input HeTui type="text" @focus="handleFocus" placeholder="聚焦事件 (@focus)">
+                <input HeTui type="text" @blur="handleBlur" placeholder="失焦事件 (@blur)">
+            </p>
+            <div class="event-log">
+                <p>事件日志: <span HeTui :text="eventLog"></span></p>
+            </div>
+        </div>
+        
+        <!-- 键盘事件测试 -->
+        <div class="section">
+            <h2>键盘事件测试</h2>
+            <p>
+                <input HeTui type="text" @keyup="handleKeyUp" placeholder="按键弹起 (@keyup)">
+                <input HeTui type="text" @keydown="handleKeyDown" placeholder="按键按下 (@keydown)">
+            </p>
+            <p>
+                <input HeTui type="text" @keypress="handleKeyPress" placeholder="按键按下 (@keypress)">
+            </p>
+            <div class="event-log">
+                <p>键盘事件日志: <span HeTui :text="keyEventLog"></span></p>
+            </div>
+        </div>
+        
+        <!-- 鼠标事件测试 -->
+        <div class="section">
+            <h2>鼠标事件测试</h2>
+            <p>
+                <div HeTui @mouseover="handleMouseOver" @mouseout="handleMouseOut" 
+                     style="padding: 20px; background: #e3f2fd; border: 1px solid #2196F3;">
+                    鼠标悬停区域 (@mouseover, @mouseout)
+                </div>
+            </p>
+            <p>
+                <div HeTui @mousedown="handleMouseDown" @mouseup="handleMouseUp"
+                     style="padding: 20px; background: #e8f5e9; border: 1px solid #4CAF50;">
+                    鼠标按下区域 (@mousedown, @mouseup)
+                </div>
+            </p>
+            <div class="event-log">
+                <p>鼠标事件日志: <span HeTui :text="mouseEventLog"></span></p>
+            </div>
+        </div>
+        
+        <!-- 表单事件测试 -->
+        <div class="section">
+            <h2>表单事件测试</h2>
+            <form HeTui @submit.prevent="handleSubmit">
+                <p>
+                    <input type="text" name="username" placeholder="用户名">
+                    <input type="password" name="password" placeholder="密码">
+                </p>
+                <p>
+                    <button type="submit">提交 (@submit.prevent)</button>
+                    <button type="reset" @reset="handleReset">重置 (@reset)</button>
+                </p>
+            </form>
+            <div class="event-log">
+                <p>表单事件日志: <span HeTui :text="formEventLog"></span></p>
+            </div>
+        </div>
+        
+        <!-- 修饰符测试 -->
+        <div class="section">
+            <h2>修饰符测试</h2>
+            <p>
+                <button HeTui @click.once="handleOnce">只触发一次 (@click.once)</button>
+                <button HeTui @click.stop="handleStop">阻止冒泡 (@click.stop)</button>
+                <button HeTui @click.prevent="handlePrevent">阻止默认 (@click.prevent)</button>
+            </p>
+            <p>
+                <button HeTui @click.self="handleSelf">只在自身触发 (@click.self)</button>
+                <button HeTui @click.ctrl="handleCtrl">Ctrl+点击 (@click.ctrl)</button>
+            </p>
+            <div class="event-log">
+                <p>修饰符事件日志: <span HeTui :text="modifierEventLog"></span></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        var app = Hetui.runApp({
+            eventLog: Observer.Define(''),
+            keyEventLog: Observer.Define(''),
+            mouseEventLog: Observer.Define(''),
+            formEventLog: Observer.Define(''),
+            modifierEventLog: Observer.Define('')
+        }, document.querySelector('.container')).methods({
+            // 基本事件
+            handleClick(event, data) {
+                data.eventLog = '点击事件触发: ' + new Date().toLocaleTimeString();
+            },
+            handleDblClick(event, data) {
+                data.eventLog = '双击事件触发: ' + new Date().toLocaleTimeString();
+            },
+            handleInput(event, data) {
+                data.eventLog = '输入事件触发: ' + event.target.value;
+            },
+            handleChange(event, data) {
+                data.eventLog = '变化事件触发: ' + event.target.value;
+            },
+            handleFocus(event, data) {
+                data.eventLog = '聚焦事件触发: ' + new Date().toLocaleTimeString();
+            },
+            handleBlur(event, data) {
+                data.eventLog = '失焦事件触发: ' + new Date().toLocaleTimeString();
+            },
+            
+            // 键盘事件
+            handleKeyUp(event, data) {
+                data.keyEventLog = '按键弹起: ' + event.key + ' (' + event.keyCode + ')';
+            },
+            handleKeyDown(event, data) {
+                data.keyEventLog = '按键按下: ' + event.key + ' (' + event.keyCode + ')';
+            },
+            handleKeyPress(event, data) {
+                data.keyEventLog = '按键按下: ' + event.key + ' (' + event.keyCode + ')';
+            },
+            
+            // 鼠标事件
+            handleMouseOver(event, data) {
+                data.mouseEventLog = '鼠标悬停: ' + new Date().toLocaleTimeString();
+            },
+            handleMouseOut(event, data) {
+                data.mouseEventLog = '鼠标离开: ' + new Date().toLocaleTimeString();
+            },
+            handleMouseDown(event, data) {
+                data.mouseEventLog = '鼠标按下: ' + event.button;
+            },
+            handleMouseUp(event, data) {
+                data.mouseEventLog = '鼠标弹起: ' + event.button;
+            },
+            
+            // 表单事件
+            handleSubmit(event, data) {
+                data.formEventLog = '表单提交: ' + new Date().toLocaleTimeString();
+            },
+            handleReset(event, data) {
+                data.formEventLog = '表单重置: ' + new Date().toLocaleTimeString();
+            },
+            
+            // 修饰符事件
+            handleOnce(event, data) {
+                data.modifierEventLog = '只触发一次: ' + new Date().toLocaleTimeString();
+            },
+            handleStop(event, data) {
+                data.modifierEventLog = '阻止冒泡: ' + new Date().toLocaleTimeString();
+            },
+            handlePrevent(event, data) {
+                data.modifierEventLog = '阻止默认: ' + new Date().toLocaleTimeString();
+            },
+            handleSelf(event, data) {
+                data.modifierEventLog = '只在自身触发: ' + new Date().toLocaleTimeString();
+            },
+            handleCtrl(event, data) {
+                data.modifierEventLog = 'Ctrl+点击: ' + new Date().toLocaleTimeString();
+            }
+        });
+    </script>
+</body>
+</html>

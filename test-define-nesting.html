@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Observer.Define 多级嵌套测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background: #f5f5f5; }
+        .container { max-width: 900px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; background: white; }
+        .section h2 { margin-top: 0; color: #333; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; }
+        .level { margin: 10px 0; padding: 10px; background: #f9f9f9; border-left: 3px solid #4CAF50; }
+        .level-2 { margin-left: 20px; border-left-color: #2196F3; }
+        .level-3 { margin-left: 40px; border-left-color: #FF9800; }
+        .level-4 { margin-left: 60px; border-left-color: #9C27B0; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; font-weight: bold; }
+        .info { color: #666; font-size: 0.9em; }
+        button { margin: 5px; padding: 8px 16px; cursor: pointer; }
+        input { margin: 5px; padding: 8px; border: 1px solid #ccc; border-radius: 3px; }
+        .result { margin-top: 20px; padding: 15px; background: #e8f5e9; border-radius: 5px; }
+        .test-label { display: inline-block; width: 120px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Observer.Define 多级嵌套测试</h1>
+        <p class="info">测试 Observer.Define 在不同嵌套深度下的响应式更新能力</p>
+        
+        <!-- 测试1: 单层 Observer.Define -->
+        <div class="section">
+            <h2>测试1: 单层 Observer.Define（原始值）</h2>
+            <div class="level">
+                <p><span class="test-label">计数器:</span> <span HeTui :text="count" class="success"></span></p>
+                <p>
+                    <button HeTui @click="incrementCount">+1</button>
+                    <button HeTui @click="decrementCount">-1</button>
+                    <button HeTui @click="resetCount">重置</button>
+                </p>
+                <p class="info">直接修改 data.count，验证原始值的响应式更新</p>
+            </div>
+        </div>
+        
+        <!-- 测试2: 一级嵌套 Observer.Define（对象） -->
+        <div class="section">
+            <h2>测试2: 一级嵌套 Observer.Define（对象）</h2>
+            <div class="level">
+                <p><span class="test-label">用户名:</span> <span HeTui :text="user:name" class="success"></span></p>
+                <p><span class="test-label">年龄:</span> <span HeTui :text="user:age" class="success"></span></p>
+                <p>
+                    用户名: <input HeTui type="text" :value="user:name" @input="updateUserName">
+                    年龄: <input HeTui type="number" :value="user:age" @input="updateUserAge">
+                </p>
+                <p class="info">使用冒号路径 user:name 访问嵌套属性</p>
+            </div>
+        </div>
+        
+        <!-- 测试3: 二级嵌套 Observer.Define -->
+        <div class="section">
+            <h2>测试3: 二级嵌套 Observer.Define</h2>
+            <div class="level">
+                <p><span class="test-label">公司名:</span> <span HeTui :text="company:name" class="success"></span></p>
+                <div class="level level-2">
+                    <p><span class="test-label">部门名:</span> <span HeTui :text="company:department:name" class="success"></span></p>
+                    <p><span class="test-label">部门预算:</span> <span HeTui :text="company:department:budget" class="success"></span></p>
+                    <p>
+                        部门名: <input HeTui type="text" :value="company:department:name" @input="updateDeptName">
+                        部门预算: <input HeTui type="number" :value="company:department:budget" @input="updateDeptBudget">
+                    </p>
+                </div>
+                <p class="info">二级嵌套 company:department:name，验证深层属性更新</p>
+            </div>
+        </div>
+        
+        <!-- 测试4: 三级嵌套 Observer.Define -->
+        <div class="section">
+            <h2>测试4: 三级嵌套 Observer.Define</h2>
+            <div class="level">
+                <p><span class="test-label">组织名:</span> <span HeTui :text="org:name" class="success"></span></p>
+                <div class="level level-2">
+                    <p><span class="test-label">部门名:</span> <span HeTui :text="org:dept:name" class="success"></span></p>
+                    <div class="level level-3">
+                        <p><span class="test-label">团队名:</span> <span HeTui :text="org:dept:team:name" class="success"></span></p>
+                        <p><span class="test-label">团队人数:</span> <span HeTui :text="org:dept:team:memberCount" class="success"></span></p>
+                        <p>
+                            团队名: <input HeTui type="text" :value="org:dept:team:name" @input="updateTeamName">
+                            人数: <input HeTui type="number" :value="org:dept:team:memberCount" @input="updateTeamMembers">
+                        </p>
+                    </div>
+                </div>
+                <p class="info">三级嵌套 org:dept:team:name，验证最深层属性更新</p>
+            </div>
+        </div>
+        
+        <!-- 测试5: 四级嵌套 Observer.Define -->
+        <div class="section">
+            <h2>测试5: 四级嵌套 Observer.Define</h2>
+            <div class="level">
+                <p><span class="test-label">大学:</span> <span HeTui :text="university:name" class="success"></span></p>
+                <div class="level level-2">
+                    <p><span class="test-label">学院:</span> <span HeTui :text="university:college:name" class="success"></span></p>
+                    <div class="level level-3">
+                        <p><span class="test-label">系:</span> <span HeTui :text="university:college:department:name" class="success"></span></p>
+                        <div class="level level-4">
+                            <p><span class="test-label">班级:</span> <span HeTui :text="university:college:department:class:name" class="success"></span></p>
+                            <p><span class="test-label">学生数:</span> <span HeTui :text="university:college:department:class:studentCount" class="success"></span></p>
+                            <p>
+                                班级: <input HeTui type="text" :value="university:college:department:class:name" @input="updateClassName">
+                                学生数: <input HeTui type="number" :value="university:college:department:class:studentCount" @input="updateStudentCount">
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="info">四级嵌套 university:college:department:class:name，验证最深层级更新</p>
+            </div>
+        </div>
+        
+        <!-- 测试6: 混合 Observer.Define -->
+        <div class="section">
+            <h2>测试6: 混合 Observer.Define</h2>
+            <div class="level">
+                <p><span class="test-label">项目名:</span> <span HeTui :text="project:name" class="success"></span></p>
+                <div class="level level-2">
+                    <p><span class="test-label">负责人:</span> <span HeTui :text="project:leader:name" class="success"></span></p>
+                    <p><span class="test-label">负责人邮箱:</span> <span HeTui :text="project:leader:email" class="success"></span></p>
+                    <div class="level level-3">
+                        <p><span class="test-label">团队名:</span> <span HeTui :text="project:leader:team:name" class="success"></span></p>
+                        <p><span class="test-label">团队人数:</span> <span HeTui :text="project:leader:team:count" class="success"></span></p>
+                        <p>
+                            团队名: <input HeTui type="text" :value="project:leader:team:name" @input="updateProjectTeamName">
+                            人数: <input HeTui type="number" :value="project:leader:team:count" @input="updateProjectTeamCount">
+                        </p>
+                    </div>
+                </div>
+                <p class="info">Observer.Define 包裹 Observer.Define，验证混合嵌套</p>
+            </div>
+        </div>
+        
+        <!-- 批量操作 -->
+        <div class="section">
+            <h2>批量操作</h2>
+            <p>
+                <button HeTui @click="incrementAll">全部 +1</button>
+                <button HeTui @click="resetAll">全部重置</button>
+                <button HeTui @click="runAutoTest">自动测试</button>
+            </p>
+        </div>
+        
+        <!-- 测试结果 -->
+        <div class="result">
+            <h2>测试结果</h2>
+            <p><span class="test-label">测试状态:</span> <span HeTui :text="testStatus" class="success"></span></p>
+            <p><span class="test-label">通过测试数:</span> <span HeTui :text="passedTests" class="success"></span></p>
+            <p><span class="test-label">失败测试数:</span> <span HeTui :text="failedTests" class="error"></span></p>
+        </div>
+    </div>
+
+    <script>
+        var app = Hetui.Observe({
+            // 测试1: 单层原始值
+            count: Observer.Define(0),
+            
+            // 测试2: 一级嵌套对象
+            user: Observer.Define({
+                name: '张三',
+                age: 25
+            }),
+            
+            // 测试3: 二级嵌套对象
+            company: Observer.Define({
+                name: '科技公司',
+                department: Observer.Define({
+                    name: '技术部',
+                    budget: 1000000
+                })
+            }),
+            
+            // 测试4: 三级嵌套对象
+            org: Observer.Define({
+                name: '集团',
+                dept: Observer.Define({
+                    name: '研发部',
+                    team: Observer.Define({
+                        name: '前端组',
+                        memberCount: 8
+                    })
+                })
+            }),
+            
+            // 测试5: 四级嵌套对象
+            university: Observer.Define({
+                name: '北京大学',
+                college: Observer.Define({
+                    name: '信息科学技术学院',
+                    department: Observer.Define({
+                        name: '计算机科学系',
+                        class: Observer.Define({
+                            name: '计科2024班',
+                            studentCount: 45
+                        })
+                    })
+                })
+            }),
+            
+            // 测试6: 混合 Define 和 Proxy
+            project: Observer.Define({
+                name: 'Hetui Mini',
+                leader: Observer.Define({
+                    name: '李四',
+                    email: 'lisi@example.com',
+                    team: Observer.Define({
+                        name: '核心开发组',
+                        count: 5
+                    })
+                })
+            }),
+            
+            // 测试状态
+            testStatus: '运行中',
+            passedTests: 0,
+            failedTests: 0
+        })
+        .methods({
+            // 测试1 方法
+            incrementCount: function(event, data) {
+                data.count++;
+                console.log('计数器增加:', data.count);
+            },
+            decrementCount: function(event, data) {
+                data.count--;
+                console.log('计数器减少:', data.count);
+            },
+            resetCount: function(event, data) {
+                data.count = 0;
+                console.log('计数器重置');
+            },
+            
+            // 测试2 方法
+            updateUserName: function(event, data) {
+                data.user.name = event.target.value;
+                console.log('用户名更新:', event.target.value);
+            },
+            updateUserAge: function(event, data) {
+                data.user.age = parseInt(event.target.value) || 0;
+                console.log('年龄更新:', event.target.value);
+            },
+            
+            // 测试3 方法
+            updateDeptName: function(event, data) {
+                data.company.department.name = event.target.value;
+                console.log('部门名更新:', event.target.value);
+            },
+            updateDeptBudget: function(event, data) {
+                data.company.department.budget = parseInt(event.target.value) || 0;
+                console.log('部门预算更新:', event.target.value);
+            },
+            
+            // 测试4 方法
+            updateTeamName: function(event, data) {
+                data.org.dept.team.name = event.target.value;
+                console.log('团队名更新:', event.target.value);
+            },
+            updateTeamMembers: function(event, data) {
+                data.org.dept.team.memberCount = parseInt(event.target.value) || 0;
+                console.log('团队人数更新:', event.target.value);
+            },
+            
+            // 测试5 方法
+            updateClassName: function(event, data) {
+                data.university.college.department.class.name = event.target.value;
+                console.log('班级名更新:', event.target.value);
+            },
+            updateStudentCount: function(event, data) {
+                data.university.college.department.class.studentCount = parseInt(event.target.value) || 0;
+                console.log('学生数更新:', event.target.value);
+            },
+            
+            // 测试6 方法
+            updateProjectTeamName: function(event, data) {
+                data.project.leader.team.name = event.target.value;
+                console.log('项目团队名更新:', event.target.value);
+            },
+            updateProjectTeamCount: function(event, data) {
+                data.project.leader.team.count = parseInt(event.target.value) || 0;
+                console.log('项目团队人数更新:', event.target.value);
+            },
+            
+            // 批量操作
+            incrementAll: function(event, data) {
+                data.count++;
+                data.user.age++;
+                data.company.department.budget += 100000;
+                data.org.dept.team.memberCount++;
+                data.university.college.department.class.studentCount++;
+                data.project.leader.team.count++;
+                console.log('全部 +1');
+            },
+            resetAll: function(event, data) {
+                data.count = 0;
+                data.user.name = '张三';
+                data.user.age = 25;
+                data.company.name = '科技公司';
+                data.company.department.name = '技术部';
+                data.company.department.budget = 1000000;
+                data.org.name = '集团';
+                data.org.dept.name = '研发部';
+                data.org.dept.team.name = '前端组';
+                data.org.dept.team.memberCount = 8;
+                data.university.name = '北京大学';
+                data.university.college.name = '信息科学技术学院';
+                data.university.college.department.name = '计算机科学系';
+                data.university.college.department.class.name = '计科2024班';
+                data.university.college.department.class.studentCount = 45;
+                data.project.name = 'Hetui Mini';
+                data.project.leader.name = '李四';
+                data.project.leader.email = 'lisi@example.com';
+                data.project.leader.team.name = '核心开发组';
+                data.project.leader.team.count = 5;
+                console.log('全部重置');
+            },
+            runAutoTest: function(event, data) {
+                console.log('=== 开始自动测试 ===');
+                var passed = 0;
+                var failed = 0;
+                
+                // 测试1: 单层原始值
+                try {
+                    data.count = 100;
+                    if (data.count === 100) {
+                        passed++;
+                        console.log('✓ 测试1 通过: 单层原始值');
+                    } else {
+                        failed++;
+                        console.log('✗ 测试1 失败');
+                    }
+                } catch (e) {
+                    failed++;
+                    console.log('✗ 测试1 异常:', e);
+                }
+                
+                // 测试2: 一级嵌套
+                try {
+                    data.user.name = '测试用户';
+                    data.user.age = 30;
+                    if (data.user.name === '测试用户' && data.user.age === 30) {
+                        passed++;
+                        console.log('✓ 测试2 通过: 一级嵌套');
+                    } else {
+                        failed++;
+                        console.log('✗ 测试2 失败');
+                    }
+                } catch (e) {
+                    failed++;
+                    console.log('✗ 测试2 异常:', e);
+                }
+                
+                // 测试3: 二级嵌套
+                try {
+                    data.company.department.name = '测试部门';
+                    data.company.department.budget = 2000000;
+                    if (data.company.department.name === '测试部门' && data.company.department.budget === 2000000) {
+                        passed++;
+                        console.log('✓ 测试3 通过: 二级嵌套');
+                    } else {
+                        failed++;
+                        console.log('✗ 测试3 失败');
+                    }
+                } catch (e) {
+                    failed++;
+                    console.log('✗ 测试3 异常:', e);
+                }
+                
+                // 测试4: 三级嵌套
+                try {
+                    data.org.dept.team.name = '测试团队';
+                    data.org.dept.team.memberCount = 10;
+                    if (data.org.dept.team.name === '测试团队' && data.org.dept.team.memberCount === 10) {
+                        passed++;
+                        console.log('✓ 测试4 通过: 三级嵌套');
+                    } else {
+                        failed++;
+                        console.log('✗ 测试4 失败');
+                    }
+                } catch (e) {
+                    failed++;
+                    console.log('✗ 测试4 异常:', e);
+                }
+                
+                // 测试5: 四级嵌套
+                try {
+                    data.university.college.department.class.name = '测试班级';
+                    data.university.college.department.class.studentCount = 50;
+                    if (data.university.college.department.class.name === '测试班级' && data.university.college.department.class.studentCount === 50) {
+                        passed++;
+                        console.log('✓ 测试5 通过: 四级嵌套');
+                    } else {
+                        failed++;
+                        console.log('✗ 测试5 失败');
+                    }
+                } catch (e) {
+                    failed++;
+                    console.log('✗ 测试5 异常:', e);
+                }
+                
+                // 测试6: 混合嵌套
+                try {
+                    data.project.leader.team.name = '混合测试组';
+                    data.project.leader.team.count = 3;
+                    if (data.project.leader.team.name === '混合测试组' && data.project.leader.team.count === 3) {
+                        passed++;
+                        console.log('✓ 测试6 通过: 混合嵌套');
+                    } else {
+                        failed++;
+                        console.log('✗ 测试6 失败');
+                    }
+                } catch (e) {
+                    failed++;
+                    console.log('✗ 测试6 异常:', e);
+                }
+                
+                data.passedTests = passed;
+                data.failedTests = failed;
+                data.testStatus = failed === 0 ? '全部通过' : '部分失败';
+                
+                console.log('=== 自动测试完成 ===');
+                console.log('通过:', passed, '失败:', failed);
+                
+                // 重置数据
+                data.count = 0;
+                data.user.name = '张三';
+                data.user.age = 25;
+                data.company.name = '科技公司';
+                data.company.department.name = '技术部';
+                data.company.department.budget = 1000000;
+                data.org.name = '集团';
+                data.org.dept.name = '研发部';
+                data.org.dept.team.name = '前端组';
+                data.org.dept.team.memberCount = 8;
+                data.university.name = '北京大学';
+                data.university.college.name = '信息科学技术学院';
+                data.university.college.department.name = '计算机科学系';
+                data.university.college.department.class.name = '计科2024班';
+                data.university.college.department.class.studentCount = 45;
+                data.project.name = 'Hetui Mini';
+                data.project.leader.name = '李四';
+                data.project.leader.email = 'lisi@example.com';
+                data.project.leader.team.name = '核心开发组';
+                data.project.leader.team.count = 5;
+            }
+        })
+        .computed({
+            totalCount: function() {
+                return this.count;
+            }
+        });
+        
+        // 页面加载完成后的测试
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('=== Observer.Define 多级嵌套测试开始 ===');
+            
+            var passed = 0;
+            var failed = 0;
+            
+            // 测试1: 验证单层原始值
+            try {
+                var count = app.count;
+                console.log('单层原始值:', count);
+                
+                if (count === 0) {
+                    console.log('✓ 测试1 通过: 单层原始值读取正确');
+                    passed++;
+                } else {
+                    console.log('✗ 测试1 失败: 期望 0, 实际', count);
+                    failed++;
+                }
+            } catch (e) {
+                console.log('✗ 测试1 异常:', e);
+                failed++;
+            }
+            
+            // 测试2: 验证一级嵌套
+            try {
+                var userName = app.user.name;
+                var userAge = app.user.age;
+                console.log('一级嵌套:', userName, userAge);
+                
+                if (userName === '张三' && userAge === 25) {
+                    console.log('✓ 测试2 通过: 一级嵌套读取正确');
+                    passed++;
+                } else {
+                    console.log('✗ 测试2 失败');
+                    failed++;
+                }
+            } catch (e) {
+                console.log('✗ 测试2 异常:', e);
+                failed++;
+            }
+            
+            // 测试3: 验证二级嵌套
+            try {
+                var companyName = app.company.name;
+                var deptName = app.company.department.name;
+                var budget = app.company.department.budget;
+                console.log('二级嵌套:', companyName, deptName, budget);
+                
+                if (companyName === '科技公司' && deptName === '技术部' && budget === 1000000) {
+                    console.log('✓ 测试3 通过: 二级嵌套读取正确');
+                    passed++;
+                } else {
+                    console.log('✗ 测试3 失败');
+                    failed++;
+                }
+            } catch (e) {
+                console.log('✗ 测试3 异常:', e);
+                failed++;
+            }
+            
+            // 测试4: 验证三级嵌套
+            try {
+                var orgName = app.org.name;
+                var teamName = app.org.dept.team.name;
+                var memberCount = app.org.dept.team.memberCount;
+                console.log('三级嵌套:', orgName, teamName, memberCount);
+                
+                if (orgName === '集团' && teamName === '前端组' && memberCount === 8) {
+                    console.log('✓ 测试4 通过: 三级嵌套读取正确');
+                    passed++;
+                } else {
+                    console.log('✗ 测试4 失败');
+                    failed++;
+                }
+            } catch (e) {
+                console.log('✗ 测试4 异常:', e);
+                failed++;
+            }
+            
+            // 测试5: 验证四级嵌套
+            try {
+                var uniName = app.university.name;
+                var className = app.university.college.department.class.name;
+                var studentCount = app.university.college.department.class.studentCount;
+                console.log('四级嵌套:', uniName, className, studentCount);
+                
+                if (uniName === '北京大学' && className === '计科2024班' && studentCount === 45) {
+                    console.log('✓ 测试5 通过: 四级嵌套读取正确');
+                    passed++;
+                } else {
+                    console.log('✗ 测试5 失败');
+                    failed++;
+                }
+            } catch (e) {
+                console.log('✗ 测试5 异常:', e);
+                failed++;
+            }
+            
+            // 测试6: 验证混合嵌套
+            try {
+                var projectName = app.project.name;
+                var leaderName = app.project.leader.name;
+                var teamName = app.project.leader.team.name;
+                console.log('混合嵌套:', projectName, leaderName, teamName);
+                
+                if (projectName === 'Hetui Mini' && leaderName === '李四' && teamName === '核心开发组') {
+                    console.log('✓ 测试6 通过: 混合嵌套读取正确');
+                    passed++;
+                } else {
+                    console.log('✗ 测试6 失败');
+                    failed++;
+                }
+            } catch (e) {
+                console.log('✗ 测试6 异常:', e);
+                failed++;
+            }
+            
+            app.passedTests = passed;
+            app.failedTests = failed;
+            app.testStatus = failed === 0 ? '初始化通过' : '初始化失败';
+            
+            console.log('=== 初始化测试完成 ===');
+            console.log('通过:', passed, '失败:', failed);
+        });
+    </script>
+</body>
+</html>

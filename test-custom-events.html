@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义事件测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        button { margin: 5px; padding: 8px 16px; }
+        .log { margin-top: 10px; padding: 10px; background: #f5f5f5; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>自定义事件测试 (dispatchEvent)</h1>
+        
+        <!-- 测试1：基本自定义事件 -->
+        <div class="section">
+            <h2>测试1：基本自定义事件</h2>
+            <div id="custom-box" HeTui @user-login="handleUserLogin" 
+                 style="padding: 20px; background: #e3f2fd; cursor: pointer;">
+                点击此区域触发 user-login 自定义事件
+            </div>
+            <div class="log">
+                <p>日志: <span HeTui :text="loginLog"></span></p>
+            </div>
+            <button HeTui @click="triggerLogin">手动触发 user-login 事件</button>
+        </div>
+        
+        <!-- 测试2：带数据的自定义事件 -->
+        <div class="section">
+            <h2>测试2：带数据的自定义事件</h2>
+            <div id="data-box" HeTui @data-update="handleDataUpdate"
+                 style="padding: 20px; background: #e8f5e9; cursor: pointer;">
+                点击此区域触发带数据的 data-update 事件
+            </div>
+            <div class="log">
+                <p>接收到的数据: <span HeTui :text="receivedData"></span></p>
+            </div>
+            <button HeTui @click="triggerDataUpdate">手动触发 data-update 事件（带数据）</button>
+        </div>
+        
+        <!-- 测试3：冒泡和阻止冒泡 -->
+        <div class="section">
+            <h2>测试3：自定义事件冒泡</h2>
+            <div id="parent" HeTui @parent-event="handleParentEvent"
+                 style="padding: 20px; background: #fff3e0; border: 2px solid #ff9800;">
+                父容器（监听 parent-event）
+                <div id="child" HeTui @click="triggerParentEvent"
+                     style="margin-top: 10px; padding: 15px; background: #ffe0b2; cursor: pointer;">
+                    点击子元素触发 parent-event（会冒泡到父容器）
+                </div>
+            </div>
+            <div class="log">
+                <p>父容器日志: <span HeTui :text="parentLog"></span></p>
+            </div>
+        </div>
+        
+        <!-- 测试4：传递 detail 数据 -->
+        <div class="section">
+            <h2>测试4：通过 detail 传递复杂数据</h2>
+            <div HeTui @order-created="handleOrder"
+                 style="padding: 20px; background: #f3e5f5; cursor: pointer;">
+                点击创建订单（触发 order-created 事件）
+            </div>
+            <div class="log">
+                <p>订单信息: <span HeTui :text="orderInfo"></span></p>
+            </div>
+            <button HeTui @click="triggerOrder">创建订单</button>
+        </div>
+    </div>
+    
+    <script>
+        var app = Hetui.runApp({
+            loginLog: Observer.Define(''),
+            receivedData: Observer.Define(''),
+            parentLog: Observer.Define(''),
+            orderInfo: Observer.Define('')
+        }, document.getElementById('app')).methods({
+            // 测试1：基本自定义事件
+            handleUserLogin(event, data) {
+                data.loginLog = 'user-login 事件触发: ' + new Date().toLocaleTimeString();
+                console.log('user-login 事件:', event);
+            },
+            triggerLogin(event, data) {
+                var box = document.getElementById('custom-box');
+                box.dispatchEvent(new CustomEvent('user-login', {
+                    bubbles: true,
+                    detail: { user: '张三' }
+                }));
+            },
+            
+            // 测试2：带数据的自定义事件
+            handleDataUpdate(event, data) {
+                var detail = event.detail || {};
+                data.receivedData = JSON.stringify(detail);
+                console.log('data-update 事件:', event, detail);
+            },
+            triggerDataUpdate(event, data) {
+                var box = document.getElementById('data-box');
+                box.dispatchEvent(new CustomEvent('data-update', {
+                    bubbles: true,
+                    detail: {
+                        id: 123,
+                        name: '测试数据',
+                        timestamp: Date.now()
+                    }
+                }));
+            },
+            
+            // 测试3：事件冒泡
+            handleParentEvent(event, data) {
+                data.parentLog = 'parent-event 冒泡到父容器: ' + new Date().toLocaleTimeString();
+                console.log('parent-event 在父容器触发');
+            },
+            triggerParentEvent(event, data) {
+                var child = document.getElementById('child');
+                child.dispatchEvent(new CustomEvent('parent-event', {
+                    bubbles: true  // 允许冒泡
+                }));
+            },
+            
+            // 测试4：复杂数据
+            handleOrder(event, data) {
+                var order = event.detail || {};
+                data.orderInfo = '订单 #' + order.id + ': ' + order.items.join(', ');
+                console.log('order-created 事件:', order);
+            },
+            triggerOrder(event, data) {
+                var section = event.target.closest('.section');
+                section.dispatchEvent(new CustomEvent('order-created', {
+                    bubbles: true,
+                    detail: {
+                        id: Math.floor(Math.random() * 10000),
+                        items: ['商品A', '商品B', '商品C'],
+                        total: 299.99
+                    }
+                }));
+            }
+        });
+    </script>
+</body>
+</html>

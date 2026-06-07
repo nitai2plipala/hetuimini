@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>复杂指令绑定测试 - :class、:style、:attr 多指令支持</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .active { color: green; font-weight: bold; }
+        .inactive { color: gray; }
+        .highlight { background-color: yellow; }
+        .border { border: 2px solid red; }
+        .large { font-size: 20px; }
+        .small { font-size: 12px; }
+        .test-box { padding: 10px; margin: 10px 0; }
+        .success { color: green; }
+        .error { color: red; }
+        .info { color: blue; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>复杂数据绑定指令测试</h1>
+        
+        <!-- 测试1: 同一DOM多个:class指令 -->
+        <div class="section">
+            <h2>测试1: 同一DOM多个:class指令</h2>
+            <p>测试同一个元素是否能同时使用多个:class指令</p>
+            
+            <div HeTui :class|active="isActive" :class|highlight="isHighlighted" :class|large="isLarge" class="test-box">
+                这个元素有多个:class指令绑定
+            </div>
+            
+            <p>
+                <button HeTui @click="toggleActive">切换active类</button>
+                <button HeTui @click="toggleHighlighted">切换highlight类</button>
+                <button HeTui @click="toggleLarge">切换large类</button>
+            </p>
+            
+            <p>当前状态: isActive=<span HeTui :text="isActive"></span>, isHighlighted=<span HeTui :text="isHighlighted"></span>, isLarge=<span HeTui :text="isLarge"></span></p>
+        </div>
+        
+        <!-- 测试2: 同一DOM多个:style指令 -->
+        <div class="section">
+            <h2>测试2: 同一DOM多个:style指令</h2>
+            <p>测试同一个元素是否能同时使用多个:style指令</p>
+            
+            <div HeTui :style|color="fontColor" :style|backgroundColor="bgColor" :style|fontSize="fontSize" class="test-box">
+                这个元素有多个:style指令绑定
+            </div>
+            
+            <p>
+                <button HeTui @click="cycleFontColor">循环字体颜色</button>
+                <button HeTui @click="cycleBgColor">循环背景颜色</button>
+                <button HeTui @click="cycleFontSize">循环字体大小</button>
+            </p>
+            
+            <p>当前样式: fontColor=<span HeTui :text="fontColor"></span>, bgColor=<span HeTui :text="bgColor"></span>, fontSize=<span HeTui :text="fontSize"></span></p>
+        </div>
+        
+        <!-- 测试3: 复杂:attr指令 -->
+        <div class="section">
+            <h2>测试3: 复杂:attr指令</h2>
+            <p>测试:attr指令的各种用法</p>
+            
+            <div class="test-box">
+                <p>
+                    <a HeTui :attr|href="linkUrl" :attr|title="linkTitle">链接1</a>
+                </p>
+                <p>
+                    <input HeTui type="text" :attr|placeholder="inputPlaceholder" :attr|value="inputValue">
+                </p>
+                <p>
+                    <img HeTui :attr|src="imageSrc" :attr|alt="imageAlt" :attr|width="imageWidth" style="max-width: 200px;">
+                </p>
+            </div>
+            
+            <p>
+                <button HeTui @click="changeLink">改变链接</button>
+                <button HeTui @click="changeImage">改变图片</button>
+            </p>
+        </div>
+        
+        <!-- 测试4: 混合指令测试 -->
+        <div class="section">
+            <h2>测试4: 混合指令测试</h2>
+            <p>测试多个指令混合使用</p>
+            
+            <div HeTui :class|active="isActive" :style|color="fontColor" :attr|title="tooltipText" class="test-box">
+                这个元素混合使用了:class、:style和:attr指令
+            </div>
+            
+            <p>
+                <button HeTui @click="toggleActive">切换active类</button>
+                <button HeTui @click="cycleFontColor">改变颜色</button>
+                <button HeTui @click="changeTooltip">改变提示</button>
+            </p>
+        </div>
+        
+        <!-- 测试5: 嵌套数据测试 -->
+        <div class="section">
+            <h2>测试5: 嵌套数据测试</h2>
+            <p>测试使用冒号分隔的嵌套数据路径</p>
+            
+            <div class="test-box">
+                <p>
+                    用户名: <span HeTui :text="user:name"></span>
+                </p>
+                <p>
+                    用户状态: <span HeTui :class|active="user:isActive"></span>
+                </p>
+                <p>
+                    用户主题颜色: <span HeTui :style|color="user:theme:color"></span>
+                </p>
+                <p>
+                    用户头像: <img HeTui :attr|src="user:avatar:url" style="max-width: 50px;">
+                </p>
+            </div>
+        </div>
+        
+        <!-- 测试6: 动态指令格式 -->
+        <div class="section">
+            <h2>测试6: 动态指令格式</h2>
+            <p>测试指令格式的友好性和可读性</p>
+            
+            <div class="test-box">
+                <p>
+                    <strong>格式1:</strong> :class|active="isActive" → 类名作为参数，条件作为值
+                </p>
+                <p>
+                    <strong>格式2:</strong> :style|color="fontColor" → 样式名作为参数，值作为值
+                </p>
+                <p>
+                    <strong>格式3:</strong> :attr|href="linkUrl" → 属性名作为参数，值作为值
+                </p>
+                <p>
+                    <strong>格式4:</strong> :text="user:name" → 使用冒号分隔嵌套路径
+                </p>
+            </div>
+        </div>
+        
+        <!-- 测试结果 -->
+        <div class="section">
+            <h2>测试结果</h2>
+            <div id="testResults">
+                <p>测试正在运行...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = Hetui.Observe({
+            // 测试1数据
+            isActive: Observer.Define(true),
+            isHighlighted: Observer.Define(false),
+            isLarge: Observer.Define(false),
+            
+            // 测试2数据
+            fontColor: Observer.Define('blue'),
+            bgColor: Observer.Define('#f0f0f0'),
+            fontSize: Observer.Define('16px'),
+            
+            // 测试3数据
+            linkUrl: Observer.Define('https://www.example.com'),
+            linkTitle: Observer.Define('示例链接'),
+            inputPlaceholder: Observer.Define('请输入内容'),
+            inputValue: Observer.Define('示例值'),
+            imageSrc: Observer.Define('https://via.placeholder.com/150'),
+            imageAlt: Observer.Define('示例图片'),
+            imageWidth: Observer.Define('150'),
+            
+            // 测试4数据（混合使用）
+            tooltipText: Observer.Define('这是一个提示信息'),
+            
+            // 测试5数据（嵌套数据）
+            user: Observer.Define({
+                name: '张三',
+                isActive: true,
+                theme: {
+                    color: 'green'
+                },
+                avatar: {
+                    url: 'https://via.placeholder.com/50'
+                }
+            }),
+            
+            // 测试状态
+            testResults: []
+        })
+        .methods({
+            // 测试1方法
+            toggleActive: function(event, data) {
+                console.log("点击了按钮", data.isActive)
+                data.isActive = !data.isActive;
+
+                console.log(data.isActive)
+            },
+            toggleHighlighted: function(event, data) {
+                data.isHighlighted = !data.isHighlighted;
+            },
+            toggleLarge: function(event, data) {
+                data.isLarge = !data.isLarge;
+            },
+            
+            // 测试2方法
+            cycleFontColor: function(event, data) {
+                var colors = ['blue', 'red', 'green', 'purple', 'orange'];
+                var currentIndex = colors.indexOf(data.fontColor);
+                data.fontColor = colors[(currentIndex + 1) % colors.length];
+            },
+            cycleBgColor: function(event, data) {
+                var colors = ['#f0f0f0', '#e0e0e0', '#d0d0d0', '#c0c0c0', '#b0b0b0'];
+                var currentIndex = colors.indexOf(data.bgColor);
+                data.bgColor = colors[(currentIndex + 1) % colors.length];
+            },
+            cycleFontSize: function(event, data) {
+                var sizes = ['12px', '14px', '16px', '18px', '20px'];
+                var currentIndex = sizes.indexOf(data.fontSize);
+                data.fontSize = sizes[(currentIndex + 1) % sizes.length];
+            },
+            
+            // 测试3方法
+            changeLink: function(event, data) {
+                data.linkUrl = 'https://www.' + Math.random().toString(36).substring(7) + '.com';
+                data.linkTitle = '新链接 ' + Math.random().toString(36).substring(7);
+            },
+            changeImage: function(event, data) {
+                data.imageSrc = 'https://via.placeholder.com/' + Math.floor(Math.random() * 200 + 100);
+                data.imageAlt = '新图片 ' + Math.random().toString(36).substring(7);
+                data.imageWidth = Math.floor(Math.random() * 200 + 50).toString();
+            },
+            
+            // 测试4方法
+            changeTooltip: function(event, data) {
+                data.tooltipText = '新提示 ' + Math.random().toString(36).substring(7);
+            }
+        })
+        .computed({
+            // 测试状态
+            testStatus: function() {
+                var passed = 0;
+                var total = 6;
+                
+                // 简单测试
+                if (typeof this.isActive === 'boolean') passed++;
+                if (typeof this.fontColor === 'string') passed++;
+                if (typeof this.linkUrl === 'string') passed++;
+                if (typeof this.user === 'object') passed++;
+                if (typeof this.user.name === 'string') passed++;
+                if (typeof this.user.theme.color === 'string') passed++;
+                
+                return passed + '/' + total + ' 测试通过';
+            }
+        });
+        
+        // 显示测试结果
+        document.addEventListener('DOMContentLoaded', function() {
+            var resultsDiv = document.getElementById('testResults');
+            resultsDiv.innerHTML = '<p class="success">' + app.testStatus + '</p>';
+        });
+    </script>
+</body>
+</html>

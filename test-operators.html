@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运算符测试</title>
+    <script src="hetuimini.js"></script>
+</head>
+<body>
+    <h1>运算符测试</h1>
+    
+    <div id="app">
+        <h2>测试各种运算符</h2>
+        
+        <!-- 基础数据 -->
+        <p><strong>基础数据：</strong></p>
+        <p>a = <span HeTui :text="a"></span></p>
+        <p>b = <span HeTui :text="b"></span></p>
+        <p>flag = <span HeTui :text="flag"></span></p>
+        <p>status = <span HeTui :text="status"></span></p>
+        
+        <!-- 测试1: 加法 + -->
+        <p><strong>测试1: 加法 +</strong></p>
+        <p>a + b = <span HeTui :text="a + b"></span></p>
+        <p>a + 10 = <span HeTui :text="a + 10"></span></p>
+        
+        <!-- 测试2: 减法 - -->
+        <p><strong>测试2: 减法 -</strong></p>
+        <p>a - b = <span HeTui :text="a - b"></span></p>
+        <p>b - 1 = <span HeTui :text="b - 1"></span></p>
+        
+        <!-- 测试3: 乘法 * -->
+        <p><strong>测试3: 乘法 *</strong></p>
+        <p>a * b = <span HeTui :text="a * b"></span></p>
+        <p>a * 2 = <span HeTui :text="a * 2"></span></p>
+        
+        <!-- 测试4: 除法 / -->
+        <p><strong>测试4: 除法 /</strong></p>
+        <p>a / b = <span HeTui :text="a / b"></span></p>
+        <p>b / 2 = <span HeTui :text="b / 2"></span></p>
+        
+        <!-- 测试5: 取反操作符 ! -->
+        <p><strong>测试5: 取反操作符 !</strong></p>
+        <p>!flag = <span HeTui :text="!flag"></span></p>
+        <p>!a = <span HeTui :text="!a"></span></p>
+        <p>!(a > b) = <span HeTui :text="!(a < b)"></span></p>
+        <p>a == 5 =<span HeTui :text="a == 5"></span></p>
+        
+        <!-- 测试6: 复杂操作符表达式组合 -->
+        <p><strong>测试6: 复杂操作符表达式组合</strong></p>
+        <p>(a + b) * 2 - a = <span HeTui :text="(a + b) * 2 - a"></span></p>
+        <p>(a * b) / (a - b) = <span HeTui :text="(a * b) / (a - b)"></span></p>
+        <p>((a + b) * (a - b)) = <span HeTui :text="((a + b) * (a - b))"></span></p>
+        <p>a * (b + 1) - (a / b) = <span HeTui :text="a * (b + 1) - (a / b)"></span></p>
+        
+        
+        <!-- 操作按钮 -->
+        <p><strong>操作：</strong></p>
+        <button HeTui @click="incrementA">a++</button>
+        <button HeTui @click="decrementA">a--</button>
+        <button HeTui @click="toggleFlag">切换 flag</button>
+        <button HeTui @click="cycleStatus">切换 status</button>
+        <button HeTui @click="reset">重置</button>
+        
+
+    </div>
+
+    <script>
+        var app = Hetui.Observe({
+            a: Observer.Define(10),
+            b: Observer.Define(5),
+            flag: Observer.Define(true),
+            status: Observer.Define('active')
+
+        })
+        .methods({
+            incrementA: function(event, data) {
+                data.a++;
+            },
+            decrementA: function(event, data) {
+                data.a--;
+            },
+            toggleFlag: function(event, data) {
+                data.flag = !data.flag;
+            },
+            cycleStatus: function(event, data) {
+                data.status = data.status === 'active' ? 'inactive' : 'active';
+            },
+            reset: function(event, data) {
+                data.a = 10;
+                data.b = 5;
+                data.flag = true;
+                data.status = 'active';
+            }
+        });
+    </script>
+</body>
+</html>

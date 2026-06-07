@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hetui Mini 测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .active { color: green; font-weight: bold; }
+        .inactive { color: gray; }
+        button { margin: 5px; padding: 8px 16px; }
+        input { margin: 5px; padding: 8px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Hetui Mini 框架测试</h1>
+        
+        <!-- 测试1: 文本绑定 -->
+        <div class="section">
+            <h2>测试1: 文本绑定</h2>
+            <p>问候语: <span HeTui :text="greeting"></span></p>
+            <p>计数器: <span HeTui :text="count"></span></p>
+            <button HeTui @click="increment">+1</button>
+            <button HeTui @click="decrement">-1</button>
+            <button HeTui @click="reset">重置</button>
+        </div>
+        
+        <!-- 测试2: 值绑定（双向绑定） -->
+        <div class="section">
+            <h2>测试2: 值绑定（双向绑定）</h2>
+            <p>用户名: <input HeTui type="text" :value="username"></p>
+            <p>显示用户名: <span HeTui :text="username"></span></p>
+        </div>
+        
+        <!-- 测试3: 属性绑定 -->
+        <div class="section">
+            <h2>测试3: 属性绑定</h2>
+            <p>
+                <a HeTui :attr|href="linkUrl">链接</a>
+                <input HeTui type="text" :value="linkUrl" placeholder="输入链接URL">
+            </p>
+        </div>
+        
+        <!-- 测试4: 类绑定 -->
+        <div class="section">
+            <h2>测试4: 类绑定</h2>
+            <p>
+                <span HeTui :class|active="isActive">状态文本</span>
+                <button HeTui @click="toggleActive">切换状态</button>
+            </p>
+        </div>
+        
+        <!-- 测试5: 表单提交 -->
+        <div class="section">
+            <h2>测试5: 表单提交</h2>
+            <form HeTui @submit="handleLogin">
+                <div>
+                    <label>邮箱: <input type="email" name="email" placeholder="请输入邮箱"></label>
+                </div>
+                <div>
+                    <label>密码: <input type="password" name="password" placeholder="请输入密码"></label>
+                </div>
+                <button type="submit">登录</button>
+            </form>
+            <p>登录状态: <span HeTui :text="loginStatus"></span></p>
+        </div>
+        
+        <!-- 测试6: 计算属性 -->
+        <div class="section">
+            <h2>测试6: 计算属性</h2>
+            <p>计数器: <span HeTui :text="count"></span></p>
+            <p>双倍计数: <span HeTui :text="doubleCount"></span></p>
+            <p>是否正数: <span HeTui :text="isPositive"></span></p>
+        </div>
+        
+        <!-- 测试7: 循环指令 -->
+        <div class="section">
+            <h2>测试7: 循环指令</h2>
+            <ul>
+                <li HeTui foreach:="items">
+                    <span HeTui :text="#index"></span>. 
+                    <span HeTui :text="name"></span> - 
+                    ¥<span HeTui :text="price"></span>
+                </li>
+            </ul>
+            <button HeTui @click="addItem">添加商品</button>
+        </div>
+        
+        <!-- 测试8: 条件渲染 -->
+        <div class="section">
+            <h2>测试8: 条件渲染</h2>
+            <p>
+                <button HeTui @click="toggleShow">切换显示</button>
+                <button HeTui @click="toggleIf">切换条件</button>
+            </p>
+            <div HeTui if:="showIf" style="padding: 10px; background: #e8f5e9; margin: 10px 0;">
+                ✅ 条件渲染：这段文字只在 showIf 为 true 时显示
+            </div>
+            <div HeTui show:="showDisplay" style="padding: 10px; background: #e3f2fd; margin: 10px 0;">
+                👁️ 显示控制：这段文字通过 display 控制显示/隐藏
+            </div>
+        </div>
+        
+        <!-- 测试9: 样式绑定 -->
+        <div class="section">
+            <h2>测试9: 样式绑定</h2>
+            <p>
+                <span HeTui :style|color="fontColor">样式绑定文本</span>
+                <button HeTui @click="toggleColor">切换颜色</button>
+            </p>
+            <p>
+                <div HeTui :style|background="bgColor" style="width: 200px; height: 50px; border: 1px solid #ccc;">
+                    背景色块
+                </div>
+            </p>
+        </div>
+        
+        <!-- 测试10: 禁用状态绑定 -->
+        <div class="section">
+            <h2>测试10: 禁用状态绑定</h2>
+            <p>
+                <input HeTui type="text" :disabled="isDisabled" placeholder="输入框">
+                <button HeTui @click="toggleDisabled">切换禁用状态</button>
+            </p>
+            <p>禁用状态: <span HeTui :text="isDisabledText"></span></p>
+        </div>
+        
+        <!-- 测试11: 选中状态绑定 -->
+        <div class="section">
+            <h2>测试11: 选中状态绑定</h2>
+            <p>
+                <label>
+                    <input HeTui type="checkbox" :checked="isAgreed"> 同意协议
+                </label>
+                <button HeTui @click="toggleAgreed">切换选中状态</button>
+            </p>
+            <p>选中状态: <span HeTui :text="isAgreedText"></span></p>
+        </div>
+        
+        <!-- 测试12: 占位符绑定 -->
+        <div class="section">
+            <h2>测试12: 占位符绑定</h2>
+            <p>
+                <input HeTui type="text" :placeholder="inputPlaceholder">
+                <button HeTui @click="changePlaceholder">改变占位符</button>
+            </p>
+        </div>
+        
+        <!-- 测试13: HTML绑定 -->
+        <div class="section">
+            <h2>测试13: HTML绑定</h2>
+            <p>
+                <div HeTui :html="htmlContent" style="border: 1px solid #ccc; padding: 10px; min-height: 50px;"></div>
+                <button HeTui @click="changeHtml">改变HTML内容</button>
+            </p>
+        </div>
+        
+        <!-- 测试14: 事件修饰符 -->
+        <div class="section">
+            <h2>测试14: 事件修饰符</h2>
+            <p>
+                <button HeTui @click.prevent="handlePrevent">.prevent 阻止默认行为</button>
+                <button HeTui @click.stop="handleStop">.stop 阻止冒泡</button>
+                <button HeTui @click.once="handleOnce">.once 只触发一次</button>
+            </p>
+            <p>
+                <form HeTui @submit.prevent="handleFormSubmit" style="border: 1px solid #ccc; padding: 10px;">
+                    <input type="text" name="test" value="测试表单">
+                    <button type="submit">提交表单（.prevent）</button>
+                </form>
+            </p>
+            <p>事件日志: <span HeTui :text="eventLog"></span></p>
+        </div>
+        
+        <!-- 测试15: 过滤器系统 -->
+        <div class="section">
+            <h2>测试15: 过滤器系统</h2>
+            <p>
+                原始价格: <span HeTui :text="price"></span>
+            </p>
+            <p>
+                货币格式: <span HeTui :text="price | currency:'¥'"></span>
+            </p>
+            <p>
+                美元格式: <span HeTui :text="price | currency:'$'"></span>
+            </p>
+            <p>
+                大写: <span HeTui :text="text | uppercase"></span>
+            </p>
+            <p>
+                小写: <span HeTui :text="text | lowercase"></span>
+            </p>
+            <p>
+                首字母大写: <span HeTui :text="text | capitalize"></span>
+            </p>
+            <p>
+                截断: <span HeTui :text="longText | truncate:10"></span>
+            </p>
+            <p>
+                千分位: <span HeTui :text="bigNumber | numberFormat"></span>
+            </p>
+            <p>
+                链式过滤器: <span HeTui :text="text | uppercase | truncate:5"></span>
+            </p>
+            <p>
+                默认值: <span HeTui :text="emptyValue | default:'暂无数据'"></span>
+            </p>
+        </div>
+        
+        <!-- 测试16: data-* 属性绑定 -->
+        <div class="section">
+            <h2>测试16: data-* 属性绑定</h2>
+            <p>
+                <div HeTui :data="user:id" 
+                     style="border: 1px solid #ccc; padding: 10px;">
+                    data-user-id 属性
+                </div>
+            </p>
+            <p>
+                <div HeTui :data="user:name" 
+                     style="border: 1px solid #ccc; padding: 10px;">
+                    data-user-name 属性
+                </div>
+            </p>
+            <p>
+                <div HeTui :data="user:profile:email" 
+                     style="border: 1px solid #ccc; padding: 10px;">
+                    data-user-profile-email 属性
+                </div>
+            </p>
+            <p>
+                <button HeTui @click="changeUserData">改变用户数据</button>
+                <button HeTui @click="logDataAttrs">读取 data-* 属性</button>
+            </p>
+            <p>data-* 属性值: <span HeTui :text="dataAttrsLog"></span></p>
+        </div>
+        
+        <!-- 测试17: title 属性绑定 -->
+        <div class="section">
+            <h2>测试17: title 属性绑定</h2>
+            <p>
+                <span HeTui :title="tooltipText" style="border: 1px solid #ccc; padding: 5px 10px; cursor: help;">
+                    鼠标悬停查看 title
+                </span>
+                <button HeTui @click="changeTooltip">改变提示文本</button>
+            </p>
+            <p>
+                <button HeTui :title="buttonTooltip">带提示的按钮</button>
+            </p>
+            <p>当前提示: <span HeTui :text="tooltipText"></span></p>
+        </div>
+        
+        <!-- 测试18: 网络请求功能 -->
+        <div class="section">
+            <h2>测试18: 网络请求功能</h2>
+            <p>
+                <button HeTui @click="testXHR">测试 XHR GET</button>
+                <button HeTui @click="testXHRPost">测试 XHR POST</button>
+            </p>
+            <p>
+                <button HeTui @click="testFetch">测试 Fetch GET</button>
+                <button HeTui @click="testFetchPost">测试 Fetch POST</button>
+            </p>
+            <p>
+                <button HeTui @click="testEncoded">测试 Encoded 编码</button>
+            </p>
+            <p>请求结果: <span HeTui :text="networkResult"></span></p>
+            <div HeTui :html="networkResultHtml" style="border: 1px solid #ccc; padding: 10px; margin-top: 10px; min-height: 50px;"></div>
+        </div>
+    </div>
+    
+    <script>
+        // ============================================
+        // 方式二：链式调用
+        // ============================================
+        var app = Hetui.Observe({
+            // 数据
+            greeting: Observer.Define('你好，Hetui Mini!'),
+            count: Observer.Define(0),
+            username: Observer.Define('张三'),
+            linkUrl: Observer.Define('https://www.example.com'),
+            isActive: Observer.Define(false),
+            loginStatus: Observer.Define('未登录'),
+            showIf: Observer.Define(true),
+            showDisplay: Observer.Define(true),
+            items: Observer.Define([
+                { name: '商品A', price: 100 },
+                { name: '商品B', price: 200 },
+                { name: '商品C', price: 300 }
+            ]),
+            // 新增数据
+            fontColor: Observer.Define('blue'),
+            bgColor: Observer.Define('#f0f0f0'),
+            isDisabled: Observer.Define(false),
+            isAgreed: Observer.Define(false),
+            inputPlaceholder: Observer.Define('请输入内容'),
+            htmlContent: Observer.Define('<strong>这是粗体文本</strong> <em>这是斜体文本</em>'),
+            // 事件修饰符测试数据
+            eventLog: Observer.Define(''),
+            // 过滤器测试数据
+            price: Observer.Define(1234.56),
+            text: Observer.Define('hello world'),
+            longText: Observer.Define('这是一段很长的文本，用于测试截断过滤器'),
+            bigNumber: Observer.Define(1234567.89),
+            emptyValue: Observer.Define(''),
+            // data-* 属性绑定测试数据
+            user: Observer.Define({
+                id: Observer.Define(1001),
+                name: Observer.Define('张三'),
+                profile: Observer.Define({
+                    email: Observer.Define('zhangsan@example.com'),
+                    phone: Observer.Define('13800138000')
+                })
+            }),
+            dataAttrsLog: Observer.Define(''),
+            // title 属性绑定测试数据
+            tooltipText: Observer.Define('这是一个提示信息'),
+            buttonTooltip: Observer.Define('点击这个按钮'),
+            // 网络请求测试数据
+            networkResult: Observer.Define(''),
+            networkResultHtml: Observer.Define('')
+        }).methods({
+            // 基础方法
+            increment(event, data) {
+                data.count++;
+            },
+            decrement(event, data) {
+                data.count--;
+            },
+            reset(event, data) {
+                data.count = 0;
+            },
+            toggleActive(event, data) {
+                data.isActive = !data.isActive;
+            },
+            toggleShow(event, data) {
+                data.showDisplay = !data.showDisplay;
+            },
+            toggleIf(event, data) {
+                data.showIf = !data.showIf;
+            },
+            addItem(event, data) {
+                var index = data.items.length + 1;
+                data.items.push({
+                    name: '新商品' + index,
+                    price: index * 100
+                });
+            },
+            handleLogin(event, data) {
+                var form = event.target;
+                var email = form.email.value;
+                var password = form.password.value;
+
+                console.log('登录信息:', { email: email, password: password });
+
+                // 模拟登录
+                if (email && password) {
+                    data.loginStatus = '登录成功: ' + email;
+                } else {
+                    data.loginStatus = '登录失败: 请填写完整信息';
+                }
+            },
+            // 新增方法
+            toggleColor(event, data) {
+                data.fontColor = data.fontColor === 'blue' ? 'red' : 'blue';
+            },
+            toggleDisabled(event, data) {
+                data.isDisabled = !data.isDisabled;
+            },
+            toggleAgreed(event, data) {
+                data.isAgreed = !data.isAgreed;
+            },
+            changePlaceholder(event, data) {
+                data.inputPlaceholder = data.inputPlaceholder === '请输入内容' ? '请输入新的内容' : '请输入内容';
+            },
+            changeHtml(event, data) {
+                data.htmlContent = data.htmlContent === '<strong>这是粗体文本</strong> <em>这是斜体文本</em>' 
+                    ? '<p style="color: green;">这是新的HTML内容</p>' 
+                    : '<strong>这是粗体文本</strong> <em>这是斜体文本</em>';
+            },
+            // 事件修饰符测试方法
+            handlePrevent(event, data) {
+                data.eventLog = ' prevent 默认行为被阻止';
+                console.log('.prevent 修饰符测试');
+            },
+            handleStop(event, data) {
+                data.eventLog = ' stop 冒泡被阻止';
+                console.log('.stop 修饰符测试');
+            },
+            handleOnce(event, data) {
+                data.eventLog = ' once 只触发一次';
+                console.log('.once 修饰符测试');
+            },
+            handleFormSubmit(event, data) {
+                data.eventLog = ' form 表单提交被阻止';
+                console.log('表单提交被 .prevent 阻止');
+            },
+            // data-* 属性绑定测试方法
+            changeUserData(event, data) {
+                var user = data.user;
+                user.id = user.id + 1;
+                user.name = user.name === '张三' ? '李四' : '张三';
+                user.profile.email = user.name + '@example.com';
+            },
+            logDataAttrs(event, data) {
+                // 读取元素的 data-* 属性
+                var element = document.querySelector('[data-user-id]');
+                if (element) {
+                    var userId = element.getAttribute('data-user-id');
+                    var userName = element.getAttribute('data-user-name');
+                    var userEmail = element.getAttribute('data-user-profile-email');
+                    data.dataAttrsLog = 'id: ' + userId + ', name: ' + userName + ', email: ' + userEmail;
+                    console.log('data-* 属性值:', { userId: userId, userName: userName, userEmail: userEmail });
+                }
+            },
+            // title 属性绑定测试方法
+            changeTooltip(event, data) {
+                data.tooltipText = data.tooltipText === '这是一个提示信息' 
+                    ? '新的提示信息' 
+                    : '这是一个提示信息';
+            },
+            // 网络请求测试方法
+            testXHR(event, data) {
+                data.networkResult = 'XHR GET 请求中...';
+                Network.XHR({
+                    url: 'https://jsonplaceholder.typicode.com/posts/1',
+                    method: 'GET',
+                    option: {
+                        responseType: 'json',
+                        success: function(response) {
+                            data.networkResult = 'XHR GET 成功: ' + response.title;
+                            data.networkResultHtml = '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
+                        },
+                        error: function(xhr) {
+                            data.networkResult = 'XHR GET 失败: ' + xhr.status;
+                        }
+                    }
+                });
+            },
+            testXHRPost(event, data) {
+                data.networkResult = 'XHR POST 请求中...';
+                Network.XHR({
+                    url: 'https://jsonplaceholder.typicode.com/posts',
+                    method: 'POST',
+                    code: 'json',
+                    data: {
+                        title: '测试标题',
+                        body: '测试内容',
+                        userId: 1
+                    },
+                    option: {
+                        responseType: 'json',
+                        success: function(response) {
+                            data.networkResult = 'XHR POST 成功: ID=' + response.id;
+                            data.networkResultHtml = '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
+                        },
+                        error: function(xhr) {
+                            data.networkResult = 'XHR POST 失败: ' + xhr.status;
+                        }
+                    }
+                });
+            },
+            testFetch(event, data) {
+                data.networkResult = 'Fetch GET 请求中...';
+                Network.Fetch({
+                    url: 'https://jsonplaceholder.typicode.com/posts/2',
+                    method: 'GET',
+                    option: {
+                        responseType: 'json',
+                        success: function(response) {
+                            data.networkResult = 'Fetch GET 成功: ' + response.title;
+                            data.networkResultHtml = '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
+                        },
+                        error: function(error) {
+                            data.networkResult = 'Fetch GET 失败: ' + error.message;
+                        }
+                    }
+                });
+            },
+            testFetchPost(event, data) {
+                data.networkResult = 'Fetch POST 请求中...';
+                Network.Fetch({
+                    url: 'https://jsonplaceholder.typicode.com/posts',
+                    method: 'POST',
+                    code: 'json',
+                    data: {
+                        title: '测试标题',
+                        body: '测试内容',
+                        userId: 1
+                    },
+                    option: {
+                        responseType: 'json',
+                        success: function(response) {
+                            data.networkResult = 'Fetch POST 成功: ID=' + response.id;
+                            data.networkResultHtml = '<pre>' + JSON.stringify(response, null, 2) + '</pre>';
+                        },
+                        error: function(error) {
+                            data.networkResult = 'Fetch POST 失败: ' + error.message;
+                        }
+                    }
+                });
+            },
+            testEncoded(event, data) {
+                var testObj = {
+                    name: '张三',
+                    age: 25,
+                    email: 'zhangsan@example.com',
+                    city: '北京'
+                };
+                var encoded = Network.Encoded(testObj);
+                var encodedWithPrefix = Network.Encoded(testObj, 'https://api.example.com/users');
+                data.networkResult = 'Encoded 结果: ' + encoded;
+                data.networkResultHtml = '<p><strong>原始对象:</strong></p><pre>' + JSON.stringify(testObj, null, 2) + '</pre><p><strong>编码结果:</strong></p><pre>' + encoded + '</pre><p><strong>带前缀:</strong></p><pre>' + encodedWithPrefix + '</pre>';
+            }
+        }).computed({
+            // 计算属性：双倍计数
+            doubleCount() {
+                return this.count * 2;
+            },
+            // 计算属性：是否正数
+            isPositive() {
+                return this.count > 0 ? '是' : '否';
+            },
+            // 计算属性：禁用状态文本
+            isDisabledText() {
+                return this.isDisabled ? '已禁用' : '未禁用';
+            },
+            // 计算属性：选中状态文本
+            isAgreedText() {
+                return this.isAgreed ? '已同意' : '未同意';
+            }
+        }).watch({
+            // 监听器：监听 count 变化
+            count(newVal, oldVal) {
+                console.log('计数器变化:', oldVal, '->', newVal);
+            },
+            // 监听器：监听 username 变化
+            username(newVal, oldVal) {
+                console.log('用户名变化:', oldVal, '->', newVal);
+            }
+        });
+        
+        // 测试响应式更新
+        console.log('初始数据:', JSON.stringify(app));
+        
+        // 延迟更新问候语
+        setTimeout(function() {
+            app.greeting = '欢迎使用 Hetui Mini 框架！';
+            console.log('问候语已更新');
+        }, 2000);
+    </script>
+</body>
+</html>
