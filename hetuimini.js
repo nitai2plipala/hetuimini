@@ -574,9 +574,14 @@
                 directive.name = name.substring(0, pipeIndex);
             }
             
-            // 解析路径（不再支持冒号分隔，只支持新格式）
+            // 解析路径（支持冒号分隔的嵌套路径）
             if (value) {
-                directive.path = [value];
+                // 支持冒号分隔的路径：user:stateClass -> ['user', 'stateClass']
+                if (value.indexOf(':') !== -1) {
+                    directive.path = value.split(':');
+                } else {
+                    directive.path = [value];
+                }
             }
             
             return directive;
