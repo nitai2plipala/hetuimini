@@ -1096,6 +1096,7 @@
                     // 创建子数据对象：继承父数据 + 当前项属性 + 索引
                     var subData = Object.create(data);
                     subData['#index'] = index + 1;
+                    subData['#item'] = item;  // 添加当前数组项支持
                     
                     // 将数组项包装为响应式对象（如果还不是的话）
                     if (item !== null && typeof item === 'object') {

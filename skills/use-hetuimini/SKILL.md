@@ -1,6 +1,6 @@
 ---
 name: use-hetuimini
-description: |
+description:
   使用 hetuimini.js 轻量级 MVVM 框架开发前端应用的完整指南。当用户提到 hetuimini、hetuimini.js、或需要创建使用该框架的 HTML 页面时触发此技能。包含框架语法、最佳实践、常见错误避免等完整开发规范。
 ---
 
@@ -388,6 +388,32 @@ methods: {
 <input :value="user:email">
 <li foreach:="user:items">...</li>
 <span :text="errors:password"></span>
+```
+
+## 流程控制指令
+
+### foreach: 循环指令
+
+遍历数组，为每个元素克隆模板节点：
+
+```html
+<ul>
+    <li HeTui foreach:="items">
+        <span HeTui :text="#index"></span>. 
+        <span HeTui :text="#item"></span>
+    </li>
+</ul>
+```
+
+**特殊变量**：
+- `#index`: 当前索引（从 1 开始）
+- `#item`: 当前数组项（支持原始值和对象）
+
+**示例**：
+```javascript
+var app = Hetui.Observe({
+    fruits: Observer.Define(["苹果", "香蕉", "橙子"])
+});
 ```
 
 ## 开发流程
