@@ -103,7 +103,8 @@ watch: {
 
 <!-- 循环 -->
 <li foreach:="items">
-    <span :text="name"></span>
+    <span :text="#index"></span>. 
+    <span :text="#item"></span>
 </li>
 
 <!-- 事件 -->

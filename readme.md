@@ -246,7 +246,10 @@ console.log(data.count);      // ✅ 唯一写法
 
 ```html
 <!-- 循环 -->
-<li foreach:="items"><span :text="name"></span></li>
+<li foreach:="items">
+    <span :text="#index"></span>. 
+    <span :text="#item"></span>
+</li>
 
 <!-- 条件渲染 -->
 <div if:="show">内容</div>
@@ -254,6 +257,10 @@ console.log(data.count);      // ✅ 唯一写法
 <!-- 显示控制 -->
 <div show:="visible">内容</div>
 ```
+
+**特殊变量**：
+- `#index`: 当前索引（从 1 开始）
+- `#item`: 当前数组项（支持原始值和对象）
 
 ## 计算属性与监听器
 
