@@ -476,7 +476,12 @@
             var root = this._container || document;
             var elements = root.querySelectorAll('[HeTui]');
             
-            elements.forEach(function(element) {
+            for (var j =0; j < elements.length; j++) {
+                
+                var element = elements[j];
+
+                if (element.hasAttribute("::break"))  continue; 
+                   
                 // 获取所有指令属性
                 var attributes = element.attributes;
                 
@@ -492,7 +497,7 @@
                         Directive.bind(element, directive, self.data, self.data['@Hetui::observer'].methods);
                     }
                 }
-            });
+            };
         },
         
         // 添加方法
@@ -659,6 +664,7 @@
          * 绑定文本指令
          */
         bindText: function(element, directive, data) {
+        
             var self = this;
             var updateFn = function() {
                 var value = self.evaluateExpression(directive.value, data);
@@ -1055,12 +1061,19 @@
             var fieldPath = directive.path;
             var parentElement = element.parentNode;
             var placeholder = document.createComment('foreach: ' + directive.value);
-            
+           
+            var breaks = element.querySelectorAll('[HeTui]');
+
+            breaks.forEach(function(element) {
+                element.setAttribute("::break", "");
+            })
+
             // 保存模板 HTML（移除 foreach 指令属性）
             var templateHTML = element.outerHTML
                 .replace(/\s*foreach="[^"]*"/, '')
                 .replace(/\s*HeTui/, ' HeTui data-foreach-item');
             
+            // console.log(templateHTML, parentElement, element)    
             // 替换原始元素为注释占位符
             parentElement.replaceChild(placeholder, element);
             
@@ -1088,7 +1101,12 @@
                     var temp = document.createElement('div');
                     temp.innerHTML = templateHTML;
                     var newElement = temp.firstChild;
-                    
+
+                    if (index != 0) {
+                        newElement.removeAttribute("foreach:");
+                        newElement.setAttribute("::continue", "")
+                    }
+
                     // 插入到占位符之前
                     parentElement.insertBefore(newElement, placeholder);
                     generatedElements.push(newElement);
@@ -1111,12 +1129,13 @@
                     allChildren.forEach(function(child) {
                         // 跳过 foreach 元素本身
                         if (child === newElement) return;
+                        child.removeAttribute("::break");
                         
                         var attrs = child.attributes;
-                        for (var i = 0; i < attrs.length; i++) {
+                        for (var i = 0; i < attrs.length; i++) { 
                             var name = attrs[i].name;
                             var value = attrs[i].value;
-                            if (name.charAt(0) === ':' || name.charAt(0) === '@') {
+                            if (name.charAt(0) === ':' || name.charAt(0) === '@' || name.slice(-1) === ':') {
                                 var subDirective = Directive.parse(name, value);
                                 Directive.bind(child, subDirective, subData);
                             }

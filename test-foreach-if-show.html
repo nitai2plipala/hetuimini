@@ -143,13 +143,13 @@
             <div class="test-box">
                 <h3>3. if: 与 show: 组合</h3>
                 <div HeTui if:="showNotification" class="info">
-                    <div HeTui show:="notificationType === 'success'" class="success">
+                    <div HeTui show:="notificationType" class="success">
                         ✅ 成功通知
                     </div>
-                    <div HeTui show:="notificationType === 'error'" class="error">
+                    <div HeTui show:="notificationType" class="error">
                         ❌ 错误通知
                     </div>
-                    <div HeTui show:="notificationType === 'warning'" class="error">
+                    <div HeTui show:="notificationType" class="error">
                         ⚠️ 警告通知
                     </div>
                 </div>
@@ -238,21 +238,21 @@
                     { name: "李四", email: "lisi@example.com" }
                 ]),
                 settings: Observer.Define({
-                    showAdvanced: Observer.Define(true)
+                    showAdvanced: true,
                 }),
                 permissions: Observer.Define({
-                    canEdit: Observer.Define(true)
+                    canEdit: true,
                 }),
                 profile: Observer.Define({
-                    isPublic: Observer.Define(true),
-                    showEmail: Observer.Define(false)
+                    isPublic: true,
+                    showEmail: false,
                 }),
                 preferences: Observer.Define({
                     notifications: Observer.Define({
-                        enabled: Observer.Define(true),
-                        showPreview: Observer.Define(true),
+                        enabled: true,
+                        showPreview: true,
                         types: Observer.Define([
-                            { name: "邮件通知", isEnabled: true, showBadge: true },
+                            { name: "邮件通知", isEnabled: true, showBadge: false },
                             { name: "短信通知", isEnabled: false, showBadge: false },
                             { name: "应用内通知", isEnabled: true, showBadge: true }
                         ])
@@ -280,8 +280,8 @@
             company: Observer.Define({
                 departments: Observer.Define({
                     engineering: Observer.Define({
-                        isActive: Observer.Define(true),
-                        showProjects: Observer.Define(true),
+                        isActive: true,
+                        showProjects: true,
                         projects: Observer.Define([
                             { name: "项目A", status: "进行中", isCritical: true, isPublic: false },
                             { name: "项目B", status: "已完成", isCritical: false, isPublic: true },

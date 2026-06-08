@@ -309,11 +309,11 @@
             emptyValue: Observer.Define(''),
             // data-* 属性绑定测试数据
             user: Observer.Define({
-                id: Observer.Define(1001),
-                name: Observer.Define('张三'),
+                id: 1001,
+                name: '张三',
                 profile: Observer.Define({
-                    email: Observer.Define('zhangsan@example.com'),
-                    phone: Observer.Define('13800138000')
+                    email: 'zhangsan@example.com',
+                    phone: '13800138000',
                 })
             }),
             dataAttrsLog: Observer.Define(''),
@@ -408,14 +408,13 @@
             },
             logDataAttrs(event, data) {
                 // 读取元素的 data-* 属性
-                var element = document.querySelector('[data-user-id]');
-                if (element) {
-                    var userId = element.getAttribute('data-user-id');
-                    var userName = element.getAttribute('data-user-name');
-                    var userEmail = element.getAttribute('data-user-profile-email');
-                    data.dataAttrsLog = 'id: ' + userId + ', name: ' + userName + ', email: ' + userEmail;
-                    console.log('data-* 属性值:', { userId: userId, userName: userName, userEmail: userEmail });
-                }
+                var userId = document.querySelector('[data-user-id]').getAttribute('data-user-id');
+                var userName = document.querySelector('[data-user-name]').getAttribute('data-user-name');
+                var userEmail = document.querySelector('[data-user-profile-email]').getAttribute('data-user-profile-email');
+               
+                data.dataAttrsLog = 'id: ' + userId + ', name: ' + userName + ', email: ' + userEmail;
+                console.log('data-* 属性值:', { userId: userId, userName: userName, userEmail: userEmail });
+                
             },
             // title 属性绑定测试方法
             changeTooltip(event, data) {
