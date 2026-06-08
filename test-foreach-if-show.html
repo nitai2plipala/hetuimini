@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流程控制指令综合测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        .section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; border-radius: 5px; }
+        .test-box { padding: 10px; margin: 10px 0; border: 1px solid #eee; background: #f9f9f9; }
+        button { margin: 5px; padding: 5px 10px; }
+        .success { color: green; font-weight: bold; }
+        .error { color: red; }
+        .info { color: blue; }
+        h1 { color: #333; }
+        h2 { color: #555; border-bottom: 2px solid #eee; padding-bottom: 5px; }
+        h3 { color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>流程控制指令综合测试</h1>
+        <p>测试 <code>foreach:</code>、<code>if:</code>、<code>show:</code> 三个指令，从简单到复杂，包括嵌套访问</p>
+        
+        <!-- 一、简单测试 -->
+        <div class="section">
+            <h2>一、简单测试</h2>
+            
+            <!-- 1. foreach: 简单数组 -->
+            <div class="test-box">
+                <h3>1. foreach: 简单数组</h3>
+                <ul>
+                    <li HeTui foreach:="simpleFruits">
+                        <span HeTui :text="#index"></span>. 
+                        <span HeTui :text="#item"></span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 2. if: 简单条件 -->
+            <div class="test-box">
+                <h3>2. if: 简单条件</h3>
+                <div HeTui if:="showWarning" class="error">
+                    ⚠️ 警告信息（条件为 true 时显示）
+                </div>
+                <div HeTui if:="hideInfo" class="info">
+                    ℹ️ 信息内容（条件为 false 时隐藏）
+                </div>
+                <button HeTui @click="toggleWarning">切换警告</button>
+                <button HeTui @click="toggleInfo">切换信息</button>
+            </div>
+            
+            <!-- 3. show: 简单显示控制 -->
+            <div class="test-box">
+                <h3>3. show: 简单显示控制</h3>
+                <div HeTui show:="isVisible" class="success">
+                    ✅ 可见内容（show 控制）
+                </div>
+                <div HeTui show:="isHidden" class="info">
+                    🔍 隐藏内容（show 控制）
+                </div>
+                <button HeTui @click="toggleVisible">切换可见性</button>
+                <button HeTui @click="toggleHidden">切换隐藏</button>
+            </div>
+        </div>
+        
+        <!-- 二、嵌套访问测试 -->
+        <div class="section">
+            <h2>二、嵌套访问测试</h2>
+            
+            <!-- 1. foreach: 嵌套对象数组 -->
+            <div class="test-box">
+                <h3>1. foreach: 嵌套对象数组</h3>
+                <ul>
+                    <li HeTui foreach:="user:contacts">
+                        <span HeTui :text="#index"></span>. 
+                        <span HeTui :text="name"></span> - 
+                        <span HeTui :text="email"></span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 2. if: 嵌套条件 -->
+            <div class="test-box">
+                <h3>2. if: 嵌套条件</h3>
+                <div HeTui if:="user:settings:showAdvanced" class="info">
+                    🔧 高级设置（嵌套条件）
+                </div>
+                <div HeTui if:="user:permissions:canEdit" class="success">
+                    ✏️ 编辑权限（嵌套条件）
+                </div>
+                <button HeTui @click="toggleAdvanced">切换高级设置</button>
+                <button HeTui @click="toggleEditPermission">切换编辑权限</button>
+            </div>
+            
+            <!-- 3. show: 嵌套显示控制 -->
+            <div class="test-box">
+                <h3>3. show: 嵌套显示控制</h3>
+                <div HeTui show:="user:profile:isPublic" class="success">
+                    👤 公开资料（嵌套 show）
+                </div>
+                <div HeTui show:="user:profile:showEmail" class="info">
+                    📧 显示邮箱（嵌套 show）
+                </div>
+                <button HeTui @click="togglePublic">切换公开状态</button>
+                <button HeTui @click="toggleShowEmail">切换显示邮箱</button>
+            </div>
+        </div>
+        
+        <!-- 三、组合测试 -->
+        <div class="section">
+            <h2>三、组合测试</h2>
+            
+            <!-- 1. foreach: 与 if: 组合 -->
+            <div class="test-box">
+                <h3>1. foreach: 与 if: 组合</h3>
+                <ul>
+                    <li HeTui foreach:="filteredUsers">
+                        <span HeTui :text="#index"></span>. 
+                        <span HeTui :text="name"></span>
+                        <span HeTui if:="isActive" class="success"> (活跃)</span>
+                        <span HeTui if:="isVIP" class="info"> [VIP]</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 2. foreach: 与 show: 组合 -->
+            <div class="test-box">
+                <h3>2. foreach: 与 show: 组合</h3>
+                <ul>
+                    <li HeTui foreach:="products">
+                        <span HeTui :text="#index"></span>. 
+                        <span HeTui :text="name"></span> - ¥<span HeTui :text="price"></span>
+                        <span HeTui show:="inStock" class="success"> [有货]</span>
+                        <span HeTui show:="isOnSale" class="error"> [促销]</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- 3. if: 与 show: 组合 -->
+            <div class="test-box">
+                <h3>3. if: 与 show: 组合</h3>
+                <div HeTui if:="showNotification" class="info">
+                    <div HeTui show:="notificationType === 'success'" class="success">
+                        ✅ 成功通知
+                    </div>
+                    <div HeTui show:="notificationType === 'error'" class="error">
+                        ❌ 错误通知
+                    </div>
+                    <div HeTui show:="notificationType === 'warning'" class="error">
+                        ⚠️ 警告通知
+                    </div>
+                </div>
+                <button HeTui @click="showSuccessNotification">成功通知</button>
+                <button HeTui @click="showErrorNotification">错误通知</button>
+                <button HeTui @click="showWarningNotification">警告通知</button>
+                <button HeTui @click="hideNotification">隐藏通知</button>
+            </div>
+        </div>
+        
+        <!-- 四、复杂嵌套测试 -->
+        <div class="section">
+            <h2>四、复杂嵌套测试</h2>
+            
+            <!-- 1. 三层嵌套对象中的指令使用 -->
+            <div class="test-box">
+                <h3>1. 三层嵌套对象中的指令使用</h3>
+                <div HeTui if:="company:departments:engineering:isActive" class="success">
+                    🏢 工程部门激活状态
+                </div>
+                <div HeTui show:="company:departments:engineering:showProjects" class="info">
+                    📋 显示项目列表
+                </div>
+                <ul>
+                    <li HeTui foreach:="company:departments:engineering:projects">
+                        <span HeTui :text="#index"></span>. 
+                        <span HeTui :text="name"></span> - 
+                        <span HeTui :text="status"></span>
+                        <span HeTui if:="isCritical" class="error"> [关键]</span>
+                        <span HeTui show:="isPublic" class="info"> [公开]</span>
+                    </li>
+                </ul>
+                <button HeTui @click="toggleEngineeringActive">切换工程部门状态</button>
+                <button HeTui @click="toggleShowProjects">切换显示项目</button>
+            </div>
+            
+            <!-- 2. 混合嵌套路径 -->
+            <div class="test-box">
+                <h3>2. 混合嵌套路径</h3>
+                <div HeTui if:="user:preferences:notifications:enabled" class="info">
+                    🔔 通知已启用
+                </div>
+                <div HeTui show:="user:preferences:notifications:showPreview" class="success">
+                    👁️ 显示通知预览
+                </div>
+                <ul>
+                    <li HeTui foreach:="user:preferences:notifications:types">
+                        <span HeTui :text="#index"></span>. 
+                        <span HeTui :text="#item"></span>
+                        <span HeTui if:="isEnabled" class="success"> [已启用]</span>
+                        <span HeTui show:="showBadge" class="info"> [显示徽章]</span>
+                    </li>
+                </ul>
+                <button HeTui @click="toggleNotifications">切换通知</button>
+                <button HeTui @click="toggleShowPreview">切换预览</button>
+            </div>
+        </div>
+        
+        <!-- 测试结果 -->
+        <div class="section">
+            <h2>测试结果</h2>
+            <div id="testResults">
+                <p>测试正在运行...</p>
+            </div>
+            <div class="test-box">
+                <h3>控制面板</h3>
+                <button HeTui @click="resetAll">重置所有状态</button>
+                <button HeTui @click="runAllTests">运行所有测试</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var app = Hetui.Observe({
+            // 简单数据
+            simpleFruits: Observer.Define(["苹果", "香蕉", "橙子"]),
+            showWarning: Observer.Define(true),
+            hideInfo: Observer.Define(false),
+            isVisible: Observer.Define(true),
+            isHidden: Observer.Define(false),
+            
+            // 嵌套数据
+            user: Observer.Define({
+                contacts: Observer.Define([
+                    { name: "张三", email: "zhangsan@example.com" },
+                    { name: "李四", email: "lisi@example.com" }
+                ]),
+                settings: Observer.Define({
+                    showAdvanced: Observer.Define(true)
+                }),
+                permissions: Observer.Define({
+                    canEdit: Observer.Define(true)
+                }),
+                profile: Observer.Define({
+                    isPublic: Observer.Define(true),
+                    showEmail: Observer.Define(false)
+                }),
+                preferences: Observer.Define({
+                    notifications: Observer.Define({
+                        enabled: Observer.Define(true),
+                        showPreview: Observer.Define(true),
+                        types: Observer.Define([
+                            { name: "邮件通知", isEnabled: true, showBadge: true },
+                            { name: "短信通知", isEnabled: false, showBadge: false },
+                            { name: "应用内通知", isEnabled: true, showBadge: true }
+                        ])
+                    })
+                })
+            }),
+            
+            // 组合测试数据
+            filteredUsers: Observer.Define([
+                { name: "张三", isActive: true, isVIP: false },
+                { name: "李四", isActive: false, isVIP: true },
+                { name: "王五", isActive: true, isVIP: true }
+            ]),
+            products: Observer.Define([
+                { name: "商品A", price: 100, inStock: true, isOnSale: false },
+                { name: "商品B", price: 200, inStock: false, isOnSale: true },
+                { name: "商品C", price: 150, inStock: true, isOnSale: true }
+            ]),
+            
+            // 通知数据
+            showNotification: Observer.Define(false),
+            notificationType: Observer.Define("success"),
+            
+            // 复杂嵌套数据
+            company: Observer.Define({
+                departments: Observer.Define({
+                    engineering: Observer.Define({
+                        isActive: Observer.Define(true),
+                        showProjects: Observer.Define(true),
+                        projects: Observer.Define([
+                            { name: "项目A", status: "进行中", isCritical: true, isPublic: false },
+                            { name: "项目B", status: "已完成", isCritical: false, isPublic: true },
+                            { name: "项目C", status: "规划中", isCritical: false, isPublic: false }
+                        ])
+                    })
+                })
+            })
+        })
+        .methods({
+            // 简单方法
+            toggleWarning: function(event, data) {
+                data.showWarning = !data.showWarning;
+            },
+            toggleInfo: function(event, data) {
+                data.hideInfo = !data.hideInfo;
+            },
+            toggleVisible: function(event, data) {
+                data.isVisible = !data.isVisible;
+            },
+            toggleHidden: function(event, data) {
+                data.isHidden = !data.isHidden;
+            },
+            
+            // 嵌套方法
+            toggleAdvanced: function(event, data) {
+                data.user.settings.showAdvanced = !data.user.settings.showAdvanced;
+            },
+            toggleEditPermission: function(event, data) {
+                data.user.permissions.canEdit = !data.user.permissions.canEdit;
+            },
+            togglePublic: function(event, data) {
+                data.user.profile.isPublic = !data.user.profile.isPublic;
+            },
+            toggleShowEmail: function(event, data) {
+                data.user.profile.showEmail = !data.user.profile.showEmail;
+            },
+            
+            // 通知方法
+            showSuccessNotification: function(event, data) {
+                data.showNotification = true;
+                data.notificationType = "success";
+            },
+            showErrorNotification: function(event, data) {
+                data.showNotification = true;
+                data.notificationType = "error";
+            },
+            showWarningNotification: function(event, data) {
+                data.showNotification = true;
+                data.notificationType = "warning";
+            },
+            hideNotification: function(event, data) {
+                data.showNotification = false;
+            },
+            
+            // 复杂嵌套方法
+            toggleEngineeringActive: function(event, data) {
+                data.company.departments.engineering.isActive = !data.company.departments.engineering.isActive;
+            },
+            toggleShowProjects: function(event, data) {
+                data.company.departments.engineering.showProjects = !data.company.departments.engineering.showProjects;
+            },
+            toggleNotifications: function(event, data) {
+                data.user.preferences.notifications.enabled = !data.user.preferences.notifications.enabled;
+            },
+            toggleShowPreview: function(event, data) {
+                data.user.preferences.notifications.showPreview = !data.user.preferences.notifications.showPreview;
+            },
+            
+            // 控制方法
+            resetAll: function(event, data) {
+                data.showWarning = true;
+                data.hideInfo = false;
+                data.isVisible = true;
+                data.isHidden = false;
+                data.user.settings.showAdvanced = true;
+                data.user.permissions.canEdit = true;
+                data.user.profile.isPublic = true;
+                data.user.profile.showEmail = false;
+                data.showNotification = false;
+                data.company.departments.engineering.isActive = true;
+                data.company.departments.engineering.showProjects = true;
+                data.user.preferences.notifications.enabled = true;
+                data.user.preferences.notifications.showPreview = true;
+            },
+            runAllTests: function(event, data) {
+                // 简单测试
+                console.log("简单测试:");
+                console.log("foreach: 简单数组:", data.simpleFruits);
+                console.log("if: 警告条件:", data.showWarning);
+                console.log("show: 可见性:", data.isVisible);
+                
+                // 嵌套测试
+                console.log("嵌套测试:");
+                console.log("foreach: 联系人:", data.user.contacts);
+                console.log("if: 高级设置:", data.user.settings.showAdvanced);
+                console.log("show: 公开资料:", data.user.profile.isPublic);
+                
+                // 复杂测试
+                console.log("复杂测试:");
+                console.log("foreach: 项目列表:", data.company.departments.engineering.projects);
+                console.log("if: 工程部门:", data.company.departments.engineering.isActive);
+                console.log("show: 项目显示:", data.company.departments.engineering.showProjects);
+                
+                alert("所有测试已运行，请查看控制台输出");
+            }
+        });
+        
+        // 显示测试结果
+        document.addEventListener('DOMContentLoaded', function() {
+            var resultsDiv = document.getElementById('testResults');
+            resultsDiv.innerHTML = '<p class="success">所有指令测试完成！请通过控制面板交互测试。</p>';
+        });
+    </script>
+</body>
+</html>
