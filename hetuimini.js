@@ -9,7 +9,7 @@
     
     // 全局对象
     var Hetui = {
-        version: '1.1.0',
+        version: '1.1.1',
         data: null, // 响应式数据对象
         methods: {}, // 方法对象
         filters: {}, // 过滤器对象
@@ -1070,8 +1070,6 @@
 
             // 保存模板 HTML（移除 foreach 指令属性）
             var templateHTML = element.outerHTML
-                .replace(/\s*foreach="[^"]*"/, '')
-                .replace(/\s*HeTui/, ' HeTui data-foreach-item');
             
             // console.log(templateHTML, parentElement, element)    
             // 替换原始元素为注释占位符
@@ -1101,6 +1099,18 @@
                     var temp = document.createElement('div');
                     temp.innerHTML = templateHTML;
                     var newElement = temp.firstChild;
+
+                    // 确保 newElement 是元素节点
+                    if (!newElement || newElement.nodeType !== Node.ELEMENT_NODE) {
+                        // 查找第一个元素节点
+                        var elements = temp.getElementsByTagName('*');
+                        if (elements.length > 0) {
+                            newElement = elements[0];
+                        } else {
+                            console.error('模板中没有找到元素节点');
+                            return;
+                        }
+                    }
 
                     if (index != 0) {
                         newElement.removeAttribute("foreach:");
