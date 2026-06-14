@@ -1,0 +1,96 @@
+- generic [ref=e2]:
+  - heading "冒号分隔路径测试" [level=1] [ref=e3]
+  - paragraph [ref=e4]:
+    - text: 测试所有指令对冒号分隔路径（如
+    - code [ref=e5]: user:name
+    - text: ）的支持
+  - generic [ref=e6]:
+    - 'heading "测试1: 嵌套对象属性绑定" [level=2] [ref=e7]'
+    - generic [ref=e8]:
+      - paragraph [ref=e9]: "用户名: 张三"
+      - paragraph [ref=e10]: "邮箱: zhangsan@example.com"
+      - paragraph [ref=e11]: "年龄: 25"
+    - paragraph [ref=e13]: "控制台输出: 用户名应为 \"张三\", 邮箱应为 \"zhangsan@example.com\", 年龄应为 25"
+  - generic [ref=e14]:
+    - 'heading "测试2: 嵌套对象值绑定（双向绑定）" [level=2] [ref=e15]'
+    - paragraph [ref=e16]:
+      - text: "用户名:"
+      - textbox [ref=e17]: 张三
+    - paragraph [ref=e18]:
+      - text: "邮箱:"
+      - textbox [ref=e19]: zhangsan@example.com
+    - paragraph [ref=e20]:
+      - text: "年龄:"
+      - spinbutton [ref=e21]: "25"
+    - generic [ref=e22]:
+      - paragraph [ref=e23]: "更新后的用户名: 张三"
+      - paragraph [ref=e24]: "更新后的邮箱: zhangsan@example.com"
+      - paragraph [ref=e25]: "更新后的年龄: 25"
+  - generic [ref=e26]:
+    - 'heading "测试3: 嵌套对象事件绑定" [level=2] [ref=e27]'
+    - paragraph [ref=e28]:
+      - button "增加年龄" [ref=e29]
+      - button "减少年龄" [ref=e30]
+      - button "重置用户" [ref=e31]
+    - generic [ref=e32]:
+      - paragraph [ref=e33]: "当前年龄: 25"
+      - paragraph [ref=e34]: "年龄变化次数: 0"
+    - paragraph [ref=e36]: "控制台输出: 点击按钮应触发对应方法，年龄和变化次数应更新"
+  - generic [ref=e37]:
+    - 'heading "测试4: 嵌套对象样式绑定" [level=2] [ref=e38]'
+    - paragraph
+    - generic [ref=e39]: 动态类绑定 (user:isActive)
+    - paragraph
+    - paragraph
+    - generic [ref=e40]: 动态样式绑定 (user:theme:color)
+    - paragraph
+    - generic [ref=e41]:
+      - paragraph [ref=e42]: "用户状态: true"
+      - paragraph [ref=e43]: "主题颜色: #3f6085"
+    - paragraph [ref=e44]:
+      - button "切换状态" [ref=e45]
+      - button "改变颜色" [ref=e46]
+  - generic [ref=e47]:
+    - 'heading "测试5: 嵌套对象流程控制" [level=2] [ref=e48]'
+    - generic [ref=e49]:
+      - 'heading "foreach: 测试" [level=3] [ref=e50]'
+      - list [ref=e51]:
+        - listitem [ref=e52]: 商品A - 100 元
+        - listitem [ref=e53]: 商品B - 200 元
+        - listitem [ref=e54]: 商品C - 300 元
+    - generic [ref=e55]:
+      - 'heading "if: 测试" [level=3] [ref=e56]'
+      - generic [ref=e57]:
+        - paragraph [ref=e58]: 详细信息已显示
+        - paragraph [ref=e59]: "用户ID: 1001"
+    - generic [ref=e60]:
+      - 'heading "show: 测试" [level=3] [ref=e61]'
+      - paragraph [ref=e63]: 此内容根据 user:isVisible 显示/隐藏
+    - paragraph [ref=e64]:
+      - button "切换详细信息" [ref=e65]
+      - button "切换可见性" [ref=e66]
+      - button "添加项目" [ref=e67]
+  - generic [ref=e68]:
+    - 'heading "测试6: 错误信息显示测试（修复的核心问题）" [level=2] [ref=e69]'
+    - paragraph [ref=e70]: 此测试验证错误信息是否能正确显示在页面上
+    - generic [ref=e71]:
+      - paragraph [ref=e72]:
+        - text: "用户名:"
+        - textbox [ref=e73]
+      - paragraph [ref=e74]:
+        - text: "邮箱:"
+        - textbox [ref=e75]
+      - paragraph [ref=e76]:
+        - text: "密码:"
+        - textbox [ref=e77]
+    - paragraph [ref=e78]:
+      - button "验证表单" [ref=e79]
+      - button "清除错误" [ref=e80]
+    - paragraph [ref=e82]: "控制台输出: 验证表单后，错误信息应显示在输入框旁边"
+  - generic [ref=e83]:
+    - heading "测试结果汇总" [level=2] [ref=e84]
+    - generic [ref=e85]:
+      - paragraph [ref=e86]: "测试状态: 运行中"
+      - paragraph [ref=e87]: "通过测试数: 0"
+      - paragraph [ref=e88]: "失败测试数: 0"
+    - paragraph [ref=e90]: 所有测试应通过，验证冒号分隔路径在所有指令中正常工作

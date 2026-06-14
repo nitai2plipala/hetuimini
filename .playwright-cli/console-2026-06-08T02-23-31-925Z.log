@@ -1,0 +1,1440 @@
+[      27ms] [LOG] 响应式 getter 访问: {key: name, value: 邮件通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      28ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      28ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      28ms] [LOG] 响应式 getter 访问: {key: name, value: 短信通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      28ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      29ms] [LOG] 响应式 getter 访问: {key: showBadge, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      29ms] [LOG] 响应式 getter 访问: {key: name, value: 应用内通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      29ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      29ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      29ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      30ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      30ms] [LOG] 响应式 getter 访问: {key: name, value: 邮件通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      30ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      30ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      30ms] [LOG] 响应式 getter 访问: {key: name, value: 短信通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      31ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      31ms] [LOG] 响应式 getter 访问: {key: showBadge, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      31ms] [LOG] 响应式 getter 访问: {key: name, value: 应用内通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      31ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      31ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      31ms] [LOG] 响应式 getter 访问: {key: name, value: 张三, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      32ms] [LOG] 响应式 getter 访问: {key: email, value: zhangsan@example.com, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      32ms] [LOG] 响应式 getter 访问: {key: name, value: 李四, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      32ms] [LOG] 响应式 getter 访问: {key: email, value: lisi@example.com, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      32ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      32ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      33ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      33ms] [LOG] 响应式 getter 访问: {key: value, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      33ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      33ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      33ms] [LOG] 响应式 getter 访问: {key: name, value: 邮件通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      33ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      34ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      34ms] [LOG] 响应式 getter 访问: {key: name, value: 短信通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      34ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      34ms] [LOG] 响应式 getter 访问: {key: showBadge, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      34ms] [LOG] 响应式 getter 访问: {key: name, value: 应用内通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      35ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      35ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      35ms] [LOG] 响应式 getter 访问: {key: name, value: 项目A, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      35ms] [LOG] 响应式 getter 访问: {key: status, value: 进行中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: isCritical, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: name, value: 项目B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: status, value: 已完成, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: isPublic, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      36ms] [LOG] 响应式 getter 访问: {key: name, value: 项目C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      37ms] [LOG] 响应式 getter 访问: {key: status, value: 规划中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      37ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      37ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      38ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      38ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      38ms] [LOG] 响应式 getter 访问: {key: name, value: 项目A, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      38ms] [LOG] 响应式 getter 访问: {key: status, value: 进行中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      38ms] [LOG] 响应式 getter 访问: {key: isCritical, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      39ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      39ms] [LOG] 响应式 getter 访问: {key: name, value: 项目B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      39ms] [LOG] 响应式 getter 访问: {key: status, value: 已完成, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      39ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      39ms] [LOG] 响应式 getter 访问: {key: isPublic, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      39ms] [LOG] 响应式 getter 访问: {key: name, value: 项目C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: status, value: 规划中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: value, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: name, value: 项目A, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      40ms] [LOG] 响应式 getter 访问: {key: status, value: 进行中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      41ms] [LOG] 响应式 getter 访问: {key: isCritical, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      41ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      41ms] [LOG] 响应式 getter 访问: {key: name, value: 项目B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      41ms] [LOG] 响应式 getter 访问: {key: status, value: 已完成, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      41ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      42ms] [LOG] 响应式 getter 访问: {key: isPublic, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      42ms] [LOG] 响应式 getter 访问: {key: name, value: 项目C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      42ms] [LOG] 响应式 getter 访问: {key: status, value: 规划中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      42ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[      42ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     140ms] [LOG] Directive.parse 开始解析: {name: foreach:, value: simpleFruits} @ http://localhost:8084/hetuimini.js:557
+[     140ms] [LOG] Directive.parse 简单路径: {value: simpleFruits, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     140ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     141ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: li} @ http://localhost:8084/hetuimini.js:610
+[     141ms] [LOG] bindForeach 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1073
+[     142ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindFor… updateFn 执行:', { fieldPath: fieldPath });
+  ...} @ http://localhost:8084/hetuimini.js:298
+[     142ms] [LOG] bindForeach updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1087
+[     142ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     142ms] [LOG] getValueByPath 访问属性: {index: 0, path: simpleFruits, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     143ms] [LOG] getValueByPath 属性值: {index: 0, path: simpleFruits, value: Array(3)} @ http://localhost:8084/hetuimini.js:1491
+[     143ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: Array(3)} @ http://localhost:8084/hetuimini.js:1493
+[     143ms] [LOG] bindForeach 获取数组: {fieldPath: Array(1), items: Array(3), isArray: true} @ http://localhost:8084/hetuimini.js:1089
+[     143ms] [LOG] bindForeach 开始循环，数组长度: 3 @ http://localhost:8084/hetuimini.js:1104
+[     144ms] [LOG] bindForeach 处理项: {index: 0, item: 苹果, type: string} @ http://localhost:8084/hetuimini.js:1108
+[     144ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: 苹果} @ http://localhost:8084/hetuimini.js:1124
+[     144ms] [LOG] bindForeach 原始值项: {item: 苹果} @ http://localhost:8084/hetuimini.js:1135
+[     144ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     145ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     145ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     145ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     145ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     146ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     146ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     146ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     147ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:1151
+[     147ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     147ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     147ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     147ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     148ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     148ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     148ms] [LOG] bindForeach 处理项: {index: 1, item: 香蕉, type: string} @ http://localhost:8084/hetuimini.js:1108
+[     148ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: 香蕉} @ http://localhost:8084/hetuimini.js:1124
+[     148ms] [LOG] bindForeach 原始值项: {item: 香蕉} @ http://localhost:8084/hetuimini.js:1135
+[     148ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     149ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     149ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     149ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     149ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     149ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     149ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     150ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     150ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:1151
+[     150ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     150ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     150ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     150ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     150ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     151ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     151ms] [LOG] bindForeach 处理项: {index: 2, item: 橙子, type: string} @ http://localhost:8084/hetuimini.js:1108
+[     151ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: 橙子} @ http://localhost:8084/hetuimini.js:1124
+[     151ms] [LOG] bindForeach 原始值项: {item: 橙子} @ http://localhost:8084/hetuimini.js:1135
+[     151ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     152ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     152ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     152ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     152ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     152ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     152ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     153ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     153ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:1151
+[     153ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     153ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     153ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     154ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     154ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     154ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     154ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     154ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     154ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     154ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     155ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     155ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     155ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     155ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     155ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     156ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     156ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     156ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     156ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     156ms] [LOG] Directive.parse 开始解析: {name: if:, value: showWarning} @ http://localhost:8084/hetuimini.js:557
+[     156ms] [LOG] Directive.parse 简单路径: {value: showWarning, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     157ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     157ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.error} @ http://localhost:8084/hetuimini.js:610
+[     157ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     157ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     157ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     158ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     158ms] [LOG] getValueByPath 访问属性: {index: 0, path: showWarning, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     158ms] [LOG] getValueByPath 属性值: {index: 0, path: showWarning, value: true} @ http://localhost:8084/hetuimini.js:1491
+[     158ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: true} @ http://localhost:8084/hetuimini.js:1493
+[     158ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: true, type: boolean} @ http://localhost:8084/hetuimini.js:1317
+[     158ms] [LOG] bindIf 条件为真，显示元素 @ http://localhost:8084/hetuimini.js:1320
+[     158ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     158ms] [LOG] Directive.parse 开始解析: {name: if:, value: hideInfo} @ http://localhost:8084/hetuimini.js:557
+[     158ms] [LOG] Directive.parse 简单路径: {value: hideInfo, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     159ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     159ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     159ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     159ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     159ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     159ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     159ms] [LOG] getValueByPath 访问属性: {index: 0, path: hideInfo, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     160ms] [LOG] getValueByPath 属性值: {index: 0, path: hideInfo, value: false} @ http://localhost:8084/hetuimini.js:1491
+[     160ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: false} @ http://localhost:8084/hetuimini.js:1493
+[     160ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: false, type: boolean} @ http://localhost:8084/hetuimini.js:1317
+[     160ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328
+[     160ms] [LOG] bindIf element 已不在 DOM 中 @ http://localhost:8084/hetuimini.js:1331
+[     160ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     160ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleWarning} @ http://localhost:8084/hetuimini.js:557
+[     160ms] [LOG] Directive.parse 简单路径: {value: toggleWarning, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     161ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     161ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     161ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleInfo} @ http://localhost:8084/hetuimini.js:557
+[     161ms] [LOG] Directive.parse 简单路径: {value: toggleInfo, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     161ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     161ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     161ms] [LOG] Directive.parse 开始解析: {name: show:, value: isVisible} @ http://localhost:8084/hetuimini.js:557
+[     162ms] [LOG] Directive.parse 简单路径: {value: isVisible, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     162ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     162ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.success} @ http://localhost:8084/hetuimini.js:610
+[     162ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     162ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     162ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     162ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     163ms] [LOG] getValueByPath 访问属性: {index: 0, path: isVisible, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     163ms] [LOG] getValueByPath 属性值: {index: 0, path: isVisible, value: true} @ http://localhost:8084/hetuimini.js:1491
+[     163ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: true} @ http://localhost:8084/hetuimini.js:1493
+[     163ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: true, type: boolean} @ http://localhost:8084/hetuimini.js:1360
+[     163ms] [LOG] bindShow 设置 display: {value: true, display: } @ http://localhost:8084/hetuimini.js:1361
+[     163ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     163ms] [LOG] Directive.parse 开始解析: {name: show:, value: isHidden} @ http://localhost:8084/hetuimini.js:557
+[     164ms] [LOG] Directive.parse 简单路径: {value: isHidden, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     164ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     164ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     164ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     164ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     164ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     164ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     165ms] [LOG] getValueByPath 访问属性: {index: 0, path: isHidden, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     165ms] [LOG] getValueByPath 属性值: {index: 0, path: isHidden, value: false} @ http://localhost:8084/hetuimini.js:1491
+[     165ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: false} @ http://localhost:8084/hetuimini.js:1493
+[     165ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: false, type: boolean} @ http://localhost:8084/hetuimini.js:1360
+[     165ms] [LOG] bindShow 设置 display: {value: false, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     165ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     165ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleVisible} @ http://localhost:8084/hetuimini.js:557
+[     166ms] [LOG] Directive.parse 简单路径: {value: toggleVisible, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     166ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     166ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     166ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleHidden} @ http://localhost:8084/hetuimini.js:557
+[     166ms] [LOG] Directive.parse 简单路径: {value: toggleHidden, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     166ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     166ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     167ms] [LOG] Directive.parse 开始解析: {name: foreach:, value: user:contacts} @ http://localhost:8084/hetuimini.js:557
+[     167ms] [LOG] Directive.parse 冒号分隔路径: {value: user:contacts, path: Array(2)} @ http://localhost:8084/hetuimini.js:591
+[     167ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     167ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: li} @ http://localhost:8084/hetuimini.js:610
+[     167ms] [LOG] bindForeach 初始化: {directive: Object, fieldPath: Array(2), data: Object} @ http://localhost:8084/hetuimini.js:1073
+[     167ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindFor… updateFn 执行:', { fieldPath: fieldPath });
+  ...} @ http://localhost:8084/hetuimini.js:298
+[     167ms] [LOG] bindForeach updateFn 执行: {fieldPath: Array(2)} @ http://localhost:8084/hetuimini.js:1087
+[     168ms] [LOG] getValueByPath 调用: {path: Array(2), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     168ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     168ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     168ms] [LOG] getValueByPath 访问属性: {index: 1, path: contacts, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     168ms] [LOG] getValueByPath 属性值: {index: 1, path: contacts, value: Array(2)} @ http://localhost:8084/hetuimini.js:1491
+[     168ms] [LOG] getValueByPath 最终结果: {path: Array(2), result: Array(2)} @ http://localhost:8084/hetuimini.js:1493
+[     168ms] [LOG] bindForeach 获取数组: {fieldPath: Array(2), items: Array(2), isArray: true} @ http://localhost:8084/hetuimini.js:1089
+[     168ms] [LOG] bindForeach 开始循环，数组长度: 2 @ http://localhost:8084/hetuimini.js:1104
+[     169ms] [LOG] bindForeach 处理项: {index: 0, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     169ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     169ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     169ms] [LOG] 响应式 getter 访问: {key: name, value: 张三, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     169ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     169ms] [LOG] bindForeach 添加属性: {key: name, value: 张三} @ http://localhost:8084/hetuimini.js:1130
+[     170ms] [LOG] 响应式 getter 访问: {key: name, value: 张三, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     170ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     170ms] [LOG] 响应式 getter 访问: {key: email, value: zhangsan@example.com, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     170ms] [LOG] 响应式 getter 收集依赖: {key: email, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     170ms] [LOG] bindForeach 添加属性: {key: email, value: zhangsan@example.com} @ http://localhost:8084/hetuimini.js:1130
+[     170ms] [LOG] 响应式 getter 访问: {key: email, value: zhangsan@example.com, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     170ms] [LOG] 响应式 getter 收集依赖: {key: email, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     171ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     171ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     171ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     171ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     171ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     171ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     172ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     172ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     172ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     172ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     172ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     172ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     172ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     173ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     173ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     173ms] [LOG] bindForeach 绑定子指令: {name: :text, value: email} @ http://localhost:8084/hetuimini.js:1151
+[     173ms] [LOG] Directive.parse 开始解析: {name: :text, value: email} @ http://localhost:8084/hetuimini.js:557
+[     173ms] [LOG] Directive.parse 简单路径: {value: email, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     173ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     173ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     173ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     174ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     174ms] [LOG] bindForeach 处理项: {index: 1, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     174ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     174ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     174ms] [LOG] 响应式 getter 访问: {key: name, value: 李四, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     174ms] [LOG] bindForeach 添加属性: {key: name, value: 李四} @ http://localhost:8084/hetuimini.js:1130
+[     174ms] [LOG] 响应式 getter 访问: {key: name, value: 李四, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     175ms] [LOG] 响应式 getter 访问: {key: email, value: lisi@example.com, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     175ms] [LOG] bindForeach 添加属性: {key: email, value: lisi@example.com} @ http://localhost:8084/hetuimini.js:1130
+[     175ms] [LOG] 响应式 getter 访问: {key: email, value: lisi@example.com, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     175ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     175ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     175ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     175ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     176ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     176ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     176ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     176ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     176ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     176ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     176ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     176ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     176ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     176ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     177ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     177ms] [LOG] bindForeach 绑定子指令: {name: :text, value: email} @ http://localhost:8084/hetuimini.js:1151
+[     177ms] [LOG] Directive.parse 开始解析: {name: :text, value: email} @ http://localhost:8084/hetuimini.js:557
+[     177ms] [LOG] Directive.parse 简单路径: {value: email, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     177ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     177ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     177ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     177ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     177ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     177ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     178ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     178ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     178ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     178ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     178ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     178ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     178ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     179ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     179ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     179ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     179ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     179ms] [LOG] Directive.parse 开始解析: {name: :text, value: email} @ http://localhost:8084/hetuimini.js:557
+[     179ms] [LOG] Directive.parse 简单路径: {value: email, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     179ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     180ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     180ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     180ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     180ms] [LOG] Directive.parse 开始解析: {name: if:, value: user:settings:showAdvanced} @ http://localhost:8084/hetuimini.js:557
+[     180ms] [LOG] Directive.parse 冒号分隔路径: {value: user:settings:showAdvanced, path: Array(3)} @ http://localhost:8084/hetuimini.js:591
+[     180ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     181ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     181ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(3), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     181ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     181ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(3)} @ http://localhost:8084/hetuimini.js:1315
+[     181ms] [LOG] getValueByPath 调用: {path: Array(3), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     181ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     181ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     182ms] [LOG] getValueByPath 访问属性: {index: 1, path: settings, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     182ms] [LOG] getValueByPath 属性值: {index: 1, path: settings, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     182ms] [LOG] getValueByPath 访问属性: {index: 2, path: showAdvanced, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     182ms] [LOG] getValueByPath 属性值: {index: 2, path: showAdvanced, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     182ms] [LOG] getValueByPath 最终结果: {path: Array(3), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     182ms] [LOG] bindIf 获取值: {fieldPath: Array(3), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1317
+[     182ms] [LOG] bindIf 条件为真，显示元素 @ http://localhost:8084/hetuimini.js:1320
+[     183ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     183ms] [LOG] Directive.parse 开始解析: {name: if:, value: user:permissions:canEdit} @ http://localhost:8084/hetuimini.js:557
+[     183ms] [LOG] Directive.parse 冒号分隔路径: {value: user:permissions:canEdit, path: Array(3)} @ http://localhost:8084/hetuimini.js:591
+[     183ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     183ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.success} @ http://localhost:8084/hetuimini.js:610
+[     184ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(3), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     184ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     184ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(3)} @ http://localhost:8084/hetuimini.js:1315
+[     184ms] [LOG] getValueByPath 调用: {path: Array(3), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     184ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     184ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     184ms] [LOG] getValueByPath 访问属性: {index: 1, path: permissions, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     185ms] [LOG] getValueByPath 属性值: {index: 1, path: permissions, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     185ms] [LOG] getValueByPath 访问属性: {index: 2, path: canEdit, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     185ms] [LOG] getValueByPath 属性值: {index: 2, path: canEdit, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     185ms] [LOG] getValueByPath 最终结果: {path: Array(3), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     185ms] [LOG] bindIf 获取值: {fieldPath: Array(3), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1317
+[     185ms] [LOG] bindIf 条件为真，显示元素 @ http://localhost:8084/hetuimini.js:1320
+[     186ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     186ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleAdvanced} @ http://localhost:8084/hetuimini.js:557
+[     186ms] [LOG] Directive.parse 简单路径: {value: toggleAdvanced, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     186ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     186ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     186ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleEditPermission} @ http://localhost:8084/hetuimini.js:557
+[     186ms] [LOG] Directive.parse 简单路径: {value: toggleEditPermission, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     187ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     187ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     187ms] [LOG] Directive.parse 开始解析: {name: show:, value: user:profile:isPublic} @ http://localhost:8084/hetuimini.js:557
+[     187ms] [LOG] Directive.parse 冒号分隔路径: {value: user:profile:isPublic, path: Array(3)} @ http://localhost:8084/hetuimini.js:591
+[     187ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     187ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.success} @ http://localhost:8084/hetuimini.js:610
+[     187ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(3), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     188ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     188ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(3)} @ http://localhost:8084/hetuimini.js:1358
+[     188ms] [LOG] getValueByPath 调用: {path: Array(3), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     188ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     188ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     188ms] [LOG] getValueByPath 访问属性: {index: 1, path: profile, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     189ms] [LOG] getValueByPath 属性值: {index: 1, path: profile, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     189ms] [LOG] getValueByPath 访问属性: {index: 2, path: isPublic, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     189ms] [LOG] getValueByPath 属性值: {index: 2, path: isPublic, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     189ms] [LOG] getValueByPath 最终结果: {path: Array(3), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     189ms] [LOG] bindShow 获取值: {fieldPath: Array(3), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1360
+[     189ms] [LOG] bindShow 设置 display: {value: Object, display: } @ http://localhost:8084/hetuimini.js:1361
+[     190ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     190ms] [LOG] Directive.parse 开始解析: {name: show:, value: user:profile:showEmail} @ http://localhost:8084/hetuimini.js:557
+[     190ms] [LOG] Directive.parse 冒号分隔路径: {value: user:profile:showEmail, path: Array(3)} @ http://localhost:8084/hetuimini.js:591
+[     190ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     190ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     190ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(3), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     190ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     190ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(3)} @ http://localhost:8084/hetuimini.js:1358
+[     191ms] [LOG] getValueByPath 调用: {path: Array(3), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     191ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     191ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     191ms] [LOG] getValueByPath 访问属性: {index: 1, path: profile, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     191ms] [LOG] getValueByPath 属性值: {index: 1, path: profile, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     191ms] [LOG] getValueByPath 访问属性: {index: 2, path: showEmail, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     191ms] [LOG] getValueByPath 属性值: {index: 2, path: showEmail, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     191ms] [LOG] getValueByPath 最终结果: {path: Array(3), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     192ms] [LOG] bindShow 获取值: {fieldPath: Array(3), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1360
+[     192ms] [LOG] bindShow 设置 display: {value: Object, display: } @ http://localhost:8084/hetuimini.js:1361
+[     192ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     192ms] [LOG] Directive.parse 开始解析: {name: @click, value: togglePublic} @ http://localhost:8084/hetuimini.js:557
+[     192ms] [LOG] Directive.parse 简单路径: {value: togglePublic, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     192ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     192ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     192ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleShowEmail} @ http://localhost:8084/hetuimini.js:557
+[     192ms] [LOG] Directive.parse 简单路径: {value: toggleShowEmail, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     193ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     193ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     193ms] [LOG] Directive.parse 开始解析: {name: foreach:, value: filteredUsers} @ http://localhost:8084/hetuimini.js:557
+[     193ms] [LOG] Directive.parse 简单路径: {value: filteredUsers, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     193ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     193ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: li} @ http://localhost:8084/hetuimini.js:610
+[     193ms] [LOG] bindForeach 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1073
+[     194ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindFor… updateFn 执行:', { fieldPath: fieldPath });
+  ...} @ http://localhost:8084/hetuimini.js:298
+[     194ms] [LOG] bindForeach updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1087
+[     194ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     194ms] [LOG] getValueByPath 访问属性: {index: 0, path: filteredUsers, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     194ms] [LOG] getValueByPath 属性值: {index: 0, path: filteredUsers, value: Array(3)} @ http://localhost:8084/hetuimini.js:1491
+[     194ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: Array(3)} @ http://localhost:8084/hetuimini.js:1493
+[     194ms] [LOG] bindForeach 获取数组: {fieldPath: Array(1), items: Array(3), isArray: true} @ http://localhost:8084/hetuimini.js:1089
+[     195ms] [LOG] bindForeach 开始循环，数组长度: 3 @ http://localhost:8084/hetuimini.js:1104
+[     195ms] [LOG] bindForeach 处理项: {index: 0, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     195ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     195ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     195ms] [LOG] 响应式 getter 访问: {key: name, value: 张三, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     195ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     195ms] [LOG] bindForeach 添加属性: {key: name, value: 张三} @ http://localhost:8084/hetuimini.js:1130
+[     196ms] [LOG] 响应式 getter 访问: {key: name, value: 张三, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     196ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     196ms] [LOG] 响应式 getter 访问: {key: isActive, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     196ms] [LOG] 响应式 getter 收集依赖: {key: isActive, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     196ms] [LOG] bindForeach 添加属性: {key: isActive, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     196ms] [LOG] 响应式 getter 访问: {key: isActive, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     197ms] [LOG] 响应式 getter 收集依赖: {key: isActive, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     197ms] [LOG] 响应式 getter 访问: {key: isVIP, value: false, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     197ms] [LOG] 响应式 getter 收集依赖: {key: isVIP, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     197ms] [LOG] bindForeach 添加属性: {key: isVIP, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     197ms] [LOG] 响应式 getter 访问: {key: isVIP, value: false, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     197ms] [LOG] 响应式 getter 收集依赖: {key: isVIP, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     197ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     198ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     198ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     198ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     198ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     198ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     198ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     198ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     198ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     199ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     199ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     199ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     199ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     199ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     199ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     199ms] [LOG] bindForeach 处理项: {index: 1, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     200ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     200ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     200ms] [LOG] 响应式 getter 访问: {key: name, value: 李四, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     200ms] [LOG] bindForeach 添加属性: {key: name, value: 李四} @ http://localhost:8084/hetuimini.js:1130
+[     200ms] [LOG] 响应式 getter 访问: {key: name, value: 李四, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     200ms] [LOG] 响应式 getter 访问: {key: isActive, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     200ms] [LOG] bindForeach 添加属性: {key: isActive, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     201ms] [LOG] 响应式 getter 访问: {key: isActive, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     201ms] [LOG] 响应式 getter 访问: {key: isVIP, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     201ms] [LOG] bindForeach 添加属性: {key: isVIP, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     201ms] [LOG] 响应式 getter 访问: {key: isVIP, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     201ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     203ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     203ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     203ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     204ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     204ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     204ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     204ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     204ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     204ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     205ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     205ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     205ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     205ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     205ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     205ms] [LOG] bindForeach 处理项: {index: 2, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     206ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     206ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     206ms] [LOG] 响应式 getter 访问: {key: name, value: 王五, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     206ms] [LOG] bindForeach 添加属性: {key: name, value: 王五} @ http://localhost:8084/hetuimini.js:1130
+[     206ms] [LOG] 响应式 getter 访问: {key: name, value: 王五, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     206ms] [LOG] 响应式 getter 访问: {key: isActive, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     206ms] [LOG] bindForeach 添加属性: {key: isActive, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     207ms] [LOG] 响应式 getter 访问: {key: isActive, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     207ms] [LOG] 响应式 getter 访问: {key: isVIP, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     207ms] [LOG] bindForeach 添加属性: {key: isVIP, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     207ms] [LOG] 响应式 getter 访问: {key: isVIP, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     207ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     207ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     207ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     207ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     208ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     208ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     208ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     208ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     208ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     208ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     209ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     209ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     209ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     209ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     209ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     209ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     209ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     209ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     210ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     210ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     210ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     210ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     210ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     210ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     210ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     210ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     211ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     211ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     211ms] [LOG] Directive.parse 开始解析: {name: if:, value: isActive} @ http://localhost:8084/hetuimini.js:557
+[     211ms] [LOG] Directive.parse 简单路径: {value: isActive, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     211ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     211ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.success} @ http://localhost:8084/hetuimini.js:610
+[     211ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     211ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     212ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     212ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     212ms] [LOG] getValueByPath 访问属性: {index: 0, path: isActive, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     212ms] [LOG] getValueByPath 属性值: {index: 0, path: isActive, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     212ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     212ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1317
+[     212ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328
+[     213ms] [LOG] bindIf element 已不在 DOM 中 @ http://localhost:8084/hetuimini.js:1331
+[     213ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     213ms] [LOG] Directive.parse 开始解析: {name: if:, value: isVIP} @ http://localhost:8084/hetuimini.js:557
+[     213ms] [LOG] Directive.parse 简单路径: {value: isVIP, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     213ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     213ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.info} @ http://localhost:8084/hetuimini.js:610
+[     213ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     213ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     213ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     214ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     214ms] [LOG] getValueByPath 访问属性: {index: 0, path: isVIP, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     214ms] [LOG] getValueByPath 属性值: {index: 0, path: isVIP, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     214ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     214ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1317
+[     214ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328
+[     214ms] [LOG] bindIf element 已不在 DOM 中 @ http://localhost:8084/hetuimini.js:1331
+[     214ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     214ms] [LOG] Directive.parse 开始解析: {name: foreach:, value: products} @ http://localhost:8084/hetuimini.js:557
+[     214ms] [LOG] Directive.parse 简单路径: {value: products, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     215ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     215ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: li} @ http://localhost:8084/hetuimini.js:610
+[     215ms] [LOG] bindForeach 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1073
+[     215ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindFor… updateFn 执行:', { fieldPath: fieldPath });
+  ...} @ http://localhost:8084/hetuimini.js:298
+[     215ms] [LOG] bindForeach updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1087
+[     216ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     216ms] [LOG] getValueByPath 访问属性: {index: 0, path: products, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     216ms] [LOG] getValueByPath 属性值: {index: 0, path: products, value: Array(3)} @ http://localhost:8084/hetuimini.js:1491
+[     216ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: Array(3)} @ http://localhost:8084/hetuimini.js:1493
+[     216ms] [LOG] bindForeach 获取数组: {fieldPath: Array(1), items: Array(3), isArray: true} @ http://localhost:8084/hetuimini.js:1089
+[     217ms] [LOG] bindForeach 开始循环，数组长度: 3 @ http://localhost:8084/hetuimini.js:1104
+[     217ms] [LOG] bindForeach 处理项: {index: 0, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     217ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     217ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     217ms] [LOG] 响应式 getter 访问: {key: name, value: 商品A, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     218ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     218ms] [LOG] bindForeach 添加属性: {key: name, value: 商品A} @ http://localhost:8084/hetuimini.js:1130
+[     218ms] [LOG] 响应式 getter 访问: {key: name, value: 商品A, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     218ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     218ms] [LOG] 响应式 getter 访问: {key: price, value: 100, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     218ms] [LOG] 响应式 getter 收集依赖: {key: price, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     219ms] [LOG] bindForeach 添加属性: {key: price, value: 100} @ http://localhost:8084/hetuimini.js:1130
+[     219ms] [LOG] 响应式 getter 访问: {key: price, value: 100, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     219ms] [LOG] 响应式 getter 收集依赖: {key: price, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     219ms] [LOG] 响应式 getter 访问: {key: inStock, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     220ms] [LOG] 响应式 getter 收集依赖: {key: inStock, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     220ms] [LOG] bindForeach 添加属性: {key: inStock, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     220ms] [LOG] 响应式 getter 访问: {key: inStock, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     220ms] [LOG] 响应式 getter 收集依赖: {key: inStock, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     221ms] [LOG] 响应式 getter 访问: {key: isOnSale, value: false, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     221ms] [LOG] 响应式 getter 收集依赖: {key: isOnSale, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     221ms] [LOG] bindForeach 添加属性: {key: isOnSale, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     221ms] [LOG] 响应式 getter 访问: {key: isOnSale, value: false, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     221ms] [LOG] 响应式 getter 收集依赖: {key: isOnSale, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     221ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     222ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     222ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     222ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     223ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     223ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     223ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     223ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     224ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     224ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     224ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     224ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     225ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     225ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     225ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     225ms] [LOG] bindForeach 绑定子指令: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:1151
+[     225ms] [LOG] Directive.parse 开始解析: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:557
+[     226ms] [LOG] Directive.parse 简单路径: {value: price, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     226ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     226ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     227ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     227ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     227ms] [LOG] bindForeach 处理项: {index: 1, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     228ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     229ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     229ms] [LOG] 响应式 getter 访问: {key: name, value: 商品B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     229ms] [LOG] bindForeach 添加属性: {key: name, value: 商品B} @ http://localhost:8084/hetuimini.js:1130
+[     229ms] [LOG] 响应式 getter 访问: {key: name, value: 商品B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     229ms] [LOG] 响应式 getter 访问: {key: price, value: 200, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     229ms] [LOG] bindForeach 添加属性: {key: price, value: 200} @ http://localhost:8084/hetuimini.js:1130
+[     230ms] [LOG] 响应式 getter 访问: {key: price, value: 200, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     230ms] [LOG] 响应式 getter 访问: {key: inStock, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     230ms] [LOG] bindForeach 添加属性: {key: inStock, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     230ms] [LOG] 响应式 getter 访问: {key: inStock, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     230ms] [LOG] 响应式 getter 访问: {key: isOnSale, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     230ms] [LOG] bindForeach 添加属性: {key: isOnSale, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     230ms] [LOG] 响应式 getter 访问: {key: isOnSale, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     231ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     231ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     231ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     231ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     231ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     231ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     232ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     232ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     232ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     232ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     232ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     232ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     232ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     233ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     233ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     233ms] [LOG] bindForeach 绑定子指令: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:1151
+[     233ms] [LOG] Directive.parse 开始解析: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:557
+[     233ms] [LOG] Directive.parse 简单路径: {value: price, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     233ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     233ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     233ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     234ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     234ms] [LOG] bindForeach 处理项: {index: 2, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     234ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     234ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     234ms] [LOG] 响应式 getter 访问: {key: name, value: 商品C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     234ms] [LOG] bindForeach 添加属性: {key: name, value: 商品C} @ http://localhost:8084/hetuimini.js:1130
+[     235ms] [LOG] 响应式 getter 访问: {key: name, value: 商品C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     235ms] [LOG] 响应式 getter 访问: {key: price, value: 150, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     235ms] [LOG] bindForeach 添加属性: {key: price, value: 150} @ http://localhost:8084/hetuimini.js:1130
+[     235ms] [LOG] 响应式 getter 访问: {key: price, value: 150, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     235ms] [LOG] 响应式 getter 访问: {key: inStock, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     235ms] [LOG] bindForeach 添加属性: {key: inStock, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     235ms] [LOG] 响应式 getter 访问: {key: inStock, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     236ms] [LOG] 响应式 getter 访问: {key: isOnSale, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     236ms] [LOG] bindForeach 添加属性: {key: isOnSale, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     236ms] [LOG] 响应式 getter 访问: {key: isOnSale, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     236ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     237ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     237ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     237ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     237ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     237ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     238ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     238ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     238ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     238ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     238ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     238ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     239ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     239ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     239ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     239ms] [LOG] bindForeach 绑定子指令: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:1151
+[     239ms] [LOG] Directive.parse 开始解析: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:557
+[     239ms] [LOG] Directive.parse 简单路径: {value: price, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     240ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     240ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     240ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     240ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     240ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     240ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     240ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     240ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     240ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     241ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     241ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     241ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     241ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     241ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     241ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     241ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     241ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     241ms] [LOG] Directive.parse 开始解析: {name: :text, value: price} @ http://localhost:8084/hetuimini.js:557
+[     241ms] [LOG] Directive.parse 简单路径: {value: price, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     242ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     242ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     242ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     242ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     242ms] [LOG] Directive.parse 开始解析: {name: show:, value: inStock} @ http://localhost:8084/hetuimini.js:557
+[     242ms] [LOG] Directive.parse 简单路径: {value: inStock, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     242ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     242ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.success} @ http://localhost:8084/hetuimini.js:610
+[     242ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     243ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     243ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     243ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     243ms] [LOG] getValueByPath 访问属性: {index: 0, path: inStock, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     243ms] [LOG] getValueByPath 属性值: {index: 0, path: inStock, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     243ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     244ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     244ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     244ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     244ms] [LOG] Directive.parse 开始解析: {name: show:, value: isOnSale} @ http://localhost:8084/hetuimini.js:557
+[     244ms] [LOG] Directive.parse 简单路径: {value: isOnSale, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     244ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     244ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.error} @ http://localhost:8084/hetuimini.js:610
+[     245ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     245ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     245ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     245ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     245ms] [LOG] getValueByPath 访问属性: {index: 0, path: isOnSale, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     245ms] [LOG] getValueByPath 属性值: {index: 0, path: isOnSale, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     245ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     246ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     246ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     246ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     246ms] [LOG] Directive.parse 开始解析: {name: if:, value: showNotification} @ http://localhost:8084/hetuimini.js:557
+[     246ms] [LOG] Directive.parse 简单路径: {value: showNotification, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     246ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     246ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     246ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     246ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     247ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     247ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     247ms] [LOG] getValueByPath 访问属性: {index: 0, path: showNotification, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     247ms] [LOG] getValueByPath 属性值: {index: 0, path: showNotification, value: false} @ http://localhost:8084/hetuimini.js:1491
+[     247ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: false} @ http://localhost:8084/hetuimini.js:1493
+[     247ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: false, type: boolean} @ http://localhost:8084/hetuimini.js:1317
+[     247ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328
+[     248ms] [LOG] bindIf element 已不在 DOM 中 @ http://localhost:8084/hetuimini.js:1331
+[     248ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     248ms] [LOG] Directive.parse 开始解析: {name: show:, value: notificationType === 'success'} @ http://localhost:8084/hetuimini.js:557
+[     248ms] [LOG] Directive.parse 简单路径: {value: notificationType === 'success', path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     248ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     248ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.success} @ http://localhost:8084/hetuimini.js:610
+[     248ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     248ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     248ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     249ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     249ms] [LOG] getValueByPath 访问属性: {index: 0, path: notificationType === 'success', currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     249ms] [LOG] getValueByPath 属性值: {index: 0, path: notificationType === 'success', value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     249ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     249ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     249ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     249ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     250ms] [LOG] Directive.parse 开始解析: {name: show:, value: notificationType === 'error'} @ http://localhost:8084/hetuimini.js:557
+[     250ms] [LOG] Directive.parse 简单路径: {value: notificationType === 'error', path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     250ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     250ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.error} @ http://localhost:8084/hetuimini.js:610
+[     250ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     250ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     250ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     250ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     250ms] [LOG] getValueByPath 访问属性: {index: 0, path: notificationType === 'error', currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     251ms] [LOG] getValueByPath 属性值: {index: 0, path: notificationType === 'error', value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     251ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     251ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     251ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     251ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     251ms] [LOG] Directive.parse 开始解析: {name: show:, value: notificationType === 'warning'} @ http://localhost:8084/hetuimini.js:557
+[     251ms] [LOG] Directive.parse 简单路径: {value: notificationType === 'warning', path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     251ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     251ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.error} @ http://localhost:8084/hetuimini.js:610
+[     252ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     252ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     252ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     252ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     252ms] [LOG] getValueByPath 访问属性: {index: 0, path: notificationType === 'warning', currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     252ms] [LOG] getValueByPath 属性值: {index: 0, path: notificationType === 'warning', value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     252ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     252ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     252ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     253ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     253ms] [LOG] Directive.parse 开始解析: {name: @click, value: showSuccessNotification} @ http://localhost:8084/hetuimini.js:557
+[     253ms] [LOG] Directive.parse 简单路径: {value: showSuccessNotification, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     253ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     253ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     253ms] [LOG] Directive.parse 开始解析: {name: @click, value: showErrorNotification} @ http://localhost:8084/hetuimini.js:557
+[     253ms] [LOG] Directive.parse 简单路径: {value: showErrorNotification, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     253ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     253ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     254ms] [LOG] Directive.parse 开始解析: {name: @click, value: showWarningNotification} @ http://localhost:8084/hetuimini.js:557
+[     254ms] [LOG] Directive.parse 简单路径: {value: showWarningNotification, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     254ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     254ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     254ms] [LOG] Directive.parse 开始解析: {name: @click, value: hideNotification} @ http://localhost:8084/hetuimini.js:557
+[     254ms] [LOG] Directive.parse 简单路径: {value: hideNotification, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     254ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     254ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     254ms] [LOG] Directive.parse 开始解析: {name: if:, value: company:departments:engineering:isActive} @ http://localhost:8084/hetuimini.js:557
+[     254ms] [LOG] Directive.parse 冒号分隔路径: {value: company:departments:engineering:isActive, path: Array(4)} @ http://localhost:8084/hetuimini.js:591
+[     255ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     255ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.success} @ http://localhost:8084/hetuimini.js:610
+[     255ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(4), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     255ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     255ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(4)} @ http://localhost:8084/hetuimini.js:1315
+[     255ms] [LOG] getValueByPath 调用: {path: Array(4), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     256ms] [LOG] getValueByPath 访问属性: {index: 0, path: company, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     256ms] [LOG] getValueByPath 属性值: {index: 0, path: company, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     256ms] [LOG] getValueByPath 访问属性: {index: 1, path: departments, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     256ms] [LOG] getValueByPath 属性值: {index: 1, path: departments, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     256ms] [LOG] getValueByPath 访问属性: {index: 2, path: engineering, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     256ms] [LOG] getValueByPath 属性值: {index: 2, path: engineering, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     256ms] [LOG] getValueByPath 访问属性: {index: 3, path: isActive, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     256ms] [LOG] getValueByPath 属性值: {index: 3, path: isActive, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     256ms] [LOG] getValueByPath 最终结果: {path: Array(4), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     257ms] [LOG] bindIf 获取值: {fieldPath: Array(4), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1317
+[     257ms] [LOG] bindIf 条件为真，显示元素 @ http://localhost:8084/hetuimini.js:1320
+[     257ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     257ms] [LOG] Directive.parse 开始解析: {name: show:, value: company:departments:engineering:showProjects} @ http://localhost:8084/hetuimini.js:557
+[     257ms] [LOG] Directive.parse 冒号分隔路径: {value: company:departments:engineering:showProjects, path: Array(4)} @ http://localhost:8084/hetuimini.js:591
+[     257ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     257ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     257ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(4), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     257ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     257ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(4)} @ http://localhost:8084/hetuimini.js:1358
+[     257ms] [LOG] getValueByPath 调用: {path: Array(4), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     258ms] [LOG] getValueByPath 访问属性: {index: 0, path: company, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     258ms] [LOG] getValueByPath 属性值: {index: 0, path: company, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     258ms] [LOG] getValueByPath 访问属性: {index: 1, path: departments, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     258ms] [LOG] getValueByPath 属性值: {index: 1, path: departments, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     258ms] [LOG] getValueByPath 访问属性: {index: 2, path: engineering, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     258ms] [LOG] getValueByPath 属性值: {index: 2, path: engineering, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     258ms] [LOG] getValueByPath 访问属性: {index: 3, path: showProjects, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     258ms] [LOG] getValueByPath 属性值: {index: 3, path: showProjects, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     258ms] [LOG] getValueByPath 最终结果: {path: Array(4), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     259ms] [LOG] bindShow 获取值: {fieldPath: Array(4), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1360
+[     259ms] [LOG] bindShow 设置 display: {value: Object, display: } @ http://localhost:8084/hetuimini.js:1361
+[     259ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     259ms] [LOG] Directive.parse 开始解析: {name: foreach:, value: company:departments:engineering:projects} @ http://localhost:8084/hetuimini.js:557
+[     259ms] [LOG] Directive.parse 冒号分隔路径: {value: company:departments:engineering:projects, path: Array(4)} @ http://localhost:8084/hetuimini.js:591
+[     259ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     259ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: li} @ http://localhost:8084/hetuimini.js:610
+[     259ms] [LOG] bindForeach 初始化: {directive: Object, fieldPath: Array(4), data: Object} @ http://localhost:8084/hetuimini.js:1073
+[     260ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindFor… updateFn 执行:', { fieldPath: fieldPath });
+  ...} @ http://localhost:8084/hetuimini.js:298
+[     260ms] [LOG] bindForeach updateFn 执行: {fieldPath: Array(4)} @ http://localhost:8084/hetuimini.js:1087
+[     260ms] [LOG] getValueByPath 调用: {path: Array(4), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     260ms] [LOG] getValueByPath 访问属性: {index: 0, path: company, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     260ms] [LOG] getValueByPath 属性值: {index: 0, path: company, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     261ms] [LOG] getValueByPath 访问属性: {index: 1, path: departments, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     261ms] [LOG] getValueByPath 属性值: {index: 1, path: departments, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     261ms] [LOG] getValueByPath 访问属性: {index: 2, path: engineering, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     261ms] [LOG] getValueByPath 属性值: {index: 2, path: engineering, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     261ms] [LOG] getValueByPath 访问属性: {index: 3, path: projects, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     261ms] [LOG] getValueByPath 属性值: {index: 3, path: projects, value: Array(3)} @ http://localhost:8084/hetuimini.js:1491
+[     261ms] [LOG] getValueByPath 最终结果: {path: Array(4), result: Array(3)} @ http://localhost:8084/hetuimini.js:1493
+[     262ms] [LOG] bindForeach 获取数组: {fieldPath: Array(4), items: Array(3), isArray: true} @ http://localhost:8084/hetuimini.js:1089
+[     262ms] [LOG] bindForeach 开始循环，数组长度: 3 @ http://localhost:8084/hetuimini.js:1104
+[     262ms] [LOG] bindForeach 处理项: {index: 0, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     262ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     262ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     262ms] [LOG] 响应式 getter 访问: {key: name, value: 项目A, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     263ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     263ms] [LOG] bindForeach 添加属性: {key: name, value: 项目A} @ http://localhost:8084/hetuimini.js:1130
+[     263ms] [LOG] 响应式 getter 访问: {key: name, value: 项目A, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     263ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     263ms] [LOG] 响应式 getter 访问: {key: status, value: 进行中, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     263ms] [LOG] 响应式 getter 收集依赖: {key: status, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     264ms] [LOG] bindForeach 添加属性: {key: status, value: 进行中} @ http://localhost:8084/hetuimini.js:1130
+[     264ms] [LOG] 响应式 getter 访问: {key: status, value: 进行中, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     264ms] [LOG] 响应式 getter 收集依赖: {key: status, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     264ms] [LOG] 响应式 getter 访问: {key: isCritical, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     264ms] [LOG] 响应式 getter 收集依赖: {key: isCritical, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     264ms] [LOG] bindForeach 添加属性: {key: isCritical, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     265ms] [LOG] 响应式 getter 访问: {key: isCritical, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     265ms] [LOG] 响应式 getter 收集依赖: {key: isCritical, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     265ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     265ms] [LOG] 响应式 getter 收集依赖: {key: isPublic, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     265ms] [LOG] bindForeach 添加属性: {key: isPublic, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     265ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     265ms] [LOG] 响应式 getter 收集依赖: {key: isPublic, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     266ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     266ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     266ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     266ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     267ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     267ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     267ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     267ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     267ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     267ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     268ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     268ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     268ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     268ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     268ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     269ms] [LOG] bindForeach 绑定子指令: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:1151
+[     269ms] [LOG] Directive.parse 开始解析: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:557
+[     269ms] [LOG] Directive.parse 简单路径: {value: status, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     269ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     269ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     270ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     270ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     270ms] [LOG] bindForeach 处理项: {index: 1, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     271ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     271ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     271ms] [LOG] 响应式 getter 访问: {key: name, value: 项目B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     271ms] [LOG] bindForeach 添加属性: {key: name, value: 项目B} @ http://localhost:8084/hetuimini.js:1130
+[     271ms] [LOG] 响应式 getter 访问: {key: name, value: 项目B, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     271ms] [LOG] 响应式 getter 访问: {key: status, value: 已完成, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     271ms] [LOG] bindForeach 添加属性: {key: status, value: 已完成} @ http://localhost:8084/hetuimini.js:1130
+[     272ms] [LOG] 响应式 getter 访问: {key: status, value: 已完成, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     272ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     272ms] [LOG] bindForeach 添加属性: {key: isCritical, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     272ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     272ms] [LOG] 响应式 getter 访问: {key: isPublic, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     272ms] [LOG] bindForeach 添加属性: {key: isPublic, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     273ms] [LOG] 响应式 getter 访问: {key: isPublic, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     273ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     273ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     273ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     273ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     274ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     274ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     274ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     274ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     274ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     274ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     274ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     275ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     275ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     275ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     275ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     275ms] [LOG] bindForeach 绑定子指令: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:1151
+[     275ms] [LOG] Directive.parse 开始解析: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:557
+[     275ms] [LOG] Directive.parse 简单路径: {value: status, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     276ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     276ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     276ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     276ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     276ms] [LOG] bindForeach 处理项: {index: 2, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     276ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     276ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     277ms] [LOG] 响应式 getter 访问: {key: name, value: 项目C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     277ms] [LOG] bindForeach 添加属性: {key: name, value: 项目C} @ http://localhost:8084/hetuimini.js:1130
+[     277ms] [LOG] 响应式 getter 访问: {key: name, value: 项目C, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     277ms] [LOG] 响应式 getter 访问: {key: status, value: 规划中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     277ms] [LOG] bindForeach 添加属性: {key: status, value: 规划中} @ http://localhost:8084/hetuimini.js:1130
+[     277ms] [LOG] 响应式 getter 访问: {key: status, value: 规划中, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     277ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     278ms] [LOG] bindForeach 添加属性: {key: isCritical, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     278ms] [LOG] 响应式 getter 访问: {key: isCritical, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     278ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     278ms] [LOG] bindForeach 添加属性: {key: isPublic, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     278ms] [LOG] 响应式 getter 访问: {key: isPublic, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     278ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     279ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     279ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     279ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     279ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     279ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     279ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     280ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     280ms] [LOG] bindForeach 绑定子指令: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:1151
+[     280ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     280ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     280ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     280ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     280ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     281ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     281ms] [LOG] bindForeach 绑定子指令: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:1151
+[     281ms] [LOG] Directive.parse 开始解析: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:557
+[     281ms] [LOG] Directive.parse 简单路径: {value: status, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     281ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     281ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     281ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     282ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     282ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     282ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     282ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     282ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     282ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     283ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     283ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     283ms] [LOG] Directive.parse 开始解析: {name: :text, value: name} @ http://localhost:8084/hetuimini.js:557
+[     283ms] [LOG] Directive.parse 简单路径: {value: name, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     283ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     283ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     283ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     284ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     284ms] [LOG] Directive.parse 开始解析: {name: :text, value: status} @ http://localhost:8084/hetuimini.js:557
+[     284ms] [LOG] Directive.parse 简单路径: {value: status, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     284ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     284ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     284ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     284ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     284ms] [LOG] Directive.parse 开始解析: {name: if:, value: isCritical} @ http://localhost:8084/hetuimini.js:557
+[     285ms] [LOG] Directive.parse 简单路径: {value: isCritical, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     285ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     285ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.error} @ http://localhost:8084/hetuimini.js:610
+[     285ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     285ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     285ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     285ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     286ms] [LOG] getValueByPath 访问属性: {index: 0, path: isCritical, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     286ms] [LOG] getValueByPath 属性值: {index: 0, path: isCritical, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     286ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     286ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1317
+[     286ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328
+[     287ms] [LOG] bindIf element 已不在 DOM 中 @ http://localhost:8084/hetuimini.js:1331
+[     287ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     287ms] [LOG] Directive.parse 开始解析: {name: show:, value: isPublic} @ http://localhost:8084/hetuimini.js:557
+[     287ms] [LOG] Directive.parse 简单路径: {value: isPublic, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     287ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     287ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.info} @ http://localhost:8084/hetuimini.js:610
+[     287ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     288ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     288ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     288ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     288ms] [LOG] getValueByPath 访问属性: {index: 0, path: isPublic, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     288ms] [LOG] getValueByPath 属性值: {index: 0, path: isPublic, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     288ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     288ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     289ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     289ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     289ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleEngineeringActive} @ http://localhost:8084/hetuimini.js:557
+[     289ms] [LOG] Directive.parse 简单路径: {value: toggleEngineeringActive, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     289ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     289ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     289ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleShowProjects} @ http://localhost:8084/hetuimini.js:557
+[     290ms] [LOG] Directive.parse 简单路径: {value: toggleShowProjects, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     290ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     290ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     290ms] [LOG] Directive.parse 开始解析: {name: if:, value: user:preferences:notifications:enabled} @ http://localhost:8084/hetuimini.js:557
+[     290ms] [LOG] Directive.parse 冒号分隔路径: {value: user:preferences:notifications:enabled, path: Array(4)} @ http://localhost:8084/hetuimini.js:591
+[     290ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     290ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.info} @ http://localhost:8084/hetuimini.js:610
+[     291ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(4), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     291ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     291ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(4)} @ http://localhost:8084/hetuimini.js:1315
+[     291ms] [LOG] getValueByPath 调用: {path: Array(4), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     291ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     292ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     292ms] [LOG] getValueByPath 访问属性: {index: 1, path: preferences, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     292ms] [LOG] getValueByPath 属性值: {index: 1, path: preferences, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     292ms] [LOG] getValueByPath 访问属性: {index: 2, path: notifications, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     292ms] [LOG] getValueByPath 属性值: {index: 2, path: notifications, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     292ms] [LOG] getValueByPath 访问属性: {index: 3, path: enabled, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     293ms] [LOG] getValueByPath 属性值: {index: 3, path: enabled, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     293ms] [LOG] getValueByPath 最终结果: {path: Array(4), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     293ms] [LOG] bindIf 获取值: {fieldPath: Array(4), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1317
+[     293ms] [LOG] bindIf 条件为真，显示元素 @ http://localhost:8084/hetuimini.js:1320
+[     293ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     293ms] [LOG] Directive.parse 开始解析: {name: show:, value: user:preferences:notifications:showPreview} @ http://localhost:8084/hetuimini.js:557
+[     293ms] [LOG] Directive.parse 冒号分隔路径: {value: user:preferences:notifications:showPreview, path: Array(4)} @ http://localhost:8084/hetuimini.js:591
+[     294ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     294ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: div.success} @ http://localhost:8084/hetuimini.js:610
+[     294ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(4), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     294ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     294ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(4)} @ http://localhost:8084/hetuimini.js:1358
+[     294ms] [LOG] getValueByPath 调用: {path: Array(4), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     294ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     294ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     294ms] [LOG] getValueByPath 访问属性: {index: 1, path: preferences, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     295ms] [LOG] getValueByPath 属性值: {index: 1, path: preferences, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     295ms] [LOG] getValueByPath 访问属性: {index: 2, path: notifications, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     295ms] [LOG] getValueByPath 属性值: {index: 2, path: notifications, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     295ms] [LOG] getValueByPath 访问属性: {index: 3, path: showPreview, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     295ms] [LOG] getValueByPath 属性值: {index: 3, path: showPreview, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     295ms] [LOG] getValueByPath 最终结果: {path: Array(4), result: Object} @ http://localhost:8084/hetuimini.js:1493
+[     296ms] [LOG] bindShow 获取值: {fieldPath: Array(4), value: Object, type: object} @ http://localhost:8084/hetuimini.js:1360
+[     296ms] [LOG] bindShow 设置 display: {value: Object, display: } @ http://localhost:8084/hetuimini.js:1361
+[     296ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     296ms] [LOG] Directive.parse 开始解析: {name: foreach:, value: user:preferences:notifications:types} @ http://localhost:8084/hetuimini.js:557
+[     296ms] [LOG] Directive.parse 冒号分隔路径: {value: user:preferences:notifications:types, path: Array(4)} @ http://localhost:8084/hetuimini.js:591
+[     296ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     296ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: li} @ http://localhost:8084/hetuimini.js:610
+[     297ms] [LOG] bindForeach 初始化: {directive: Object, fieldPath: Array(4), data: Object} @ http://localhost:8084/hetuimini.js:1073
+[     297ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindFor… updateFn 执行:', { fieldPath: fieldPath });
+  ...} @ http://localhost:8084/hetuimini.js:298
+[     297ms] [LOG] bindForeach updateFn 执行: {fieldPath: Array(4)} @ http://localhost:8084/hetuimini.js:1087
+[     297ms] [LOG] getValueByPath 调用: {path: Array(4), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     297ms] [LOG] getValueByPath 访问属性: {index: 0, path: user, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     297ms] [LOG] getValueByPath 属性值: {index: 0, path: user, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     298ms] [LOG] getValueByPath 访问属性: {index: 1, path: preferences, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     298ms] [LOG] getValueByPath 属性值: {index: 1, path: preferences, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     298ms] [LOG] getValueByPath 访问属性: {index: 2, path: notifications, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     298ms] [LOG] getValueByPath 属性值: {index: 2, path: notifications, value: Object} @ http://localhost:8084/hetuimini.js:1491
+[     298ms] [LOG] getValueByPath 访问属性: {index: 3, path: types, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     298ms] [LOG] getValueByPath 属性值: {index: 3, path: types, value: Array(3)} @ http://localhost:8084/hetuimini.js:1491
+[     299ms] [LOG] getValueByPath 最终结果: {path: Array(4), result: Array(3)} @ http://localhost:8084/hetuimini.js:1493
+[     299ms] [LOG] bindForeach 获取数组: {fieldPath: Array(4), items: Array(3), isArray: true} @ http://localhost:8084/hetuimini.js:1089
+[     299ms] [LOG] bindForeach 开始循环，数组长度: 3 @ http://localhost:8084/hetuimini.js:1104
+[     299ms] [LOG] bindForeach 处理项: {index: 0, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     299ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     299ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     299ms] [LOG] 响应式 getter 访问: {key: name, value: 邮件通知, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     300ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     300ms] [LOG] bindForeach 添加属性: {key: name, value: 邮件通知} @ http://localhost:8084/hetuimini.js:1130
+[     300ms] [LOG] 响应式 getter 访问: {key: name, value: 邮件通知, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     300ms] [LOG] 响应式 getter 收集依赖: {key: name, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     300ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     300ms] [LOG] 响应式 getter 收集依赖: {key: isEnabled, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     300ms] [LOG] bindForeach 添加属性: {key: isEnabled, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     301ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     301ms] [LOG] 响应式 getter 收集依赖: {key: isEnabled, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     301ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     301ms] [LOG] 响应式 getter 收集依赖: {key: showBadge, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     301ms] [LOG] bindForeach 添加属性: {key: showBadge, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     301ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: true} @ http://localhost:8084/hetuimini.js:79
+[     302ms] [LOG] 响应式 getter 收集依赖: {key: showBadge, depSize: 1} @ http://localhost:8084/hetuimini.js:83
+[     302ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     303ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     303ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     303ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     303ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     303ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     304ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     304ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     304ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:1151
+[     304ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     304ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     304ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     305ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     305ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     305ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     305ms] [LOG] bindForeach 处理项: {index: 1, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     305ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     306ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     306ms] [LOG] 响应式 getter 访问: {key: name, value: 短信通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     306ms] [LOG] bindForeach 添加属性: {key: name, value: 短信通知} @ http://localhost:8084/hetuimini.js:1130
+[     306ms] [LOG] 响应式 getter 访问: {key: name, value: 短信通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     306ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     306ms] [LOG] bindForeach 添加属性: {key: isEnabled, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     307ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     307ms] [LOG] 响应式 getter 访问: {key: showBadge, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     307ms] [LOG] bindForeach 添加属性: {key: showBadge, value: false} @ http://localhost:8084/hetuimini.js:1130
+[     307ms] [LOG] 响应式 getter 访问: {key: showBadge, value: false, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     307ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     307ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     307ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     307ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     308ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     308ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     308ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     308ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     308ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:1151
+[     308ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     308ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     309ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     309ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     309ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     309ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     309ms] [LOG] bindForeach 处理项: {index: 2, item: Object, type: object} @ http://localhost:8084/hetuimini.js:1108
+[     309ms] [LOG] bindForeach 创建子数据对象: {subData: Object, item: Object} @ http://localhost:8084/hetuimini.js:1124
+[     310ms] [LOG] bindForeach 对象项，添加属性 @ http://localhost:8084/hetuimini.js:1128
+[     310ms] [LOG] 响应式 getter 访问: {key: name, value: 应用内通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     310ms] [LOG] bindForeach 添加属性: {key: name, value: 应用内通知} @ http://localhost:8084/hetuimini.js:1130
+[     310ms] [LOG] 响应式 getter 访问: {key: name, value: 应用内通知, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     310ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     310ms] [LOG] bindForeach 添加属性: {key: isEnabled, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     310ms] [LOG] 响应式 getter 访问: {key: isEnabled, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     311ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     311ms] [LOG] bindForeach 添加属性: {key: showBadge, value: true} @ http://localhost:8084/hetuimini.js:1130
+[     311ms] [LOG] 响应式 getter 访问: {key: showBadge, value: true, hasDep: false} @ http://localhost:8084/hetuimini.js:79
+[     311ms] [LOG] bindForeach 最终子数据对象: {subData: Object} @ http://localhost:8084/hetuimini.js:1138
+[     311ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:1151
+[     311ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     311ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     312ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     312ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     312ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     312ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     312ms] [LOG] bindForeach 绑定子指令: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:1151
+[     312ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     312ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     313ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     313ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     313ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     313ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     313ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     313ms] [LOG] Directive.parse 开始解析: {name: :text, value: #index} @ http://localhost:8084/hetuimini.js:557
+[     313ms] [LOG] Directive.parse 简单路径: {value: #index, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     314ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     314ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     314ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     314ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     314ms] [LOG] Directive.parse 开始解析: {name: :text, value: #item} @ http://localhost:8084/hetuimini.js:557
+[     314ms] [LOG] Directive.parse 简单路径: {value: #item, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     314ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     315ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span} @ http://localhost:8084/hetuimini.js:610
+[     315ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                var value = self.eva…eExpression(directive.value, data);
+         ...} @ http://localhost:8084/hetuimini.js:298
+[     315ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     315ms] [LOG] Directive.parse 开始解析: {name: if:, value: isEnabled} @ http://localhost:8084/hetuimini.js:557
+[     315ms] [LOG] Directive.parse 简单路径: {value: isEnabled, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     315ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     315ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.success} @ http://localhost:8084/hetuimini.js:610
+[     316ms] [LOG] bindIf 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1309
+[     316ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindIf …teFn 执行:', { fieldPath: fieldPath });
+       ...} @ http://localhost:8084/hetuimini.js:298
+[     316ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[     316ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     316ms] [LOG] getValueByPath 访问属性: {index: 0, path: isEnabled, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     317ms] [LOG] getValueByPath 属性值: {index: 0, path: isEnabled, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     317ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     317ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1317
+[     317ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328
+[     317ms] [LOG] bindIf element 已不在 DOM 中 @ http://localhost:8084/hetuimini.js:1331
+[     317ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     317ms] [LOG] Directive.parse 开始解析: {name: show:, value: showBadge} @ http://localhost:8084/hetuimini.js:557
+[     317ms] [LOG] Directive.parse 简单路径: {value: showBadge, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     318ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     318ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: span.info} @ http://localhost:8084/hetuimini.js:610
+[     318ms] [LOG] bindShow 初始化: {directive: Object, fieldPath: Array(1), data: Object} @ http://localhost:8084/hetuimini.js:1355
+[     318ms] [LOG] Observer.startDep 开始收集依赖: {updateFn: function() {
+                console.log('bindSho…dateFn 执行:', { fieldPath: fieldPath });
+     ...} @ http://localhost:8084/hetuimini.js:298
+[     318ms] [LOG] bindShow updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1358
+[     318ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[     318ms] [LOG] getValueByPath 访问属性: {index: 0, path: showBadge, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[     319ms] [LOG] getValueByPath 属性值: {index: 0, path: showBadge, value: undefined} @ http://localhost:8084/hetuimini.js:1491
+[     319ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: undefined} @ http://localhost:8084/hetuimini.js:1493
+[     319ms] [LOG] bindShow 获取值: {fieldPath: Array(1), value: undefined, type: undefined} @ http://localhost:8084/hetuimini.js:1360
+[     319ms] [LOG] bindShow 设置 display: {value: undefined, display: none} @ http://localhost:8084/hetuimini.js:1361
+[     319ms] [LOG] Observer.endDep 结束收集依赖 @ http://localhost:8084/hetuimini.js:306
+[     319ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleNotifications} @ http://localhost:8084/hetuimini.js:557
+[     319ms] [LOG] Directive.parse 简单路径: {value: toggleNotifications, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     319ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     319ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     320ms] [LOG] Directive.parse 开始解析: {name: @click, value: toggleShowPreview} @ http://localhost:8084/hetuimini.js:557
+[     320ms] [LOG] Directive.parse 简单路径: {value: toggleShowPreview, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     320ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     320ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     321ms] [LOG] Directive.parse 开始解析: {name: @click, value: resetAll} @ http://localhost:8084/hetuimini.js:557
+[     321ms] [LOG] Directive.parse 简单路径: {value: resetAll, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     321ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     321ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     321ms] [LOG] Directive.parse 开始解析: {name: @click, value: runAllTests} @ http://localhost:8084/hetuimini.js:557
+[     321ms] [LOG] Directive.parse 简单路径: {value: runAllTests, path: Array(1)} @ http://localhost:8084/hetuimini.js:594
+[     321ms] [LOG] Directive.parse 解析结果: {directive: Object} @ http://localhost:8084/hetuimini.js:598
+[     321ms] [LOG] Directive.bind 开始绑定: {directive: Object, element: button} @ http://localhost:8084/hetuimini.js:610
+[     333ms] [LOG] Hetui Mini 框架已加载 @ http://localhost:8084/hetuimini.js:2093
+[     342ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:8084/favicon.ico:0
+[   33770ms] [LOG] getValueByPath 调用: {path: Array(1), obj: } @ http://localhost:8084/hetuimini.js:1481
+[   33770ms] [LOG] getValueByPath 访问属性: {index: 0, path: toggleWarning, currentType: function} @ http://localhost:8084/hetuimini.js:1489
+[   33770ms] [LOG] getValueByPath 属性值: {index: 0, path: toggleWarning, value: } @ http://localhost:8084/hetuimini.js:1491
+[   33770ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: } @ http://localhost:8084/hetuimini.js:1493
+[   33770ms] [LOG] bindIf updateFn 执行: {fieldPath: Array(1)} @ http://localhost:8084/hetuimini.js:1315
+[   33771ms] [LOG] getValueByPath 调用: {path: Array(1), obj: Object} @ http://localhost:8084/hetuimini.js:1481
+[   33771ms] [LOG] getValueByPath 访问属性: {index: 0, path: showWarning, currentType: object} @ http://localhost:8084/hetuimini.js:1489
+[   33771ms] [LOG] getValueByPath 属性值: {index: 0, path: showWarning, value: false} @ http://localhost:8084/hetuimini.js:1491
+[   33771ms] [LOG] getValueByPath 最终结果: {path: Array(1), result: false} @ http://localhost:8084/hetuimini.js:1493
+[   33771ms] [LOG] bindIf 获取值: {fieldPath: Array(1), value: false, type: boolean} @ http://localhost:8084/hetuimini.js:1317
+[   33771ms] [LOG] bindIf 条件为假，隐藏元素 @ http://localhost:8084/hetuimini.js:1328

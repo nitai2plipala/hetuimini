@@ -4,12 +4,12 @@
 
 ```javascript
 // 基本创建
-var app = Hetui.runApp({
+var app = new Hetui({
     fieldName: Observer.Define(initialValue)
 }, document.getElementById('container'));
 
 // 链式调用
-var app = Hetui.runApp({...}, container)
+var app = new Hetui({...}, container)
 .methods({...})
 .computed({...})
 .watch({...});
@@ -167,7 +167,7 @@ element.dispatchEvent(new CustomEvent('my-event', {
 </form>
 
 <script>
-var app = Hetui.runApp({
+var app = new Hetui({
     email: Observer.Define(''),
     password: Observer.Define('')
 }, container)
@@ -199,7 +199,7 @@ var app = Hetui.runApp({
 <button @click="addItem">添加</button>
 
 <script>
-var app = Hetui.runApp({
+var app = new Hetui({
     items: Observer.Define([
         { name: '商品A', price: 100 },
         { name: '商品B', price: 200 }

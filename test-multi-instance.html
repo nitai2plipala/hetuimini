@@ -85,8 +85,8 @@
             }
         });
         
-        // 使用 Hetui.runApp 工厂函数创建独立实例 - 支持链式调用
-        var app3 = Hetui.runApp({
+        // 使用 new Hetui 创建独立实例 - 支持链式调用
+        var app3 = new Hetui({
             count: Observer.Define(100),
             message: Observer.Define('应用3的消息')
         }, document.getElementById('app3-container')).methods({

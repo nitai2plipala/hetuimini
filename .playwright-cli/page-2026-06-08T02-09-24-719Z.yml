@@ -1,0 +1,150 @@
+- generic [ref=e2]:
+  - heading "调试模式 - 流程控制指令测试" [level=1] [ref=e3]
+  - paragraph [ref=e4]: 添加详细调试信息，分析 bug 根本原因
+  - generic [ref=e5]:
+    - heading "调试控制面板" [level=2] [ref=e6]
+    - generic [ref=e7]:
+      - button "清除日志" [ref=e8]
+      - button "切换调试模式" [ref=e9]
+      - button "导出日志" [ref=e10]
+      - generic [ref=e11]: 调试模式：开启
+  - heading "实时日志" [level=2] [ref=e13]
+  - generic [ref=e15]:
+    - heading "一、简单测试" [level=2] [ref=e16]
+    - generic [ref=e17]:
+      - 'heading "1. foreach: 简单数组" [level=3] [ref=e18]'
+      - generic [ref=e19]:
+        - strong [ref=e20]: 数据状态：
+        - text: 加载中...
+      - list [ref=e21]:
+        - listitem [ref=e22]: .
+    - generic [ref=e23]:
+      - 'heading "2. if: 简单条件" [level=3] [ref=e24]'
+      - generic [ref=e25]:
+        - strong [ref=e26]: showWarning：
+        - text: 加载中...
+        - strong [ref=e27]: hideInfo：
+        - text: 加载中...
+      - generic [ref=e28]: ⚠️ 警告信息（条件为 true 时显示）
+      - generic [ref=e29]: ℹ️ 信息内容（条件为 false 时隐藏）
+      - button "切换警告" [active] [ref=e30]
+      - button "切换信息" [ref=e31]
+    - generic [ref=e32]:
+      - 'heading "3. show: 简单显示控制" [level=3] [ref=e33]'
+      - generic [ref=e34]:
+        - strong [ref=e35]: isVisible：
+        - text: 加载中...
+        - strong [ref=e36]: isHidden：
+        - text: 加载中...
+      - generic [ref=e37]: ✅ 可见内容（show 控制）
+      - generic [ref=e38]: 🔍 隐藏内容（show 控制）
+      - button "切换可见性" [ref=e39]
+      - button "切换隐藏" [ref=e40]
+  - generic [ref=e41]:
+    - heading "二、嵌套访问测试" [level=2] [ref=e42]
+    - generic [ref=e43]:
+      - 'heading "1. foreach: 嵌套对象数组" [level=3] [ref=e44]'
+      - generic [ref=e45]:
+        - strong [ref=e46]: user:contacts：
+        - text: 加载中...
+      - list [ref=e47]:
+        - listitem [ref=e48]:
+          - text: .
+          - text: "-"
+    - generic [ref=e49]:
+      - 'heading "2. if: 嵌套条件" [level=3] [ref=e50]'
+      - generic [ref=e51]:
+        - strong [ref=e52]: user:settings:showAdvanced：
+        - text: 加载中...
+        - strong [ref=e53]: user:permissions:canEdit：
+        - text: 加载中...
+      - generic [ref=e54]: 🔧 高级设置（嵌套条件）
+      - generic [ref=e55]: ✏️ 编辑权限（嵌套条件）
+      - button "切换高级设置" [ref=e56]
+      - button "切换编辑权限" [ref=e57]
+    - generic [ref=e58]:
+      - 'heading "3. show: 嵌套显示控制" [level=3] [ref=e59]'
+      - generic [ref=e60]:
+        - strong [ref=e61]: user:profile:isPublic：
+        - text: 加载中...
+        - strong [ref=e62]: user:profile:showEmail：
+        - text: 加载中...
+      - generic [ref=e63]: 👤 公开资料（嵌套 show）
+      - generic [ref=e64]: 📧 显示邮箱（嵌套 show）
+      - button "切换公开状态" [ref=e65]
+      - button "切换显示邮箱" [ref=e66]
+  - generic [ref=e67]:
+    - heading "三、组合测试" [level=2] [ref=e68]
+    - generic [ref=e69]:
+      - 'heading "1. foreach: 与 if: 组合" [level=3] [ref=e70]'
+      - generic [ref=e71]:
+        - strong [ref=e72]: filteredUsers 数据：
+        - text: 加载中...
+      - list [ref=e73]:
+        - listitem [ref=e74]:
+          - text: .
+          - text: (活跃) [VIP]
+    - generic [ref=e75]:
+      - 'heading "2. foreach: 与 show: 组合" [level=3] [ref=e76]'
+      - generic [ref=e77]:
+        - strong [ref=e78]: products 数据：
+        - text: 加载中...
+      - list [ref=e79]:
+        - listitem [ref=e80]:
+          - text: .
+          - text: "- ¥"
+          - text: "[有货] [促销]"
+    - generic [ref=e81]:
+      - 'heading "3. if: 与 show: 组合" [level=3] [ref=e82]'
+      - generic [ref=e83]:
+        - strong [ref=e84]: showNotification：
+        - text: 加载中...
+        - strong [ref=e85]: notificationType：
+        - text: 加载中...
+      - generic [ref=e86]:
+        - generic [ref=e87]: ✅ 成功通知
+        - generic [ref=e88]: ❌ 错误通知
+        - generic [ref=e89]: ⚠️ 警告通知
+      - button "成功通知" [ref=e90]
+      - button "错误通知" [ref=e91]
+      - button "警告通知" [ref=e92]
+      - button "隐藏通知" [ref=e93]
+  - generic [ref=e94]:
+    - heading "四、复杂嵌套测试" [level=2] [ref=e95]
+    - generic [ref=e96]:
+      - heading "1. 三层嵌套对象中的指令使用" [level=3] [ref=e97]
+      - generic [ref=e98]:
+        - strong [ref=e99]: company:departments:engineering:isActive：
+        - text: 加载中...
+        - strong [ref=e100]: company:departments:engineering:showProjects：
+        - text: 加载中...
+      - generic [ref=e101]: 🏢 工程部门激活状态
+      - generic [ref=e102]: 📋 显示项目列表
+      - list [ref=e103]:
+        - listitem [ref=e104]:
+          - text: .
+          - text: "-"
+          - text: "[关键] [公开]"
+      - button "切换工程部门状态" [ref=e105]
+      - button "切换显示项目" [ref=e106]
+    - generic [ref=e107]:
+      - heading "2. 混合嵌套路径" [level=3] [ref=e108]
+      - generic [ref=e109]:
+        - strong [ref=e110]: user:preferences:notifications:enabled：
+        - text: 加载中...
+        - strong [ref=e111]: user:preferences:notifications:showPreview：
+        - text: 加载中...
+      - generic [ref=e112]: 🔔 通知已启用
+      - generic [ref=e113]: 👁️ 显示通知预览
+      - list [ref=e114]:
+        - listitem [ref=e115]:
+          - text: .
+          - text: "[已启用] [显示徽章]"
+      - button "切换通知" [ref=e116]
+      - button "切换预览" [ref=e117]
+  - generic [ref=e118]:
+    - heading "依赖收集监控" [level=2] [ref=e119]
+    - generic [ref=e121]: 依赖收集信息将显示在这里...
+  - generic [ref=e122]:
+    - heading "测试结果" [level=2] [ref=e123]
+    - paragraph [ref=e125]: 测试正在运行...

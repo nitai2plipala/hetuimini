@@ -1,0 +1,71 @@
+- generic [ref=e2]:
+  - heading "复杂数据绑定指令测试" [level=1] [ref=e3]
+  - generic [ref=e4]:
+    - 'heading "测试1: 同一DOM多个:class指令" [level=2] [ref=e5]'
+    - paragraph [ref=e6]: 测试同一个元素是否能同时使用多个:class指令
+    - generic [ref=e7]: 这个元素有多个:class指令绑定
+    - paragraph [ref=e8]:
+      - button "切换active类" [ref=e9]
+      - button "切换highlight类" [ref=e10]
+      - button "切换large类" [ref=e11]
+    - paragraph [ref=e12]: "当前状态: isActive=true, isHighlighted=false, isLarge=false"
+  - generic [ref=e13]:
+    - 'heading "测试2: 同一DOM多个:style指令" [level=2] [ref=e14]'
+    - paragraph [ref=e15]: 测试同一个元素是否能同时使用多个:style指令
+    - generic [ref=e16]: 这个元素有多个:style指令绑定
+    - paragraph [ref=e17]:
+      - button "循环字体颜色" [ref=e18]
+      - button "循环背景颜色" [ref=e19]
+      - button "循环字体大小" [ref=e20]
+    - paragraph [ref=e21]: "当前样式: fontColor=blue, bgColor=#f0f0f0, fontSize=16px"
+  - generic [ref=e22]:
+    - 'heading "测试3: 复杂:attr指令" [level=2] [ref=e23]'
+    - paragraph [ref=e24]: 测试:attr指令的各种用法
+    - generic [ref=e25]:
+      - paragraph [ref=e26]:
+        - link "链接1" [ref=e27] [cursor=pointer]:
+          - /url: https://www.example.com
+      - paragraph [ref=e28]:
+        - textbox "请输入内容" [ref=e29]: 示例值
+      - paragraph [ref=e30]:
+        - img "示例图片"
+    - paragraph [ref=e31]:
+      - button "改变链接" [ref=e32]
+      - button "改变图片" [ref=e33]
+  - generic [ref=e34]:
+    - 'heading "测试4: 混合指令测试" [level=2] [ref=e35]'
+    - paragraph [ref=e36]: 测试多个指令混合使用
+    - generic "这是一个提示信息" [ref=e37]: 这个元素混合使用了:class、:style和:attr指令
+    - paragraph [ref=e38]:
+      - button "切换active类" [ref=e39]
+      - button "改变颜色" [ref=e40]
+      - button "改变提示" [ref=e41]
+  - generic [ref=e42]:
+    - 'heading "测试5: 嵌套数据测试" [level=2] [ref=e43]'
+    - paragraph [ref=e44]: 测试使用冒号分隔的嵌套数据路径
+    - generic [ref=e45]:
+      - paragraph [ref=e46]: "用户名: 张三"
+      - paragraph [ref=e47]: "用户状态:"
+      - paragraph [ref=e48]: "用户主题颜色:"
+      - paragraph [ref=e49]:
+        - text: "用户头像:"
+        - img
+  - generic [ref=e50]:
+    - 'heading "测试6: 动态指令格式" [level=2] [ref=e51]'
+    - paragraph [ref=e52]: 测试指令格式的友好性和可读性
+    - generic [ref=e53]:
+      - paragraph [ref=e54]:
+        - strong [ref=e55]: "格式1:"
+        - text: :class|active="isActive" → 类名作为参数，条件作为值
+      - paragraph [ref=e56]:
+        - strong [ref=e57]: "格式2:"
+        - text: :style|color="fontColor" → 样式名作为参数，值作为值
+      - paragraph [ref=e58]:
+        - strong [ref=e59]: "格式3:"
+        - text: :attr|href="linkUrl" → 属性名作为参数，值作为值
+      - paragraph [ref=e60]:
+        - strong [ref=e61]: "格式4:"
+        - text: :text="user:name" → 使用冒号分隔嵌套路径
+  - generic [ref=e62]:
+    - heading "测试结果" [level=2] [ref=e63]
+    - paragraph [ref=e65]: 6/6 测试通过

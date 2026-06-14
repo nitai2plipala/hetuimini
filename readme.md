@@ -265,7 +265,7 @@ console.log(data.count);      // ✅ 唯一写法
 ## 计算属性与监听器
 
 ```javascript
-var app = Hetui.runApp({
+var app = new Hetui({
     price: Observer.Define(100),
     quantity: Observer.Define(2)
 }, container)
@@ -301,8 +301,8 @@ element.dispatchEvent(new CustomEvent('my-event', {
 ## 多实例
 
 ```javascript
-var app1 = Hetui.runApp({...}, document.getElementById('app1'));
-var app2 = Hetui.runApp({...}, document.getElementById('app2'));
+var app1 = new Hetui({...}, document.getElementById('app1'));
+var app2 = new Hetui({...}, document.getElementById('app2'));
 // 完全独立，互不影响
 ```
 
