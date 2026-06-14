@@ -1,21 +1,20 @@
 /**
  * Hetui Mini - 轻量级 MVVM 框架
  * 核心设计：数据、指令、方法三层分离
- * 版本：1.0.0
+ * 版本：2.0.0
  */
 
 (function() {
     'use strict';
     
-    // 全局对象
-    var Hetui = {
-        version: '1.1.1',
-        data: null, // 响应式数据对象
-        methods: {}, // 方法对象
-        filters: {}, // 过滤器对象
-        depMap: new Map(), // 依赖映射：key -> Set<updateFn>
-        elements: new Map() // 元素映射：element -> Set<directive>
-    };
+    // Hetui 构造函数
+    function Hetui(options, container) {
+        return new App(options, container);
+    }
+    
+    // 静态属性
+    Hetui.version = '1.2.0';
+    Hetui.filters = {}; // 过滤器对象
     
     // 观察者系统
     var Observer = {
@@ -1508,43 +1507,6 @@
         var returnObj = app.data;
         
         // 链式方法存储在 @Hetui::observer 中，同时保持链式调用
-        var observer = returnObj['@Hetui::observer'];
-        
-        // 创建链式方法函数
-        observer.methods = function(newMethods) {
-            app.addMethods(newMethods);
-            return returnObj;
-        };
-        
-        observer.computed = function(newComputed) {
-            app.computed(newComputed);
-            return returnObj;
-        };
-        
-        observer.watch = function(newWatch) {
-            app.watch(newWatch);
-            return returnObj;
-        };
-        
-        // 在 returnObj 上创建代理函数，保持链式调用
-        returnObj.methods = observer.methods;
-        returnObj.computed = observer.computed;
-        returnObj.watch = observer.watch;
-        
-        // 应用实例引用已经存储在 @Hetui::observer._app 中
-        
-        return returnObj;
-    };
-    
-    // 创建独立应用实例的工厂函数 - 支持链式调用
-    Hetui.runApp = function(options, container) {
-        // 创建新的 App 实例，container 作为第二个参数
-        var app = new App(options, container);
-        
-        // 返回数据对象，支持链式调用
-        var returnObj = app.data;
-        
-        // 链式方法存储在 @Hetui::observer 中
         var observer = returnObj['@Hetui::observer'];
         
         // 创建链式方法函数

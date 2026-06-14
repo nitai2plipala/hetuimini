@@ -108,7 +108,7 @@ skills/use-hetuimini/
     </div>
     
     <script>
-        var app = Hetui.runApp({
+        var app = new Hetui({
             count: Observer.Define(0)
         }, document.getElementById('app')).methods({
             increment(event, data) {
@@ -125,8 +125,8 @@ skills/use-hetuimini/
 ### 创建实例
 
 ```javascript
-// 方式1：runApp（推荐）
-var app = Hetui.runApp(options, container);
+// 方式1：new（推荐）
+var app = new Hetui(options, container);
 
 // 方式2：Observe
 var app = Hetui.Observe(options, container);
@@ -135,7 +135,7 @@ var app = Hetui.Observe(options, container);
 ### 链式调用
 
 ```javascript
-var app = Hetui.runApp({
+var app = new Hetui({
     count: Observer.Define(0)
 }, document.getElementById('app'))
 .methods({...})      // 添加方法

@@ -10,6 +10,10 @@ description:
 
 从 v1.0.0 版本开始，`.value` 属性已被完全删除，不再支持。
 
+### 🆕 v1.2.0 新功能
+- **支持 new 创建实例**：使用 `new Hetui(options, container)` 创建应用
+- **删除 runApp**：移除 `Hetui.runApp()`，保留 `Hetui.Observe()`
+
 ### 🆕 v1.1.0 新功能
 - **`:class` 指令增强**：支持类名字符串绑定，语法 `:class="className"`
 - **计算属性支持**：`:class` 指令现在支持计算属性绑定
@@ -60,7 +64,7 @@ Hetui Mini 是一个轻量级 MVVM 框架，核心设计：**数据、指令、�
     </div>
     
     <script>
-        var app = Hetui.runApp({
+        var app = new Hetui({
             count: Observer.Define(0)
         }, document.getElementById('app'))
         .methods({
@@ -79,13 +83,13 @@ Hetui Mini 是一个轻量级 MVVM 框架，核心设计：**数据、指令、�
 
 ```javascript
 // ✅ 正确：Observer.Define
-var app = Hetui.runApp({
+var app = new Hetui({
     count: Observer.Define(0),
     user: Observer.Define({ name: '张三' })
 }, container);
 
 // ✅ 正确：Observer.Proxy（支持嵌套属性监听）
-var app = Hetui.runApp({
+var app = new Hetui({
     user: Observer.Proxy({ 
         name: '张三',
         profile: Observer.Proxy({ city: '北京' })
@@ -93,7 +97,7 @@ var app = Hetui.runApp({
 }, container);
 
 // ❌ 错误 - 不会触发视图更新
-var app = Hetui.runApp({
+var app = new Hetui({
     count: 0,
     user: { name: '张三' }
 }, container);
@@ -378,7 +382,7 @@ methods: {
 ## 计算属性与监听器
 
 ```javascript
-var app = Hetui.runApp({
+var app = new Hetui({
     price: Observer.Define(100),
     quantity: Observer.Define(2)
 }, container)
@@ -404,8 +408,8 @@ var app = Hetui.runApp({
 ## 多实例
 
 ```javascript
-var app1 = Hetui.runApp({...}, document.getElementById('app1'));
-var app2 = Hetui.runApp({...}, document.getElementById('app2'));
+var app1 = new Hetui({...}, document.getElementById('app1'));
+var app2 = new Hetui({...}, document.getElementById('app2'));
 // 完全独立，互不影响
 ```
 
