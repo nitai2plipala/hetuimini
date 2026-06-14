@@ -284,7 +284,7 @@ element.dispatchEvent(new CustomEvent('my-event', { detail: data }));
 
 **⚠️ 重要：框架不支持直接在事件中传递参数**
 
-如果需要在事件处理函数中获取额外参数，使用 `:data-*` 指令将参数绑定到 DOM 属性，然后在方法中从 `event.target` 获取。
+如果需要在事件处理函数中获取额外参数，通过 `data-*` 属性绑定，然后在方法中从 `event.target` 获取。
 
 #### 基本用法
 
