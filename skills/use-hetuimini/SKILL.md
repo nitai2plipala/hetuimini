@@ -280,6 +280,88 @@ element.dispatchEvent(new CustomEvent('my-event', { detail: data }));
 | `.alt` | 需要 Alt 键 |
 | `.meta` | 需要 Meta 键 |
 
+### 事件参数传递
+
+**⚠️ 重要：框架不支持直接在事件中传递参数**
+
+如果需要在事件处理函数中获取额外参数，使用 `:data-*` 指令将参数绑定到 DOM 属性，然后在方法中从 `event.target` 获取。
+
+#### 基本用法
+
+```html
+<!-- 静态值 -->
+<button HeTui :data-mode="'split'" @click="setMode">分屏模式</button>
+
+<!-- 动态值 -->
+<button HeTui :data-mode="currentMode" @click="setMode">切换模式</button>
+
+<!-- 多个参数 -->
+<button HeTui :data-action="'delete'" :data-id="item:id" @click="handleAction">操作</button>
+```
+
+#### 方法中获取参数
+
+```javascript
+methods: {
+    setMode(event, data) {
+        // 从 data-* 属性获取参数
+        var mode = event.target.getAttribute('data-mode');
+        // 或者使用 dataset
+        var mode = event.target.dataset.mode;
+        console.log('模式:', mode);
+    },
+    handleAction(event, data) {
+        var action = event.target.dataset.action;
+        var id = event.target.dataset.id;
+        console.log('操作:', action, 'ID:', id);
+    }
+}
+```
+
+#### 复杂场景配合 :data 指令
+
+对于需要绑定复杂对象或嵌套属性的场景，可以使用 `:data` 指令：
+
+```html
+<!-- 绑定复杂对象 -->
+<button HeTui :data-item="item" @click="deleteItem">删除</button>
+
+<!-- 绑定嵌套属性 -->
+<button HeTui :data-user-email="user:email" @click="sendEmail">发邮件</button>
+```
+
+#### 使用场景示例
+
+```html
+<!-- 列表中的删除按钮 -->
+<ul>
+    <li HeTui foreach:="users">
+        <span HeTui :text="name"></span>
+        <button HeTui :data-user-id="id" @click="deleteUser">删除</button>
+    </li>
+</ul>
+
+<!-- 模式切换 -->
+<div HeTui>
+    <button HeTui :data-mode="'grid'" @click="switchMode">网格</button>
+    <button HeTui :data-mode="'list'" @click="switchMode">列表</button>
+</div>
+```
+
+```javascript
+methods: {
+    deleteUser(event, data) {
+        var userId = event.target.dataset.userId;
+        // 执行删除操作
+        console.log('删除用户:', userId);
+    },
+    switchMode(event, data) {
+        var mode = event.target.dataset.mode;
+        data.currentMode = mode;
+    }
+}
+```
+
 ### 流程控制
 
 ```html
