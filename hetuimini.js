@@ -9,12 +9,36 @@
     
     // Hetui 构造函数
     function Hetui(options, container) {
-        return new App(options, container);
+        var app = new App(options, container);
+        var returnObj = app.data;
+        
+        // 链式方法
+        var observer = returnObj['@Hetui::observer'];
+        observer.methods = function(newMethods) {
+            app.addMethods(newMethods);
+            return returnObj;
+        };
+        observer.computed = function(newComputed) {
+            app.computed(newComputed);
+            return returnObj;
+        };
+        observer.watch = function(newWatch) {
+            app.watch(newWatch);
+            return returnObj;
+        };
+        
+        returnObj.methods = observer.methods;
+        returnObj.computed = observer.computed;
+        returnObj.watch = observer.watch;
+        
+        return returnObj;
     }
     
     // 静态属性
     Hetui.version = '1.2.0';
     Hetui.filters = {}; // 过滤器对象
+    Hetui.depMap = new Map(); // 依赖映射
+    Hetui.elements = new Map(); // 元素映射
     
     // 观察者系统
     var Observer = {
