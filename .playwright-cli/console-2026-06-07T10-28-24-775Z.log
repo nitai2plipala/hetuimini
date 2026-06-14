@@ -1,8 +1,0 @@
-[      15ms] [LOG] Hetui Mini 框架已加载 @ http://localhost:8084/hetuimini.js:2041
-[      15ms] [LOG] === 冒号分隔路径测试开始 === @ http://localhost:8084/test-colon-paths.html:390
-[      15ms] [LOG] 测试数据: {"id":1001,"name":"张三","email":"zhangsan@example.com","profile":{"age":25,"ageChanges":0},"isActive":true,"theme":{"color":"#3f6085"},"showDetails":true,"isVisible":true,"items":[{"name":"商品A","price":100},{"name":"商品B","price":200},{"name":"商品C","price":300}]} @ http://localhost:8084/test-colon-paths.html:391
-[      15ms] [LOG] ✓ 初始数据正确 @ http://localhost:8084/test-colon-paths.html:397
-[      15ms] [LOG] ✓ 嵌套对象访问正常: 25 @ http://localhost:8084/test-colon-paths.html:407
-[      15ms] [LOG] === 测试初始化完成 === @ http://localhost:8084/test-colon-paths.html:414
-[      15ms] [LOG] 当前测试状态: 运行中 @ http://localhost:8084/test-colon-paths.html:415
-[      37ms] [VERBOSE] [DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o @ http://localhost:8084/test-colon-paths.html:0

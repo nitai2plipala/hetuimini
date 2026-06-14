@@ -1,4 +1,0 @@
-[      12ms] [LOG] app1 数据: {"count":0,"message":"应用1的消息"} @ http://localhost:8084/test-multi-instance.html:101
-[      12ms] [LOG] app2 数据: {"count":10,"message":"应用2的消息"} @ http://localhost:8084/test-multi-instance.html:102
-[      12ms] [LOG] app3 数据: {"count":100,"message":"应用3的消息"} @ http://localhost:8084/test-multi-instance.html:103
-[      15ms] [LOG] Hetui Mini 框架已加载 @ http://localhost:8084/hetuimini.js:2041
