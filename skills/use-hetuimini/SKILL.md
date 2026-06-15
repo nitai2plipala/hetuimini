@@ -1,7 +1,6 @@
 ---
 name: use-hetuimini
-description:
-  使用 hetuimini.js 轻量级 MVVM 框架开发前端应用的完整指南。当用户提到 hetuimini、hetuimini.js、或需要创建使用该框架的 HTML 页面时触发此技能。包含框架语法、最佳实践、常见错误避免等完整开发规范。
+description: 使用 hetuimini.js 轻量级 MVVM 框架开发前端应用的完整指南。当用户提到 hetuimini、hetuimini.js、或需要创建使用该框架的 HTML 页面时触发此技能。包含框架语法、最佳实践、常见错误避免等完整开发规范。
 ---
 
 # Hetui Mini 框架开发指南
@@ -377,6 +376,56 @@ methods: {
 
 <!-- 显示控制 -->
 <div show:="visible">内容</div>
+```
+
+### 条件取反
+
+`show:` 和 `if:` 指令不支持直接取反语法（如 `show:="!isActive"`），需要通过以下方式实现：
+
+#### 方式1：使用 computed 计算属性
+
+```javascript
+var app = new Hetui({
+    isActive: Observer.Define(true)
+}, container)
+.computed({
+    isInactive() { return !this.isActive; }
+});
+```
+
+```html
+<div HeTui show:="isActive">激活状态</div>
+<div HeTui show:="isInactive">未激活状态</div>
+```
+
+#### 方式2：使用两个变量
+
+```javascript
+var app = new Hetui({
+    isActive: Observer.Define(true),
+    isInactive: Observer.Define(false)
+}, container);
+```
+
+```html
+<div HeTui if:="isActive">激活状态</div>
+<div HeTui if:="isInactive">未激活状态</div>
+```
+
+#### 方式3：在方法中切换状态
+
+```javascript
+methods: {
+    toggleStatus(event, data) {
+        data.isActive = !data.isActive;
+    }
+}
+```
+
+```html
+<button HeTui @click="toggleStatus">切换状态</button>
+<div HeTui show:="isActive">激活状态</div>
+<div HeTui show:="!isActive">未激活状态</div>  <!-- 注意：这种方式不支持 -->
 ```
 
 ## 计算属性与监听器
