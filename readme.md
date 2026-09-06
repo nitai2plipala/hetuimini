@@ -2,8 +2,6 @@
 
 > 轻量级 MVVM 框架，专为 HTML CDN 引入设计，配合 Tailwind CSS 使用
 
-**当前版本**: v1.1.0
-
 ## 项目简介
 
 Hetui Mini 是一个轻量级的前端 MVVM 框架，核心目标是**降低 AI 修改前端代码时的认知负担和耦合风险**。
@@ -143,20 +141,36 @@ var app = new Hetui({
 .watch({...});       // 添加监听器
 ```
 
-### Observer.Define vs Observer.Proxy
+### Observer.Define
 
 ```javascript
-// Observer.Define：用于包装原始值或对象
+// Observer.Define：用于包装原始值、对象、数组
 count: Observer.Define(0)
 user: Observer.Define({ name: '张三', age: 25 })
+items: Observer.Define([])  // 空数组，后续可整体赋值
 
-// Observer.Proxy：用于包装对象，支持嵌套属性监听
-user: Observer.Proxy({ name: '张三', profile: Observer.Proxy({ city: '北京' }) })
-
-// 两者都可以直接访问属性，无需 .value
+// 直接访问属性，无需 .value
 data.count++;           // ✅ 直接使用
 data.user.name = '新名字';  // ✅ 直接使用
 ```
+
+### 异步数据赋值（v1.2.1 修复）
+
+用 `Observer.Define([])` 或 `Observer.Define({})` 初始化空数据，异步请求后端后**直接整体赋值**即可触发视图更新：
+
+```javascript
+var app = new Hetui({
+    repos: Observer.Define([])  // 初始化空数组
+}, container)
+.methods({
+    async fetchRepos(event, data) {
+        var res = await fetch('/api/repos').then(r => r.json());
+        data.repos = res;  // ✅ 直接整体赋值，视图自动更新
+    }
+});
+```
+
+> 支持的赋值方式：`data.repos = newArray`（整体替换）、`data.repos.push(item)`（变异方法）、`data.repos[i] = item`（索引赋值）
 
 ### 属性路径语法
 
@@ -182,25 +196,34 @@ data.user.name = '新名字';  // ✅ 直接使用
 
 **注意**: 不支持点号语法 `user.name`，必须使用冒号 `user:name`
 
-### 🚫 重要：`.value` 属性已删除
+### :style 样式名必须用 kebab-case（v1.2.1 修复）
 
-从 v1.0.0 版本开始，`.value` 属性已被完全删除，不再支持。
+HTML 属性会被浏览器自动转全小写，所以 `:style` 的样式名**必须用 `-` 连接符**，不能用驼峰：
 
-**旧版写法（已删除）：**
-```javascript
-data.count.value++;           // ❌ 已删除，会报错
-data.user.value.name = '新名字';  // ❌ 已删除，会报错
-console.log(data.count.value);  // ❌ 已删除，会报错
+```html
+<!-- ✅ 正确：kebab-case -->
+:style|background-color="bgColor"
+:style|font-size="fontSize"
+
+<!-- ❌ 错误：驼峰（浏览器转小写后失效） -->
+:style|backgroundColor="bgColor"
+:style|fontSize="fontSize"
 ```
 
-**新版写法（唯一）：**
-```javascript
-data.count++;                 // ✅ 唯一写法
-data.user.name = '新名字';    // ✅ 唯一写法
-console.log(data.count);      // ✅ 唯一写法
-```
+### :text 不支持三元表达式
 
-**说明**：`.value` 属性已被完全删除，必须使用新版的直接访问方式。
+`:text` 等指令的值只能是**属性路径**或**过滤器**，不支持三元表达式等复杂逻辑运算。需要条件判断时用 **computed 计算属性**：
+
+```javascript
+// ❌ 不支持
+<span HeTui :text="isActive ? '是' : '否'"></span>
+
+// ✅ 用 computed 解决
+.computed({
+    statusText() { return this.isActive ? '是' : '否'; }
+})
+// HTML: <span HeTui :text="statusText"></span>
+```
 
 ## 指令速查
 
@@ -212,7 +235,7 @@ console.log(data.count);      // ✅ 唯一写法
 | `:value` | `:value="input"` | 表单值（双向） |
 | `:attr` | `:attr\|href="url"` | HTML 属性 |
 | `:class` | `:class\|active="flag"` 或 `:class="className"` | CSS 类（支持类名字符串绑定） |
-| `:style` | `:style\|color="color"` | 内联样式 |
+| `:style` | `:style\|color="color"` | 内联样式（样式名必须用 kebab-case，如 `background-color`） |
 | `:html` | `:html="content"` | HTML 内容 |
 | `:data` | `:data="user:id"` | data-* 属性 |
 | `:disabled` | `:disabled="flag"` | 禁用状态 |

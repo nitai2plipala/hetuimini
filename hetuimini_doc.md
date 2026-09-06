@@ -1,30 +1,8 @@
 # Hetui Mini 框架使用文档与指南
 
-> **版本**: 1.1.0  
+> **版本**: 1.2.1  
 > **设计理念**: 数据、指令、方法三层分离  
 > **适用场景**: 前端 HTML CDN 引入，配合 Tailwind CSS 使用
-
-### 🚫 重要：`.value` 属性已删除
-
-从 v1.0.0 版本开始，`.value` 属性已被完全删除，不再支持。
-
-**旧版写法（已删除）：**
-```javascript
-data.count.value++;           // ❌ 已删除，会报错
-data.user.value.name = '新名字';  // ❌ 已删除，会报错
-console.log(data.count.value);  // ❌ 已删除，会报错
-```
-
-**新版写法（唯一）：**
-```javascript
-data.count++;                 // ✅ 唯一写法
-data.user.name = '新名字';    // ✅ 唯一写法
-console.log(data.count);      // ✅ 唯一写法
-```
-
-**说明**：`.value` 属性已被完全删除，必须使用新版的直接访问方式。
-
----
 
 ## 目录
 
@@ -115,7 +93,7 @@ Hetui Mini 是一个轻量级的 MVVM 框架，核心设计理念是**数据、�
     </div>
     
     <script>
-        // 必须使用 Observer.Define() 或 Observer.Proxy() 包装属性值
+        // 必须使用 Observer.Define() 包装属性值
         var app = Hetui.Observe({
             greeting: Observer.Define('Hello Hetui Mini!')
         });
@@ -127,7 +105,7 @@ Hetui Mini 是一个轻量级的 MVVM 框架，核心设计理念是**数据、�
 ### 2. 重要规则
 
 1. **每个包含指令的元素都必须有 `HeTui` 属性**
-2. **必须使用 `Observer.Define()` 或 `Observer.Proxy()` 包装属性值**
+2. **必须使用 `Observer.Define()` 包装属性值**
 3. **字段路径使用冒号 `:` 分隔**（如 `user:name`），所有指令都支持冒号分隔路径
 
 ---
@@ -136,11 +114,11 @@ Hetui Mini 是一个轻量级的 MVVM 框架，核心设计理念是**数据、�
 
 框架支持创建多个独立的应用实例，每个实例有自己的数据、方法和视图。
 
-### 使用 Hetui.runApp 创建实例
+### 使用 new Hetui 创建实例
 
 ```javascript
 // 创建第一个实例
-var app1 = Hetui.runApp({
+var app1 = new Hetui({
     count: Observer.Define(0),
     message: Observer.Define('应用1的消息')
 }, document.getElementById('app1-container')).methods({
@@ -150,7 +128,7 @@ var app1 = Hetui.runApp({
 });
 
 // 创建第二个实例
-var app2 = Hetui.runApp({
+var app2 = new Hetui({
     count: Observer.Define(10),
     message: Observer.Define('应用2的消息')
 }, document.getElementById('app2-container')).methods({
@@ -183,7 +161,7 @@ var app3 = Hetui.Observe({
 ### API 参数说明
 
 ```javascript
-Hetui.runApp(options, container)
+new Hetui(options, container)
 Hetui.Observe(options, container)
 ```
 
@@ -194,7 +172,7 @@ Hetui.Observe(options, container)
 **示例**：
 ```javascript
 // 完整配置
-var app = Hetui.runApp({
+var app = new Hetui({
     data: {
         count: Observer.Define(0)
     },
@@ -216,17 +194,18 @@ var app = Hetui.runApp({
 
 ### 响应式数据
 
-框架提供两种响应式实现：
+框架使用 `Observer.Define` 创建响应式数据，基于 `Object.defineProperty` 实现：
 
-#### Observer.Define（基于 Object.defineProperty）
+#### Observer.Define
 
 ```javascript
 var app = Hetui.Observe({
     count: Observer.Define(0),
     user: Observer.Define({
-        name: Observer.Define('张三'),
-        age: Observer.Define(25)
-    })
+        name: '张三',
+        age: 25
+    }),
+    items: Observer.Define([])  // 空数组，异步可整体赋值
 });
 
 // 修改数据自动触发视图更新
@@ -234,16 +213,28 @@ app.count = 1;           // ✅ 视图更新
 app.user.name = '李四';   // ✅ 视图更新
 ```
 
-#### Observer.Proxy（基于 ES6 Proxy）
+#### 异步数据赋值（v1.2.1 修复）
+
+用 `Observer.Define([])` 或 `Observer.Define({})` 初始化空数据，异步请求后端后**直接整体赋值**即可触发视图更新：
 
 ```javascript
 var app = Hetui.Observe({
-    items: Observer.Proxy(['商品A', '商品B', '商品C'])
+    repos: Observer.Define([])  // 初始化空数组
+})
+.methods({
+    async fetchRepos(event, data) {
+        var res = await fetch('/api/repos').then(r => r.json());
+        data.repos = res;  // ✅ 直接整体赋值，视图自动更新
+    }
 });
-
-// 数组操作自动触发更新
-app.items.push('商品D');  // ✅ 视图更新
 ```
+
+> 支持的赋值方式：
+> - `data.repos = newArray` — 整体替换（适用于异步请求后赋值）
+> - `data.repos.push(item)` — 变异方法
+> - `data.repos.splice(i, 1)` — 删除元素
+> - `data.repos[i] = item` — 索引赋值
+> - `data.user.profile = newObj` — 嵌套对象整体替换
 
 #### 数组响应式支持
 
@@ -351,38 +342,44 @@ console.log(element.dataset.userProfileEmail);  // "zhangsan@example.com"
 根据数据值添加/移除 CSS 类，支持两种模式：
 
 ```html
-<!-- 模式1：布尔值控制（原有功能） -->
+<!-- 模式1：布尔值控制 -->
 <span HeTui :class|active="isActive">状态文本</span>
 
 <!-- 如果 isActive 为 true，添加 active 类 -->
 <!-- 如果 isActive 为 false，移除 active 类 -->
 
-<!-- 模式2：类名字符串绑定（v1.1.0 新功能） -->
+<!-- 模式2：类名字符串绑定 -->
 <div HeTui :class="stateClass">动态类名绑定</div>
 
 <!-- 根据 stateClass 的值动态设置类名 -->
 <!-- 值改变时自动删除旧类名，添加新类名 -->
 ```
 
-**v1.1.0 新功能**：
+**类名字符串绑定说明**：
 - 支持 `:class="className"` 语法，直接绑定类名字符串
 - 支持计算属性绑定，可以根据条件返回不同的类名
 - 值改变时能正确删除旧类名，添加新类名
-- 与原有 `:class|类名="条件"` 语法完全兼容
+- 支持两种语法：`:class="className"`（类名字符串）和 `:class|类名="条件"`（布尔值控制）
 
 ### :style 样式绑定
 
-动态绑定 CSS 样式属性：
+动态绑定 CSS 样式属性。
+
+**⚠️ 重要：样式名必须用 kebab-case（如 `background-color`），不能用驼峰（如 `backgroundColor`）**
+
+原因：HTML 属性会被浏览器自动转全小写，驼峰写法会被转成全小写后失效。
 
 ```html
-<!-- 绑定颜色 -->
+<!-- ✅ 正确：kebab-case 样式名 -->
 <span HeTui :style|color="fontColor">彩色文本</span>
+<div HeTui :style|background-color="bgColor">背景色块</div>
+<div HeTui :style|font-size="fontSize">字号</div>
+<div HeTui :style|margin-top="marginTop">上边距</div>
+<div HeTui :style|width="progressWidth">进度条</div>
 
-<!-- 绑定背景色 -->
-<div HeTui :style|background="bgColor">背景色块</div>
-
-<!-- 绑定宽度 -->
-<div HeTui :style|width="progressPercent">进度条</div>
+<!-- ❌ 错误：驼峰写法（浏览器转小写后失效） -->
+<div HeTui :style|backgroundColor="bgColor">背景色块</div>
+<div HeTui :style|fontSize="fontSize">字号</div>
 ```
 
 ### :disabled 禁用绑定
@@ -1223,7 +1220,7 @@ app.computed({
 | 属性/方法 | 类型 | 说明 |
 |-----------|------|------|
 | `Hetui.Observe(options, container)` | Function | 初始化响应式数据（支持多实例） |
-| `Hetui.runApp(options, container)` | Function | 创建应用实例（推荐用于多实例） |
+| `new Hetui(options, container)` | Function | 创建应用实例（推荐用于多实例） |
 | `Hetui.initView(data)` | Function | 初始化视图 |
 | `Hetui.methods` | Object | 方法对象 |
 | `Hetui.filters` | Object | 过滤器对象 |
@@ -1234,14 +1231,13 @@ app.computed({
 | 方法 | 说明 |
 |------|------|
 | `Observer.Define(value)` | 创建响应式对象（基于 defineProperty） |
-| `Observer.Proxy(value)` | 创建响应式对象（基于 ES6 Proxy） |
 
-### Hetui.runApp 方法
+### new Hetui 方法
 
 创建应用实例，支持多实例开发：
 
 ```javascript
-var app = Hetui.runApp(options, container)
+var app = new Hetui(options, container)
 ```
 
 **参数**：
@@ -1267,7 +1263,7 @@ var app = Hetui.runApp(options, container)
 
 **示例**：
 ```javascript
-var app = Hetui.runApp({
+var app = new Hetui({
     count: Observer.Define(0),
     message: Observer.Define('hello')
 }, document.getElementById('app')).methods({
@@ -1337,7 +1333,7 @@ var app = Hetui.runApp({
 
 ### Q1: 为什么我的数据变化没有触发视图更新？
 
-**A**: 确保使用 `Observer.Define()` 或 `Observer.Proxy()` 包装属性值：
+**A**: 确保使用 `Observer.Define()` 包装属性值：
 
 ```javascript
 // ❌ 错误：直接赋值不会触发更新
@@ -1395,96 +1391,12 @@ app.items.splice(0, 1); // ✅
 
 ## 更新日志
 
-### v1.1.0 (2026-06-07)
+### v1.2.1 (2026-09-06)
 
-- **新增 `:class` 指令增强**：支持类名字符串绑定，语法 `:class="className"`
-- **计算属性支持**：`:class` 指令现在支持计算属性绑定
-- **条件切换**：可以根据条件动态切换不同的类名
-- **向后兼容**：原有 `:class|类名="条件"` 语法继续工作
-
-### v1.0.0 (2026-06-06)
-
-- **重大更新：完全移除 `.value` 属性**
-  - Observer.Define 和 Observer.Proxy 返回的响应式对象不再支持 `.value` 访问
-  - 必须使用直接访问方式：`data.count` 而不是 `data.count.value`
-  - 内部使用 `_value` 存储实际值（不暴露给用户）
-- **新增自动解包机制**
-  - 响应式对象自动解包为原始值，无需手动访问 `.value`
-  - 支持所有嵌套级别的自动解包
-- **新增 data 对象 Proxy 包装**
-  - data 对象自动用 Proxy 包装，拦截赋值操作
-  - 支持 `data.step1 = false` 语法直接触发响应式更新
-- **新增 Symbol(Symbol.toPrimitive) 支持**
-  - 响应式对象可以正确转换为原始值
-  - 支持数学运算、字符串拼接等操作
-- **修复 Observer.Define set 拦截器**
-  - 当 `_value` 是原始值时，直接替换 `_value` 并触发更新
-- **修复 _addWatch 方法**
-  - 移除旧版 `.value` 访问方式
-- **修复 setData 方法**
-  - 设置 `_value` 属性而不是直接赋值
-
-### v0.3.0 (2026-06-02)
-
-- **新增统一事件处理**：支持所有 DOM 事件的 `@xxx` 语法
-- **保持 `@click`、`@submit` 独立处理**：优化性能，向后兼容
-- **支持所有事件修饰符**：`.prevent`、`.stop`、`.once`、`.self`、`.ctrl`、`.shift`、`.alt`、`.meta`
-- **支持所有事件类型**：鼠标、键盘、表单、触摸、拖拽等所有 DOM 事件
-
-### v0.2.0 (2026-06-02)
-
-- **新增多实例支持**：可以创建多个独立的应用实例
-- **新增 `Hetui.runApp` 工厂函数**：推荐用于多实例开发
-- **优化 `container` 参数**：作为第二个参数传递，API 更简洁
-- **修复 `getValueByPath` 函数**：正确处理嵌套的响应式对象
-- **修复 `bindData` 函数**：正确生成 data-* 属性名
-- **优化事件处理函数查找**：优先从实例 methods 中查找
-
-### v0.1.0 (2026-06-02)
-
-- 初始版本发布
-- 支持 Observer.Define 和 Observer.Proxy 响应式系统
-- 支持 16 种指令
-- 支持事件修饰符
-- 支持过滤器系统
-- 支持计算属性和监听器
-- 支持链式调用 API
-- 支持网络请求（XHR、Form、JsonP、Fetch）
-
-#### 新增指令
-- `:text` 文本绑定
-- `:value` 值绑定（双向）
-- `:attr` 属性绑定
-- `:data` data-* 属性绑定
-- `:class` 类绑定
-- `:style` 样式绑定
-- `:disabled` 禁用绑定
-- `:checked` 选中绑定（双向）
-- `:placeholder` 占位符绑定
-- `:title` 提示文本绑定
-- `:html` HTML绑定（带安全防护）
-- `@click` 点击事件
-- `@submit` 提交事件
-- `foreach:` 循环指令
-- `if:` 条件渲染
-- `show:` 显示控制
-
-#### 事件修饰符
-- `.prevent` 阻止默认行为
-- `.stop` 阻止冒泡
-- `.once` 只触发一次
-- `.self` 只在目标元素触发
-- `.ctrl` 需要 Ctrl 键
-- `.shift` 需要 Shift 键
-- `.alt` 需要 Alt 键
-- `.meta` 需要 Meta 键
-
-#### 内置过滤器
-- `uppercase`, `lowercase`, `capitalize`
-- `truncate`, `currency`, `date`
-- `numberFormat`, `json`, `default`
-- `length`, `reverse`, `trim`
-- `encodeURIComponent`, `decodeURIComponent`
+- **修复嵌套对象/数组属性无 getter/setter** — `_defineObject` 内部属性统一用 `Object.defineProperty` 定义，嵌套数据变异能正确触发更新
+- **修复数组/对象整体赋值不响应** — `Observer.Define([])` 初始化空数据后，异步获取后端数据直接 `data.xxx = newArray` 即可触发视图更新
+- **修复 foreach 子作用域污染父数据** — 循环项属性用 `Object.defineProperty` 创建为自身属性，不再沿原型链触发父数据 setter
+- **修复 `:style` 驼峰属性名失效** — 样式名必须用 kebab-case（如 `background-color`），不能用驼峰
 
 ---
 

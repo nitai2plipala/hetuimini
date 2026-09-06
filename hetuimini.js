@@ -1,7 +1,6 @@
 /**
  * Hetui Mini - 轻量级 MVVM 框架
  * 核心设计：数据、指令、方法三层分离
- * 版本：2.0.0
  */
 
 (function() {
@@ -35,7 +34,7 @@
     }
     
     // 静态属性
-    Hetui.version = '1.2.0';
+    Hetui.version = '1.2.1';
     Hetui.filters = {}; // 过滤器对象
     Hetui.depMap = new Map(); // 依赖映射
     Hetui.elements = new Map(); // 元素映射
@@ -88,47 +87,59 @@
             Object.keys(obj).forEach(function(key) {
                 var value = obj[key];
                 
-                // 如果属性值也是对象，递归创建响应式
+                // 子属性依赖集合（用于精确通知）
+                var childDep = new Set();
+                
+                // 对象/数组属性：先递归创建响应式
                 if (value !== null && typeof value === 'object' && !Array.isArray(value)) {
-                    reactiveObj[key] = self._defineObject(value);
+                    value = self._defineObject(value);
                 } else if (Array.isArray(value)) {
-                    reactiveObj[key] = self._defineArray(value);
-                } else {
-                    // 原始值，创建响应式属性
-                    var childDep = new Set();
-                    
-                    (function(key, value, childDep) {
-                        Object.defineProperty(reactiveObj, key, {
-                            get: function() {
-                                // 收集依赖
-                                if (Observer._currentDep) {
-                                    childDep.add(Observer._currentDep);
-                                }
-                                return value;
-                            },
-                            set: function(newValue) {
-                                if (value !== newValue) {
-                                    value = newValue;
-                                    // 通知更新
-                                    childDep.forEach(function(updateFn) {
-                                        updateFn();
-                                    });
-                                    dep.forEach(function(updateFn) {
-                                        updateFn();
-                                    });
-                                    // 触发 computed 更新
-                                    if (reactiveObj['@Hetui::observer'] && reactiveObj['@Hetui::observer']._computedUpdaters) {
-                                        reactiveObj['@Hetui::observer']._computedUpdaters.forEach(function(updateFn) {
-                                            updateFn();
-                                        });
-                                    }
-                                }
-                            },
-                            enumerable: true,
-                            configurable: true
-                        });
-                    })(key, value, childDep);
+                    value = self._defineArray(value);
                 }
+                
+                (function(key, value, childDep) {
+                    Object.defineProperty(reactiveObj, key, {
+                        get: function() {
+                            // 收集依赖到当前属性的 childDep
+                            if (Observer._currentDep) {
+                                childDep.add(Observer._currentDep);
+                                // 如果值本身是响应式对象/数组，也收集到它自己的 dep，
+                                // 这样其内部变异方法（如数组 push）也能通知到当前依赖
+                                if (value && value['@Hetui::observer']) {
+                                    value['@Hetui::observer'].dep.add(Observer._currentDep);
+                                }
+                            }
+                            return value;
+                        },
+                        set: function(newValue) {
+                            if (value !== newValue) {
+                                // 对象/数组整体替换：若新值是普通对象/数组，先转成响应式
+                                if (newValue !== null && typeof newValue === 'object' && !Array.isArray(newValue) && !newValue['@Hetui::observer']) {
+                                    newValue = self._defineObject(newValue);
+                                } else if (Array.isArray(newValue) && !newValue['@Hetui::observer']) {
+                                    newValue = self._defineArray(newValue);
+                                }
+                                value = newValue;
+                                // 通知当前属性的依赖
+                                childDep.forEach(function(updateFn) {
+                                    updateFn();
+                                });
+                                // 通知父对象级别的依赖
+                                dep.forEach(function(updateFn) {
+                                    updateFn();
+                                });
+                                // 触发 computed 更新
+                                if (reactiveObj['@Hetui::observer'] && reactiveObj['@Hetui::observer']._computedUpdaters) {
+                                    reactiveObj['@Hetui::observer']._computedUpdaters.forEach(function(updateFn) {
+                                        updateFn();
+                                    });
+                                }
+                            }
+                        },
+                        enumerable: true,
+                        configurable: true
+                    });
+                })(key, value, childDep);
             });
             
             return reactiveObj;
@@ -368,28 +379,59 @@
             Object.keys(rawData).forEach(function(key) {
                 var value = rawData[key];
                 
-                // 检查是否是响应式对象（有 @Hetui::observer 和 value 属性）
-                if (value && value['@Hetui::observer'] && value.hasOwnProperty('value')) {
-                    // 响应式对象：getter 返回 value，setter 设置 value
+                // 检查是否是响应式对象（有 @Hetui::observer 标记即可）
+                // 无论是原始值(_definePrimitive)、对象(_defineObject)还是数组(_defineArray)
+                // 只要用 Observer.Define 包装，都应走响应式分支
+                if (value && value['@Hetui::observer']) {
+                    // 响应式对象：getter 收集依赖并返回实际值，setter 触发更新
                     (function(key, value) {
+                        // 判断是否为原始值响应式对象（有 value 属性）
+                        var isPrimitive = value.hasOwnProperty('value');
                         Object.defineProperty(reactiveData, key, {
                             get: function() {
-                                // 收集依赖
+                                // 收集依赖到响应式对象的 dep 集合
                                 if (Observer._currentDep) {
                                     value['@Hetui::observer'].dep.add(Observer._currentDep);
                                 }
-                                return value.value;
+                                // 原始值返回 .value，对象/数组直接返回自身
+                                return isPrimitive ? value.value : value;
                             },
                             set: function(newValue) {
-                                // 设置响应式对象的 value，会触发该对象的依赖更新
-                                value.value = newValue;
+                                if (isPrimitive) {
+                                    // 原始值：设置 .value，触发该对象的依赖更新
+                                    value.value = newValue;
+                                } else {
+                                    // 对象/数组：整体替换时，将新值逐项写入以触发各元素的依赖更新，
+                                    // 同时触发整体 dep（foreach 等订阅了数组整体的指令会重新渲染）
+                                    var dep = value['@Hetui::observer'].dep;
+                                    if (Array.isArray(value) && Array.isArray(newValue)) {
+                                        // 数组：先清空再逐项填充，让元素级 setter 生效
+                                        value.splice(0, value.length);
+                                        for (var i = 0; i < newValue.length; i++) {
+                                            value[i] = newValue[i];
+                                        }
+                                    } else {
+                                        // 对象：逐属性赋值
+                                        var oldKeys = Object.keys(value);
+                                        oldKeys.forEach(function(k) { delete value[k]; });
+                                        Object.keys(newValue).forEach(function(k) {
+                                            value[k] = newValue[k];
+                                        });
+                                    }
+                                    // 通知整体依赖（foreach 的 updateFn 等）
+                                    dep.forEach(function(updateFn) { updateFn(); });
+                                    // 触发 computed 更新
+                                    if (value['@Hetui::observer']._computedUpdaters) {
+                                        value['@Hetui::observer']._computedUpdaters.forEach(function(fn) { fn(); });
+                                    }
+                                }
                             },
                             enumerable: true,
                             configurable: true
                         });
                     })(key, value);
                 } else {
-                    // 普通值：直接读写
+                    // 普通值：直接读写（未用 Observer.Define 包装，不响应式）
                     (function(key, value) {
                         Object.defineProperty(reactiveData, key, {
                             get: function() {
@@ -871,15 +913,18 @@
          */
         bindStyle: function(element, directive, data) {
             var self = this;
-            // 只支持新格式 :style|样式名="值"
+            // 格式：:style|样式名="值"
+            // 样式名必须使用 kebab-case（如 background-color、font-size），
+            // 因为 HTML 属性会被浏览器自动转为小写，驼峰写法无效。
+            // 用 setProperty 配合 kebab-case 属性名，确保兼容性。
             var styleName = directive.param || 'color';
             var fieldPath = directive.path;
             var updateFn = function() {
                 var value = self.getValueByPath(data, fieldPath);
                 if (value !== undefined && value !== null) {
-                    element.style[styleName] = value;
+                    element.style.setProperty(styleName, value);
                 } else {
-                    element.style[styleName] = '';
+                    element.style.removeProperty(styleName);
                 }
             };
             
@@ -1145,15 +1190,23 @@
                     generatedElements.push(newElement);
                     
                     // 创建子数据对象：继承父数据 + 当前项属性 + 索引
+                    // 注意：必须用 Object.defineProperty 创建自身属性，
+                    // 不能用 subData[key] = val 赋值——否则当 key 与 data 上某属性重名时
+                    // （如 data 上有 price，item 也有 price），赋值会沿原型链触发 data 的 setter，
+                    // 把值错误地写进 data.price，导致所有循环项共享同一个值并污染父数据。
                     var subData = Object.create(data);
-                    subData['#index'] = index + 1;
-                    subData['#item'] = item;  // 添加当前数组项支持
+                    Object.defineProperty(subData, '#index', { value: index + 1, writable: true, enumerable: true, configurable: true });
+                    Object.defineProperty(subData, '#item', { value: item, writable: true, enumerable: true, configurable: true });
                     
-                    // 将数组项包装为响应式对象（如果还不是的话）
+                    // 将数组项的属性作为子数据自身的属性（不触发原型链上父数据的 setter）
                     if (item !== null && typeof item === 'object') {
                         Object.keys(item).forEach(function(key) {
-                            // 将普通值包装为带 value 属性的对象，模拟响应式
-                            subData[key] = item[key];
+                            Object.defineProperty(subData, key, {
+                                value: item[key],
+                                writable: true,
+                                enumerable: true,
+                                configurable: true
+                            });
                         });
                     }
                     

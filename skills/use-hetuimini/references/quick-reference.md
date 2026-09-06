@@ -26,7 +26,33 @@ data.fieldName = newValue;
 
 // 嵌套对象
 data.user.name = '新名字';
+
+// 异步整体赋值（v1.2.1+ 支持）
+data.repos = fetchResult;  // ✅ 整体替换数组/对象
 ```
+
+## 异步数据赋值模式
+
+用 `Observer.Define([])` 初始化空数据，异步请求后端后直接整体赋值：
+
+```javascript
+var app = new Hetui({
+    repos: Observer.Define([])  // 初始化空数组
+}, container)
+.methods({
+    async fetchRepos(event, data) {
+        var res = await fetch('/api/repos').then(r => r.json());
+        data.repos = res;  // ✅ 直接整体赋值，视图自动更新
+    }
+});
+```
+
+> 支持的赋值方式：
+> - `data.repos = newArray` — 整体替换
+> - `data.repos.push(item)` — 变异方法
+> - `data.repos.splice(i, 1)` — 删除元素
+> - `data.repos[i] = item` — 索引赋值
+> - `data.user.profile = newObj` — 嵌套对象整体替换
 
 ## 方法模板
 
@@ -111,9 +137,11 @@ watch: {
 <button @click="handler">点击</button>
 <form @submit.prevent="handleSubmit">提交</form>
 
-<!-- 样式 -->
+<!-- 样式（样式名必须用 kebab-case） -->
 <div :class|active="isActive">内容</div>
 <div :style|color="textColor">彩色文本</div>
+<div :style|background-color="bgColor">背景色</div>
+<div :style|font-size="fontSize">字号</div>
 
 <!-- 冒号分隔路径（所有指令都支持） -->
 <span :text="user:name"></span>
@@ -123,6 +151,19 @@ watch: {
 <li foreach:="user:items">...</li>
 <div if:="user:showModal">...</div>
 <div show:="user:isVisible">...</div>
+```
+
+## 条件文本（不支持三元，用 computed）
+
+```javascript
+// ❌ :text 不支持三元表达式
+// <span :text="isActive ? '是' : '否'"></span>
+
+// ✅ 用 computed 解决
+.computed({
+    statusText() { return this.isActive ? '是' : '否'; }
+})
+// HTML: <span :text="statusText"></span>
 ```
 
 ## 过滤器示例

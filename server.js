@@ -15,14 +15,31 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-    let filePath = '.' + req.url;
+    const url = new URL(req.url, `http://localhost:${PORT}`);
+    const pathname = url.pathname;
+
+    // ===== API 接口 =====
+    if (pathname === '/api/repos') {
+        const repos = [
+            { id: 1, name: 'hetuimini', price: 0, stars: 128 },
+            { id: 2, name: 'vue-core', price: 0, stars: 200000 },
+            { id: 3, name: 'react-hooks', price: 0, stars: 180000 },
+            { id: 4, name: 'svelte-kit', price: 0, stars: 75000 }
+        ];
+        res.writeHead(200, { 'Content-Type': 'application/json; charset=utf-8' });
+        res.end(JSON.stringify(repos), 'utf-8');
+        return;
+    }
+
+    // ===== 静态文件服务 =====
+    let filePath = '.' + pathname;
     if (filePath === './') {
         filePath = './test-hetuimini.html';
     }
-    
+
     const extname = path.extname(filePath);
     const contentType = MIME_TYPES[extname] || 'text/html';
-    
+
     fs.readFile(filePath, (err, content) => {
         if (err) {
             if (err.code === 'ENOENT') {

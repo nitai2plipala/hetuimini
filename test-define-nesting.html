@@ -217,9 +217,9 @@
             }),
             
             // 测试状态
-            testStatus: '运行中',
-            passedTests: 0,
-            failedTests: 0
+            testStatus: Observer.Define('运行中'),
+            passedTests: Observer.Define(0),
+            failedTests: Observer.Define(0)
         })
         .methods({
             // 测试1 方法

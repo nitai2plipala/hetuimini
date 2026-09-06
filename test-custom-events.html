@@ -61,7 +61,7 @@
         <!-- 测试4：传递 detail 数据 -->
         <div class="section">
             <h2>测试4：通过 detail 传递复杂数据</h2>
-            <div HeTui @order-created="handleOrder"
+            <div id="order-box" HeTui @order-created="handleOrder"
                  style="padding: 20px; background: #f3e5f5; cursor: pointer;">
                 点击创建订单（触发 order-created 事件）
             </div>
@@ -129,8 +129,8 @@
                 console.log('order-created 事件:', order);
             },
             triggerOrder(event, data) {
-                var section = event.target.closest('.section');
-                section.dispatchEvent(new CustomEvent('order-created', {
+                var box = document.getElementById('order-box');
+                box.dispatchEvent(new CustomEvent('order-created', {
                     bubbles: true,
                     detail: {
                         id: Math.floor(Math.random() * 10000),

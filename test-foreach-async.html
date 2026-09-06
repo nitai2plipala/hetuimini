@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foreach 异步数据赋值响应式测试</title>
+    <script src="hetuimini.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 24px; color: #333; }
+        .container { max-width: 820px; margin: 0 auto; }
+        .tip { background: #e8f5e9; border-left: 4px solid #4caf50; padding: 10px 14px; margin: 12px 0; font-size: 14px; }
+        .tip code { background: #f4f4f4; padding: 2px 6px; border-radius: 3px; }
+        button { margin: 4px; padding: 6px 14px; cursor: pointer; border: 1px solid #ccc; background: #fff; border-radius: 4px; }
+        button:hover { background: #f0f0f0; }
+        ul { list-style: none; padding: 0; }
+        li { padding: 8px 12px; border: 1px solid #e0e0e0; border-radius: 4px; margin: 6px 0; background: #fafafa; }
+        .repo-name { font-weight: bold; color: #1a73e8; }
+        .repo-price { color: #e65100; }
+        #status { color: #666; font-size: 13px; margin: 8px 0; }
+        .empty { color: #999; font-style: italic; }
+        h2 { border-bottom: 2px solid #eee; padding-bottom: 6px; }
+    </style>
+</head>
+<body>
+    <div id="app" class="container">
+        <h2>foreach 异步赋值响应式测试</h2>
+        <p style="color:#666;font-size:14px;">
+            初始 <code>repos: Observer.Define([])</code> 为空数组，请求后端后赋值，验证视图响应式更新。
+            后端接口 <code>/api/repos</code> 由 <code>server.js</code> 提供。
+        </p>
+
+        <!-- 空状态提示 -->
+        <div HeTui if:="isEmpty" class="empty">暂无数据，点击下方按钮加载</div>
+
+        <!-- foreach 列表 -->
+        <ul>
+            <li HeTui foreach:="repos">
+                <span HeTui :text="#index"></span>.
+                <span HeTui :text="name" class="repo-name"></span>
+                - ¥<span HeTui :text="price" class="repo-price"></span>
+                (<span HeTui :text="stars"></span>⭐)
+            </li>
+        </ul>
+
+        <p id="status"></p>
+
+        <div style="margin-top:16px;">
+            <h3 style="margin:8px 0;">后端请求（server.js 返回数据）</h3>
+            <button HeTui @click="loadByXhrAssign">XHR 整体赋值</button>
+            <button HeTui @click="loadByFetchPush">Fetch + splice/push</button>
+        </div>
+
+        <div style="margin-top:12px;">
+            <h3 style="margin:8px 0;">setTimeout 模拟</h3>
+            <button HeTui @click="loadByAssign">整体赋值 data.repos = newArr</button>
+            <button HeTui @click="loadBySplicePush">splice 清空 + push 逐项</button>
+        </div>
+
+        <div style="margin-top:12px;">
+            <h3 style="margin:8px 0;">本地操作</h3>
+            <button HeTui @click="addItem">追加一项</button>
+            <button HeTui @click="clearRepos">清空</button>
+        </div>
+
+        <div class="tip">
+            <strong>说明：</strong>修复后 <code>Observer.Define</code> 包装的数组/对象也走响应式分支，
+            后端数据回来后无论整体赋值还是变异方法都能触发 <code>foreach</code> 视图更新。
+            未用 <code>Observer.Define</code> 的普通值（如 <code>items: [...]</code>）仍不响应，符合预期。
+        </div>
+    </div>
+
+    <script>
+        var app = new Hetui({
+            repos: Observer.Define([])   // 初始空数组，响应式
+        }, document.getElementById('app'))
+        .computed({
+            isEmpty: function() {
+                return this.repos.length === 0;
+            }
+        })
+        .methods({
+            // ===== 后端请求 =====
+            // 方式1：XHR 请求 + 整体赋值
+            loadByXhrAssign: function(event, data) {
+                setStatus('XHR 请求 /api/repos 中...');
+                Network.XHR({
+                    url: '/api/repos',
+                    method: 'GET',
+                    option: {
+                        success: function(res) {
+                            // 整体赋值，修复后响应式
+                            data.repos = res;
+                            setStatus('✅ XHR 整体赋值完成，收到 ' + res.length + ' 项');
+                        },
+                        error: function() {
+                            setStatus('❌ XHR 请求失败');
+                        }
+                    }
+                });
+            },
+
+            // 方式2：Fetch 请求 + splice/push 变异方法
+            loadByFetchPush: function(event, data) {
+                setStatus('Fetch 请求 /api/repos 中...');
+                Network.Fetch({
+                    url: '/api/repos',
+                    method: 'GET',
+                    code: 'json',
+                    option: {
+                        responseType: 'json',
+                        success: function(res) {
+                            data.repos.splice(0, data.repos.length);
+                            res.forEach(function(item) { data.repos.push(item); });
+                            setStatus('✅ Fetch splice+push 完成，收到 ' + res.length + ' 项');
+                        },
+                        error: function() {
+                            setStatus('❌ Fetch 请求失败');
+                        }
+                    }
+                });
+            },
+
+            // ===== setTimeout 模拟 =====
+            loadByAssign: function(event, data) {
+                setStatus('模拟请求中...');
+                setTimeout(function() {
+                    data.repos = [
+                        { name: '后端商品A', price: 100, stars: 50 },
+                        { name: '后端商品B', price: 200, stars: 60 },
+                        { name: '后端商品C', price: 300, stars: 70 }
+                    ];
+                    setStatus('✅ 整体赋值完成，视图已更新');
+                }, 600);
+            },
+
+            loadBySplicePush: function(event, data) {
+                setStatus('模拟请求中...');
+                setTimeout(function() {
+                    data.repos.splice(0, data.repos.length);
+                    [
+                        { name: '变异法商品D', price: 400, stars: 80 },
+                        { name: '变异法商品E', price: 500, stars: 90 }
+                    ].forEach(function(item) { data.repos.push(item); });
+                    setStatus('✅ splice+push 完成，视图已更新');
+                }, 600);
+            },
+
+            addItem: function(event, data) {
+                data.repos.push({
+                    name: '新商品' + (data.repos.length + 1),
+                    price: Math.floor(Math.random() * 1000)
+                });
+                setStatus('已追加一项');
+            },
+
+            clearRepos: function(event, data) {
+                data.repos.splice(0, data.repos.length);
+                setStatus('已清空');
+            }
+        });
+
+        function setStatus(msg) {
+            document.getElementById('status').textContent = msg;
+        }
+    </script>
+</body>
+</html>

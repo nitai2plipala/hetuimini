@@ -76,14 +76,14 @@
         <!-- 表单事件测试 -->
         <div class="section">
             <h2>表单事件测试</h2>
-            <form HeTui @submit.prevent="handleSubmit">
+            <form HeTui @submit.prevent="handleSubmit" @reset="handleReset">
                 <p>
                     <input type="text" name="username" placeholder="用户名">
                     <input type="password" name="password" placeholder="密码">
                 </p>
                 <p>
                     <button type="submit">提交 (@submit.prevent)</button>
-                    <button type="reset" @reset="handleReset">重置 (@reset)</button>
+                    <button type="reset">重置 (@reset)</button>
                 </p>
             </form>
             <div class="event-log">

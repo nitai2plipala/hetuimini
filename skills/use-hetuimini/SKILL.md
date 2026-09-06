@@ -5,35 +5,12 @@ description: 使用 hetuimini.js 轻量级 MVVM 框架开发前端应用的完�
 
 # Hetui Mini 框架开发指南
 
-### 🚫 重要：`.value` 属性已删除
-
-从 v1.0.0 版本开始，`.value` 属性已被完全删除，不再支持。
-
-### 🆕 v1.2.0 新功能
-- **支持 new 创建实例**：使用 `new Hetui(options, container)` 创建应用
-- **删除 runApp**：移除 `Hetui.runApp()`，保留 `Hetui.Observe()`
-
-### 🆕 v1.1.0 新功能
-- **`:class` 指令增强**：支持类名字符串绑定，语法 `:class="className"`
-- **计算属性支持**：`:class` 指令现在支持计算属性绑定
-- **条件切换**：可以根据条件动态切换不同的类名
-- **向后兼容**：原有 `:class|类名="条件"` 语法继续工作
-
-**旧版写法（已删除）：**
-```javascript
-data.count.value++;           // ❌ 已删除，会报错
-data.user.value.name = '新名字';  // ❌ 已删除，会报错
-console.log(data.count.value);  // ❌ 已删除，会报错
-```
-
-**新版写法（唯一）：**
-```javascript
-data.count++;                 // ✅ 唯一写法
-data.user.name = '新名字';    // ✅ 唯一写法
-console.log(data.count);      // ✅ 唯一写法
-```
-
-**说明**：`.value` 属性已被完全删除，必须使用新版的直接访问方式。
+### 🆕 v1.2.1 修复（响应式链路完善）
+修复了四个核心 Bug，响应式系统现已完整可用：
+1. **嵌套对象/数组属性无 getter/setter** — `_defineObject` 内部属性统一用 `Object.defineProperty` 定义，嵌套数据变异现在能正确触发更新
+2. **数组/对象整体赋值不响应** — `Observer.Define([])` 初始化空数据后，异步获取后端数据直接 `data.xxx = newArray` 即可触发视图更新
+3. **foreach 子作用域污染父数据** — 循环项属性用 `Object.defineProperty` 创建为自身属性，不再沿原型链触发父数据 setter
+4. **`:style` 驼峰属性名失效** — 样式名必须用 kebab-case（如 `background-color`），不能用驼峰
 
 ## 框架简介
 
@@ -78,21 +55,14 @@ Hetui Mini 是一个轻量级 MVVM 框架，核心设计：**数据、指令、�
 
 ## 核心规则
 
-### 1. 响应式数据必须用 Observer.Define 或 Observer.Proxy 包装
+### 1. 响应式数据必须用 Observer.Define 包装
 
 ```javascript
 // ✅ 正确：Observer.Define
 var app = new Hetui({
     count: Observer.Define(0),
-    user: Observer.Define({ name: '张三' })
-}, container);
-
-// ✅ 正确：Observer.Proxy（支持嵌套属性监听）
-var app = new Hetui({
-    user: Observer.Proxy({ 
-        name: '张三',
-        profile: Observer.Proxy({ city: '北京' })
-    })
+    user: Observer.Define({ name: '张三' }),
+    items: Observer.Define([])  // 空数组，异步可整体赋值
 }, container);
 
 // ❌ 错误 - 不会触发视图更新
@@ -102,16 +72,35 @@ var app = new Hetui({
 }, container);
 ```
 
+### 1a. 异步数据赋值（v1.2.1 修复）
+
+用 `Observer.Define([])` 初始化空数据，异步请求后端后**直接整体赋值**即可触发视图更新：
+
+```javascript
+var app = new Hetui({
+    repos: Observer.Define([])  // 初始化空数组
+}, container)
+.methods({
+    async fetchRepos(event, data) {
+        var res = await fetch('/api/repos').then(r => r.json());
+        data.repos = res;  // ✅ 直接整体赋值，视图自动更新
+    }
+});
+```
+
+> 支持的赋值方式：
+> - `data.repos = newArray` — 整体替换（适用于异步请求后赋值）
+> - `data.repos.push(item)` — 变异方法
+> - `data.repos.splice(i, 1)` — 删除元素
+> - `data.repos[i] = item` — 索引赋值
+> - `data.user.profile = newObj` — 嵌套对象整体替换
+```
+
 ### 2. 访问响应式数据直接使用
 
 ```javascript
-// ✅ 正确
 console.log(data.count);  // 读取
 data.count = 10;          // 写入
-
-// ❌ 错误 - 旧版写法（已删除）
-console.log(data.count.value);  // 已删除，会报错
-data.count.value = 10;          // 已删除，会报错
 ```
 
 ### 3. 属性路径用冒号分隔，不用点号（所有指令都支持）
@@ -157,64 +146,38 @@ data.count.value = 10;          // 已删除，会报错
 <input @input="username = $event.target.value">
 ```
 
-## 响应式对象内部结构（v1.0.0+）
+### 6. :style 样式名必须用 kebab-case（v1.2.1 修复）
 
-**⚠️ 重要：`@Hetui::observer` 属性的值已更新**
+HTML 属性会被浏览器自动转全小写，`:style` 的样式名**必须用 `-` 连接符**：
 
-### 新版结构（v1.0.0+）
-```javascript
-// 响应式对象结构
-{
-  '@Hetui::observer': {      // 标记属性，值为内部状态对象
-    dep: Set(),              // 依赖集合
-    methods: {},             // 方法对象（仅根对象）
-    computedFns: {},         // 计算属性函数（仅根对象）
-    watchFns: {},            // 监听器函数（仅根对象）
-    _computedUpdaters: [],   // computed 更新函数数组（仅根对象）
-    _app: App               // App 实例引用（仅根对象）
-  },
-  'value': 1,               // 实际值（仅原始值）
-  // ... 其他属性（对象类型）
-}
+```html
+<!-- ✅ 正确：kebab-case -->
+<div HeTui :style|background-color="bgColor">背景</div>
+<div HeTui :style|font-size="fontSize">文字</div>
+<div HeTui :style|margin-top="marginTop">边距</div>
+
+<!-- ❌ 错误：驼峰（浏览器转小写后失效） -->
+<div HeTui :style|backgroundColor="bgColor">背景</div>
+<div HeTui :style|fontSize="fontSize">文字</div>
 ```
 
-### 为什么使用访问器（getter/setter）
+### 7. :text 等指令不支持三元表达式
 
-1. **防止意外修改**：setter 为空函数，确保 `@Hetui::observer` 不会被改变
-2. **不可枚举**：`enumerable: false` 确保不会出现在 `for...in` 循环中
-3. **不可配置**：`configurable: false` 确保属性不能被删除或重新配置
-4. **性能优化**：返回固定的对象引用，避免每次访问都创建新对象
+`:text` 指令的值只能是**属性路径**或**过滤器**，不支持三元表达式等复杂逻辑运算。需要条件判断时用 **computed 计算属性**：
 
-### 使用说明
-1. **检测响应式对象**：检查对象是否有 `@Hetui::observer` 属性
-2. **访问依赖集合**：通过 `obj['@Hetui::observer'].dep` 获取
-3. **内部机制**：框架自动管理依赖收集和更新，无需手动操作
-4. **根对象也有标记**：`self.data` 也有 `@Hetui::observer` 属性，保持一致性
-5. **数据清晰**：所有内部属性（methods、computed、watch 等）都存储在 `@Hetui::observer` 中，用户数据保持纯净
-6. **链式调用保持**：链式方法函数（`methods`、`computed`、`watch`）同时存储在 `@Hetui::observer` 和根对象上，保持 `app.methods({...}).computed({...})` 链式调用
-
-### 示例
 ```javascript
-// 创建响应式对象
-var count = Observer.Define(0);
+// ❌ 不支持
+<span HeTui :text="isActive ? '是' : '否'"></span>
+<span HeTui :text="count > 0 ? '有' : '无'"></span>
 
-// 检查是否为响应式对象
-console.log(count['@Hetui::observer']);  // { dep: Set(0) }
-
-// 身份比较（每次访问返回相同对象）
-var a = count['@Hetui::observer'];
-var b = count['@Hetui::observer'];
-console.log(a === b);  // true，固定对象引用
-
-// 依赖集合自动管理：
-// 1. 读取数据时自动收集依赖
-// 2. 修改数据时自动触发更新
-
-// 根对象也有 @Hetui::observer 标记
-var app = Hetui.Observe({
-    count: Observer.Define(0)
-}, container);
-console.log(app['@Hetui::observer']);  // { dep: Set(0) }
+// ✅ 用 computed 解决
+.computed({
+    statusText() { return this.isActive ? '是' : '否'; },
+    hasCount() { return this.count > 0 ? '有' : '无'; }
+})
+// HTML
+<span HeTui :text="statusText"></span>
+<span HeTui :text="hasCount"></span>
 ```
 
 ## 指令速查
@@ -494,22 +457,28 @@ methods: {
 <input @input="updateUsername" placeholder="请输入">
 ```
 
-### 错误 3: :style 使用对象语法
+### 错误 3: :style 使用对象语法或驼峰属性名
 
 ```html
 <!-- ❌ 错误 - 不支持对象语法 -->
 <div :style="{width: (percent * 25) + '%'}">
 
-<!-- ✅ 正确 - 使用 computed 属性 -->
+<!-- ❌ 错误 - 样式名不能用驼峰（浏览器会转全小写） -->
+<div :style|backgroundColor="bgColor">
+<div :style|fontSize="fontSize">
+
+<!-- ✅ 正确 - 使用 kebab-case 样式名 -->
 <div :style|width="progressWidth">
-```
+<div :style|background-color="bgColor">
+<div :style|font-size="fontSize">
+``````
 
 ### 错误 4: 嵌套对象用点号访问（所有指令都支持冒号分隔）
 
 **⚠️ 重要：指令格式说明**
 - **`:text`、`:value`、`:html` 等数据绑定指令**：使用冒号分隔嵌套路径，如 `:text="user:name"`
 - **`:class`、`:style`、`:attr` 等属性绑定指令**：使用竖线分隔参数，如 `:class|active="isActive"`
-- **不再支持旧格式**：`:class="active:isActive"`、`:style="color:fontColor"`、`:attr="href:linkUrl"` 已删除
+- **参数与路径的区别**：竖线 `|` 前是参数名（如 `active`、`href`），竖线后等号是数据路径
 
 ```html
 <!-- ❌ 错误：使用点号 -->
